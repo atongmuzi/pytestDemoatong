@@ -13,7 +13,7 @@ class User(RestClient):
         super(User, self).__init__(api_root_url, **kwargs)
 
     def list_all_users(self, **kwargs):
-        return self.get("/users", **kwargs)
+        return self.get("/sign_in/detail/v2", **kwargs)
 
     def list_one_user(self, username, **kwargs):
         return self.get("/users/{}".format(username), **kwargs)

@@ -38,6 +38,7 @@ class MysqlDb():
         self.cur.execute(sql)
         # 使用 fetchall() 获取查询结果
         data = self.cur.fetchall()
+        print(data)
         return data
 
     def execute_db(self, sql):
@@ -56,3 +57,5 @@ class MysqlDb():
 
 
 db = MysqlDb(DB_CONF)
+sql = "select * from recommend_ip_id where id = 1"
+db.select_db(sql)

@@ -9,7 +9,10 @@ def get_all_user_info():
     :return: 自定义的关键字返回结果 result
     """
     result = ResultBase()
-    res = user.list_all_users()
+    headers = {
+        "Authorization": "NzM3OjE1NjRyVXlWYVQ4MkZReUQ4c3R6b3JiNjc4ODoy"
+    }
+    res = user.list_all_users(headers=headers)
     result.success = False
     if res.json()["code"] == 0:
         result.success = True
