@@ -36,7 +36,11 @@ class TestGetUserInfo():
         # print(result.__dict__)
         text = result.response.text
         textjson = json.loads(text)
-        textjson = text.json
+        favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', }
+        for name,language in favorite_languages.items():
+            print(name.title())
+            print(language.title())
+
         print(textjson['data'])
 
         print(result.msg)
