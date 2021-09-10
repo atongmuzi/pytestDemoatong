@@ -10,10 +10,12 @@ def get_all_user_info():
     """
     result = ResultBase()
     headers = {
-        "Authorization": "NzM3OjE1NjRyVXlWYVQ4MkZReUQ4c3R6b3JiNjc4ODoy"
+        "Authorization": "ODM3OjEzMDlVRWN5QmI3YnNPMm1WWXNIUkpjMjU3Njoy"
     }
     res = user.list_all_users(headers=headers)
     result.success = False
+    code = res.json()["code"]
+   # status_code=res.json()["status_code"]
     if res.json()["code"] == 0:
         result.success = True
     else:

@@ -13,7 +13,6 @@ class Logger():
         self.logname = os.path.join(LOG_PATH, "{}.log".format(time.strftime("%Y%m%d")))
         self.logger = logging.getLogger("log")
         self.logger.setLevel(logging.DEBUG)
-
         self.formater = logging.Formatter(
             '[%(asctime)s][%(filename)s %(lineno)d][%(levelname)s]: %(message)s')
 

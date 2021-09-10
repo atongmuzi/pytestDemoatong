@@ -1,0 +1,22 @@
+[2021-09-10 11:43:21,906][test_06_pre_order.py 28][INFO]: *************** 开始执行用例 *************** /n
+[2021-09-10 11:43:21,906][test_06_pre_order.py 29][INFO]: 1
+[2021-09-10 11:43:21,906][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/pay/pre_trade
+[2021-09-10 11:43:21,906][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-09-10 11:43:21,907][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzozNTcweHdIb2VVUlV2c2kxS21XRWtIZTcwNTU6Mg==",
+    "Content-Type": "application/json"
+}
+[2021-09-10 11:43:21,908][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-09-10 11:43:21,908][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-09-10 11:43:21,908][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "order_type": 1,
+    "item_id": 378,
+    "sku_type": 1,
+    "sku_no": "20210909424640020015272-6",
+    "act_id_list": [],
+    "use_pcoin": false
+}
+[2021-09-10 11:43:21,909][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-09-10 11:43:21,909][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-09-10 11:43:22,027][test_06_pre_order.py 31][INFO]: True
+[2021-09-10 11:43:22,027][test_06_pre_order.py 32][INFO]: {'real_amount': 1.01, 'no_coupon_reason': '', 'not_any_discount': False, 'original_amount': 1.01, 'can_use_coupon': False, 'trade_activity_list': [], 'user_coupon_list': [], 'pre_trade_pcoin': {'deduct_amout': 0.0, 'total_balance': 0.0, 'balance': 0.0}}

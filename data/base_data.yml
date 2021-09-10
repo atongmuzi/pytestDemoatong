@@ -1,6 +1,8 @@
 init_admin_user:
   username: "wintest"
   password: "123456"
+  phone: "13656642042"
+  Authorization: "MTE5NzozNTcweHdIb2VVUlV2c2kxS21XRWtIZTcwNTU6Mg=="
 
 init_sql:
   insert_delete_user:

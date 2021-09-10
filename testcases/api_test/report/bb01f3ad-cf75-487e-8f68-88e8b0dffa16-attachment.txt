@@ -1,2 +1,0 @@
-<core.result_base.ResultBase object at 0x1085ac470>
-{'success': True, 'msg': 'success', 'response': <Response [200]>}

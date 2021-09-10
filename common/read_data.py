@@ -36,7 +36,7 @@ class ReadFileData():
         config = MyConfigParser()
         config.read(file_path, encoding="UTF-8")
         data = dict(config._sections)
-        # print("读到数据 ==>>  {} ".format(data))
+        print("读到数据 ==>>  {} ".format(data))
         return data
 
 data = ReadFileData()

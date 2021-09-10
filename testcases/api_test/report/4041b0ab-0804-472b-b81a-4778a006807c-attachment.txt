@@ -1,0 +1,2 @@
+INFO     log:test_06_pre_order.py:28 *************** 开始执行用例 *************** /n
+INFO     log:test_06_pre_order.py:29 [1, 378, 1, '20210909424640020015272-6', '[]', False, 0, 'success']

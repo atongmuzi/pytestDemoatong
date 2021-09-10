@@ -28,8 +28,8 @@ class RestClient():
         url = self.api_root_url + url
         headers = dict(**kwargs).get("headers")
         params = dict(**kwargs).get("params")
-        files = dict(**kwargs).get("params")
-        cookies = dict(**kwargs).get("params")
+        files = dict(**kwargs).get("files")
+        cookies = dict(**kwargs).get("cookies")
         self.request_log(url, method, data, json, params, headers, files, cookies)
         if method == "GET":
             return self.session.get(url, **kwargs)

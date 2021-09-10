@@ -34,3 +34,16 @@ test_delete_user:
   # username, except_result, except_code, except_msg
   - ["测试test", True, 0, "删除用户信息成功"]
   - ["wintest3", False, 3006, "该用户不允许删除"]
+test_trade_preorder:
+  # 预下单的参数，期望结果，期望返回码，期望返回信息
+  # order_type,tem_id,sku_type,sku_no,act_id_list,use_pcoin,except_result, except_code
+  # [1,378,1,"20210909424640020015272-6","[]",false,0,"success"]
+    order_type: 1
+    tem_id: 378
+    sku_type: 1
+    sku_no: "20210909424640020015272-6"
+    act_id_list: []
+    use_pcoin: False
+    except_result: True
+    except_code: 0
+
