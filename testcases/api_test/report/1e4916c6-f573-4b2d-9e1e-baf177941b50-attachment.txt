@@ -1,0 +1,31 @@
+[2021-09-27 16:18:00,971][test_07_item.py 10][INFO]: 步骤1：下一个盲盒详情
+[2021-09-27 16:18:00,971][test_07_item.py 30][INFO]: *************** 开始执行用例 *************** /n
+[2021-09-27 16:18:00,971][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/378/next/v5
+[2021-09-27 16:18:00,972][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-09-27 16:18:00,972][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5Nzo2Nzc4dDY2NjlKRUZsNk1TUGsxOU5YYjkwMzI6Mg=="
+}
+[2021-09-27 16:18:00,972][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> {
+    "first_random": true
+}
+[2021-09-27 16:18:00,972][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-09-27 16:18:00,972][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-09-27 16:18:00,972][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-09-27 16:18:00,972][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-09-27 16:18:01,170][test_07_item.py 34][INFO]: 20210927424640020015272-5
+[2021-09-27 16:18:01,171][test_07_item.py 35][INFO]: *************** 结束执行用例 *************** /n
+[2021-09-27 16:18:01,174][test_07_item.py 15][INFO]: 步骤2：pick一个盒子
+[2021-09-27 16:18:01,174][test_07_item.py 49][INFO]: *************** 开始执行用例 *************** /n
+[2021-09-27 16:18:01,174][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/pick?item_id=378&sku_no=20210927424640020015272-5
+[2021-09-27 16:18:01,174][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-09-27 16:18:01,175][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5Nzo2Nzc4dDY2NjlKRUZsNk1TUGsxOU5YYjkwMzI6Mg=="
+}
+[2021-09-27 16:18:01,175][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-09-27 16:18:01,175][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-09-27 16:18:01,175][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-09-27 16:18:01,175][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-09-27 16:18:01,175][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-09-27 16:18:01,278][test_07_item.py 51][INFO]: True
+[2021-09-27 16:18:01,278][test_07_item.py 52][INFO]: {'result': True, 'pick_time': 1632730681234}
+[2021-09-27 16:18:01,278][test_07_item.py 53][INFO]: *************** 结束执行用例 *************** /n

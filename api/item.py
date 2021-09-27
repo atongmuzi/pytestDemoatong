@@ -17,8 +17,13 @@ class Item(RestClient):
     def item_next(self, item_id, **kwargs):
         return self.get("/item/mbox/{}/next/v5".format(item_id), **kwargs)
 
+    def item_status(self, item_id, box_no, **kwargs):
+        return self.get("/item/mbox/cell_status?first_random=false&item_id={}&box_no={}".format(item_id, box_no),
+                        **kwargs)
+
     def item_pick(self, item_id, sku_no, **kwargs):
-        return self.get("/item/mbox/pick?item_id={}&sku_no={}".format(item_id, sku_no), **kwargs)
+        return self.get("/item/mbox/pick?item_id={}&sku_no={}".format(item_id, sku_no),
+                        **kwargs)
 
 
 item = Item(api_root_url)
