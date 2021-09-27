@@ -1,0 +1,27 @@
+[2021-09-27 19:28:55,974][test_07_item.py 15][INFO]: 步骤2：盲盒的最新状态
+[2021-09-27 19:28:55,975][test_07_item.py 53][INFO]: *************** 开始执行用例 ***************
+[2021-09-27 19:28:55,975][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/cell_status?first_random=false&item_id=378&box_no=20210927424640020015271
+[2021-09-27 19:28:55,976][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-09-27 19:28:55,976][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzoxNzc1M01NUFZnS3BPUFdPQ0QwMlN3VDc4NjQ6Mg=="
+}
+[2021-09-27 19:28:55,976][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-09-27 19:28:55,976][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-09-27 19:28:55,976][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-09-27 19:28:55,977][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-09-27 19:28:55,977][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-09-27 19:28:56,008][test_07_item.py 20][INFO]: 步骤3：pick一个盒子
+[2021-09-27 19:28:56,008][test_07_item.py 73][INFO]: *************** 开始执行用例 *************** /n
+[2021-09-27 19:28:56,008][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/pick?item_id=378&sku_no=20210927424640020015271-1
+[2021-09-27 19:28:56,008][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-09-27 19:28:56,008][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzoxNzc1M01NUFZnS3BPUFdPQ0QwMlN3VDc4NjQ6Mg=="
+}
+[2021-09-27 19:28:56,009][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-09-27 19:28:56,009][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-09-27 19:28:56,009][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-09-27 19:28:56,009][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-09-27 19:28:56,009][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-09-27 19:28:56,048][test_07_item.py 75][INFO]: True
+[2021-09-27 19:28:56,048][test_07_item.py 76][INFO]: {'result': True, 'pick_time': 1632742163920}
+[2021-09-27 19:28:56,049][test_07_item.py 77][INFO]: *************** 结束执行用例 *************** /n
