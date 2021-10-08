@@ -2,7 +2,11 @@ init_admin_user:
   username: "wintest"
   password: "123456"
   phone: "13656642042"
-  Authorization: "MTE5NzoxNzc1M01NUFZnS3BPUFdPQ0QwMlN3VDc4NjQ6Mg=="
+  Authorization: "MTE5NzowMzUxMG8yRDByMXJqclNrMndxeEh6MzY4NzU6Mg=="
+
+init_item:
+  item_id: 378
+
 
 init_sql:
   insert_delete_user:
