@@ -26,6 +26,11 @@ def step_4():
     logger.info("步骤4：预下单--》未选择支付方式")
 
 
+@allure.step("步骤5：预下单--》选择微信为支付方式")
+def step_5():
+    logger.info("步骤5：预下单--》选择微信为支付方式")
+
+
 @allure.severity(allure.severity_level.TRIVIAL)
 @allure.epic("针对单个接口的测试")
 @allure.feature("盲盒详情")
@@ -114,6 +119,10 @@ class TestTradePreItem:
         assert result.success is True, result.error
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         logger.info("接口返回data信息：==》{}".format(result.data))
+
+    def test_trade_wx_preorder(self):
+        """预下单---》微信支付预下单"""
+
 
 
 

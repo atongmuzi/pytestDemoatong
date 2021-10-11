@@ -3,6 +3,7 @@ init_admin_user:
   password: "123456"
   phone: "13656642042"
   Authorization: "MTE5NzoyMTQ4TlJYcnVYcW9CSG5hSkQwaGlUQzI5NTg6Mg=="
+  adminAuthorization: "NTc6MzY2MEVVQjNzVjVUc2FvczlKdzBtbXgzOTg0"
 
 init_item:
   item_id: 378
