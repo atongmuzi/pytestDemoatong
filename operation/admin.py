@@ -19,5 +19,5 @@ def refund_admin(order_no):
         "refund_type": 2,
         "return_stock": True,
     }
-    res = admin.refund(json_data=json_data, headers=headers)
+    res = admin.refund(json=json_data, headers=headers)
     return res_deal(res)
