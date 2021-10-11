@@ -17,10 +17,8 @@ def step_2():
 @allure.severity(allure.severity_level.TRIVIAL)
 @allure.epic("针对单个接口的测试")
 @allure.feature("真正下单之前的预下单--获取一些关键信息")
-class TestTradePreOrder():
+class TestTradePreOrder:
     """真正下单之前的预下单--获取一些关键信息"""
-
-    # @pytest.mark.usefixtures("")
     def test_trade_preorder(self, testcase_data):
         order_type = testcase_data["order_type"]
         tem_id = testcase_data["tem_id"]

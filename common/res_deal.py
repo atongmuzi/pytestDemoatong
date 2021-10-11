@@ -9,7 +9,7 @@ def res_deal(res):
         result.code = 0
         result.msg = "success"
     else:
-        res.error = "接口的返回码：【{}】，接口返回的信息：{}".format(res.json()["code"], res.json()["msg"])
+        result.error = "接口的返回码：【{}】，接口返回的信息：{}".format(res.json()["code"], res.json()["msg"])
     if "data" in res.json():
         result.data = res.json()["data"]
     result.response = res

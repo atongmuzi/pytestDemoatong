@@ -1,0 +1,1 @@
+{"uuid": "aade7414-a39d-43ae-adc7-8c73bcdff3c4", "children": ["19a7868d-8e08-414b-afdf-2f286a9101a8"], "befores": [{"name": "test_item_pick", "status": "passed", "steps": [{"name": "步骤3：pick一个盒子", "status": "passed", "start": 1633685728795, "stop": 1633685728795}], "start": 1633685728795, "stop": 1633685728836}], "start": 1633685728795, "stop": 1633685728873}

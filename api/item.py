@@ -25,6 +25,9 @@ class Item(RestClient):
         return self.get("/item/mbox/pick?item_id={}&sku_no={}".format(item_id, sku_no),
                         **kwargs)
 
+    def item_release(self, item_id, sku_no, **kwargs):
+        return self.get("/item/mbox/pick_release?item_id={}&sku_no={}".format(item_id, sku_no), **kwargs)
+
 
 item = Item(api_root_url)
 

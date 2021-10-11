@@ -1,7 +1,8 @@
 import pytest
 import allure
-from operation.item import item_next_true, item_pick_sku, item_status
+from operation.item import item_next_true, item_pick_sku, item_status, item_release_sku
 from common.logger import logger
+from operation.order import pre_trade
 from testcases.conftest import base_data
 
 
@@ -20,6 +21,11 @@ def step_3():
     logger.info("步骤3：pick一个盒子")
 
 
+@allure.step("步骤4：预下单--》未选择支付方式")
+def step_4():
+    logger.info("步骤4：预下单--》未选择支付方式")
+
+
 @allure.severity(allure.severity_level.TRIVIAL)
 @allure.epic("针对单个接口的测试")
 @allure.feature("盲盒详情")
@@ -36,7 +42,7 @@ class TestTradePreItem:
         first_random = True
         logger.info("*************** 开始执行用例 *************** /n")
         result = item_next_true(item_id, first_random)
-        assert result.success is True, result.response.error
+        assert result.success is True, result.error
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         itemSelect.box_no = result.data["mbox"]["box_no"]
         itemSelect.size = result.data["mbox"]["size"]
@@ -52,7 +58,7 @@ class TestTradePreItem:
         box_no = itemSelect.box_no
         logger.info("*************** 开始执行用例 ***************")
         result = item_status(item_id, box_no)
-        assert result.success is True, result.response.error
+        assert result.success is True, result.error
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         index = itemSelect.size
         itemSelect.status = False
@@ -71,6 +77,7 @@ class TestTradePreItem:
             return False
 
     @allure.story("选中一个盒子")
+    @pytest.fixture()
     def test_item_pick(self, test_item_status):
         """选中其中一个盒子"""
         next_result = test_item_status
@@ -81,12 +88,50 @@ class TestTradePreItem:
             sku_no_pick = itemSelect.sku_no
             logger.info("*************** 开始执行用例 *************** /n")
             result = item_pick_sku(item_id, sku_no_pick)
-            assert result.success is True, result.response.error
+            assert result.success is True, result.error
             logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
             logger.info(result.data)
             logger.info("*************** 结束执行用例 *************** /n")
+            return True
         else:
             logger.info("**********该案例的前置案例--》test_item_next未执行或执行失败************")
+            return False
 
+    @allure.story("预下单--获取下单前的一些关键信息")
+    def test_trade_preorder(self, testcase_data, test_item_pick):
+        """预下单---》支付预下单-->未选择支付方式前"""
+        step_4()
+        order_type = testcase_data["order_type"]
+        item_id = TestTradePreItem.item_id
+        sku_type = testcase_data["sku_type"]
+        sku_pick_no = itemSelect.sku_no
+        act_id_list = testcase_data["act_id_list"]
+        use_pcoin = testcase_data["use_pcoin"]
+        except_result = testcase_data["except_result"]
+        except_code = testcase_data["except_code"]
+        logger.info("*************** 开始执行用例 *************** /n")
+        result = pre_trade(order_type, item_id, sku_type, sku_pick_no, act_id_list, use_pcoin)
+        assert result.success is True, result.error
+        logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
+        logger.info("接口返回data信息：==》{}".format(result.data))
+
+
+
+    # @allure.story("释放选中盒子")
+    # def test_item_release(self, test_item_pick):
+    #     """释放选中的盒子"""
+    #     step_4()
+    #     pick_result = test_item_pick
+    #     if pick_result:
+    #         item_id = TestTradePreItem.item_id
+    #         sku_no_pick = itemSelect.sku_no
+    #         logger.info("*************** 开始执行用例 *************** /n")
+    #         result = item_release_sku(item_id, sku_no_pick)
+    #         assert result.success is True, result.error
+    #         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
+    #         logger.info(result.data)
+    #         logger.info("*************** 结束执行用例 *************** /n")
+    #     else:
+    #         logger.info("**********该案例的前置案例--》test_item_pick未执行或执行失败************")
 
 itemSelect = TestTradePreItem()

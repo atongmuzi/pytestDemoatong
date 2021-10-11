@@ -1,0 +1,54 @@
+[2021-10-11 14:38:19,723][test_07_item.py 16][INFO]: 步骤2：盲盒的最新状态
+[2021-10-11 14:38:19,723][test_07_item.py 59][INFO]: *************** 开始执行用例 ***************
+[2021-10-11 14:38:19,723][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/item/mbox/cell_status?first_random=false&item_id=378&box_no=20211011424640020013174
+[2021-10-11 14:38:19,724][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-10-11 14:38:19,724][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzoyMTQ4TlJYcnVYcW9CSG5hSkQwaGlUQzI5NTg6Mg=="
+}
+[2021-10-11 14:38:19,724][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-10-11 14:38:19,724][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-10-11 14:38:19,724][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-10-11 14:38:19,724][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-10-11 14:38:19,724][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-10-11 14:38:19,753][test_07_item.py 62][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-10-11 14:38:19,753][test_07_item.py 66][INFO]: i====>0
+[2021-10-11 14:38:19,753][test_07_item.py 67][INFO]: result.data===>[{'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-1'}, {'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-2'}, {'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-3'}, {'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-4'}, {'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-5'}, {'status': 0, 'price': 1.01, 'uid': 0, 'head': None, 'sku_no': '20211011424640020013174-6'}]
+[2021-10-11 14:38:19,754][test_07_item.py 72][INFO]: sku_no==>>20211011424640020013174-1
+[2021-10-11 14:38:19,754][test_07_item.py 73][INFO]: *************** 结束执行用例 *************** /n
+[2021-10-11 14:38:19,754][test_07_item.py 21][INFO]: 步骤3：pick一个盒子
+[2021-10-11 14:38:19,754][test_07_item.py 86][INFO]: **********该案例的前置案例=>test_item_status,执行成功：**********
+[2021-10-11 14:38:19,755][test_07_item.py 89][INFO]: *************** 开始执行用例 *************** /n
+[2021-10-11 14:38:19,755][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/item/mbox/pick?item_id=378&sku_no=20211011424640020013174-1
+[2021-10-11 14:38:19,755][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-10-11 14:38:19,755][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzoyMTQ4TlJYcnVYcW9CSG5hSkQwaGlUQzI5NTg6Mg=="
+}
+[2021-10-11 14:38:19,755][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-10-11 14:38:19,755][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-10-11 14:38:19,756][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-10-11 14:38:19,756][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-10-11 14:38:19,756][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-10-11 14:38:19,793][test_07_item.py 92][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-10-11 14:38:19,793][test_07_item.py 93][INFO]: {'result': True, 'pick_time': 1633934299717}
+[2021-10-11 14:38:19,794][test_07_item.py 94][INFO]: *************** 结束执行用例 *************** /n
+[2021-10-11 14:38:19,796][test_07_item.py 26][INFO]: 步骤4：预下单--》未选择支付方式
+[2021-10-11 14:38:19,796][test_07_item.py 112][INFO]: *************** 开始执行用例 *************** /n
+[2021-10-11 14:38:19,796][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/pay/pre_trade
+[2021-10-11 14:38:19,797][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-10-11 14:38:19,797][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "MTE5NzoyMTQ4TlJYcnVYcW9CSG5hSkQwaGlUQzI5NTg6Mg=="
+}
+[2021-10-11 14:38:19,797][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-10-11 14:38:19,797][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-10-11 14:38:19,797][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "order_type": 1,
+    "item_id": 378,
+    "sku_type": 1,
+    "sku_no": "20211011424640020013174-1",
+    "act_id_list": [],
+    "use_pcoin": false
+}
+[2021-10-11 14:38:19,797][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-10-11 14:38:19,797][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-10-11 14:38:19,949][test_07_item.py 115][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-10-11 14:38:19,949][test_07_item.py 116][INFO]: 接口返回data信息：==》{'real_amount': 1.01, 'no_coupon_reason': '', 'not_any_discount': False, 'original_amount': 1.01, 'can_use_coupon': False, 'trade_activity_list': [], 'user_coupon_list': [], 'pre_trade_pcoin': {'deduct_amout': 0.51, 'total_balance': 48.22, 'balance': 48.22}}
