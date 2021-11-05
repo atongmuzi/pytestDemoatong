@@ -18,8 +18,8 @@ class TestInitPhone:
             user_id = data[i]["user_id"]
             rm_result = rm.generate_random_str(10)
             phone_new = phone+rm_result
-            logger.info("r===>{}".format(rm_result))
-            logger.info("phone===>{}".format(phone_new))
+            logger.info("随机数===>{}".format(rm_result))
+            logger.info("随机更新的手机号===>{}".format(phone_new))
             sql_up_user = "update user set phone = '%s' where id ='%s'" % (phone_new, user_id)
             sql_up_wx = "update user_wechat_channel set open_id ='%s',union_id = '%s' " \
                         "where user_id ='%s'" % (phone_new, phone_new, user_id)
