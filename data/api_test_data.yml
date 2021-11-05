@@ -46,4 +46,7 @@ test_trade_preorder:
     use_pcoin: False
     except_result: True
     except_code: 0
-
+test_init_wx:
+  # 初始化的电话号码
+  # phone
+  - "13656640242"

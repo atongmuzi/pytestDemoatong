@@ -1,0 +1,6 @@
+INFO     log:test_init_phone.py:15 data===>[{'user_id': 1345}]
+INFO     log:test_init_phone.py:17 1345
+INFO     log:test_init_phone.py:21 r===>NfPxh0pPCv
+INFO     log:test_init_phone.py:22 phone===>13656640242NfPxh0pPCv
+INFO     log:test_init_phone.py:27 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:29 ----------执行更新user_wechat_channel表成功----------

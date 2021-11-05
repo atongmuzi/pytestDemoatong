@@ -1,0 +1,5 @@
+[2021-11-01 11:40:40,471][test_init_phone.py 14][INFO]: data===>[{'user_id': 1340}]
+[2021-11-01 11:40:40,472][test_init_phone.py 16][INFO]: 1340
+[2021-11-01 11:40:40,472][test_init_phone.py 20][INFO]: r===>sWiBESu0nr
+[2021-11-01 11:40:40,472][test_init_phone.py 21][INFO]: phone===>13656640242sWiBESu0nr
+[2021-11-01 11:40:40,586][mysql_operate.py 54][INFO]: 操作MySQL出现错误，错误原因：(1292, "Truncated incorrect DOUBLE value: '13656640242sWiBESu0nr'")

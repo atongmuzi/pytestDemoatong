@@ -1,0 +1,6 @@
+[2021-11-02 19:43:39,337][test_init_phone.py 15][INFO]: data===>[{'user_id': 1345}]
+[2021-11-02 19:43:39,338][test_init_phone.py 17][INFO]: 1345
+[2021-11-02 19:43:39,338][test_init_phone.py 21][INFO]: r===>NfPxh0pPCv
+[2021-11-02 19:43:39,338][test_init_phone.py 22][INFO]: phone===>13656640242NfPxh0pPCv
+[2021-11-02 19:43:39,541][test_init_phone.py 27][INFO]: ----------执行更新user表成功----------
+[2021-11-02 19:43:39,742][test_init_phone.py 29][INFO]: ----------执行更新user_wechat_channel表成功----------

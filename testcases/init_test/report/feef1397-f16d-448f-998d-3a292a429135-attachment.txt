@@ -1,0 +1,14 @@
+INFO     log:test_init_phone.py:15 data===>[{'user_id': 1346}]
+INFO     log:test_init_phone.py:17 1346
+INFO     log:test_init_phone.py:21 r===>qaiZPAnLwE
+INFO     log:test_init_phone.py:22 phone===>13656640242qaiZPAnLwE
+INFO     log:mysql_operate.py:54 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '13656640242qaiZPAnLwE' for key 'UK_OPEN_ID'")
+INFO     log:test_init_phone.py:27 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:29 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:30 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:8 开始执行===>
+INFO     log:redis_operate.py:11 r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+INFO     log:redis_operate.py:12 dbsize is===>3098
+INFO     log:redis_operate.py:16 清除user_id为1346的tokens成功
+INFO     log:redis_operate.py:18 清除user_id为1346的token成功
+INFO     log:test_init_phone.py:32 ----------执行清除缓存操作成功----------

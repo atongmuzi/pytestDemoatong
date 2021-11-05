@@ -1,0 +1,4 @@
+INFO     log:test_init_phone.py:13 data===>[{'user_id': 1340}]
+INFO     log:test_init_phone.py:15 1340
+INFO     log:test_init_phone.py:19 r===>['x', 'r', 'j', 'c', 'e']
+INFO     log:test_init_phone.py:20 phone_new===>x13656640242r13656640242j13656640242c13656640242e

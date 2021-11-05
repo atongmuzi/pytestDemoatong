@@ -1,0 +1,4 @@
+[2021-11-05 15:39:09,127][redis_operate.py 6][INFO]: 开始执行===>
+[2021-11-05 15:39:09,128][redis_operate.py 9][INFO]: r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+[2021-11-05 15:39:09,297][redis_operate.py 10][INFO]: dbsize is===>7754
+[2021-11-05 15:39:09,366][redis_operate.py 11][INFO]: hash is ==>

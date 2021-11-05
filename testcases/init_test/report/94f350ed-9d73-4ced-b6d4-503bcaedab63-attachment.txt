@@ -1,0 +1,12 @@
+[2021-11-05 17:03:11,556][test_init_phone.py 15][INFO]: data===>[{'user_id': 1346}]
+[2021-11-05 17:03:11,557][test_init_phone.py 17][INFO]: 1346
+[2021-11-05 17:03:11,557][test_init_phone.py 21][INFO]: r===>GnqgKrYt8b
+[2021-11-05 17:03:11,557][test_init_phone.py 22][INFO]: phone===>13656640242GnqgKrYt8b
+[2021-11-05 17:03:11,753][test_init_phone.py 27][INFO]: ----------执行更新user表成功----------
+[2021-11-05 17:03:11,949][test_init_phone.py 29][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2021-11-05 17:03:11,949][test_init_phone.py 30][INFO]: ----------执行清除缓存的操作----------
+[2021-11-05 17:03:11,949][redis_operate.py 20][INFO]: redis缓存链接为：===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+[2021-11-05 17:03:12,166][redis_operate.py 24][INFO]: ----------清除user_id为1346的token成功----------
+[2021-11-05 17:03:12,228][redis_operate.py 25][INFO]: 0
+[2021-11-05 17:03:12,293][redis_operate.py 30][INFO]: ----------无hash_tokens_keys为pookie:tokens:user_1346的tokens缓存----------
+[2021-11-05 17:03:12,294][test_init_phone.py 32][INFO]: ----------执行清除缓存操作成功----------

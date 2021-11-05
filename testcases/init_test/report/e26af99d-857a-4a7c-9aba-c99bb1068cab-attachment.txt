@@ -1,0 +1,7 @@
+INFO     log:test_init_phone.py:14 data===>[{'user_id': 1340}]
+INFO     log:test_init_phone.py:16 1340
+INFO     log:test_init_phone.py:20 r===>gxd8iDZerc
+INFO     log:test_init_phone.py:21 phone===>13656640242gxd8iDZerc
+INFO     log:mysql_operate.py:54 操作MySQL出现错误，错误原因：(1292, "Truncated incorrect DOUBLE value: '13656640242gxd8iDZerc'")
+INFO     log:test_init_phone.py:26 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:28 ----------执行更新user_wechat_channel表成功----------

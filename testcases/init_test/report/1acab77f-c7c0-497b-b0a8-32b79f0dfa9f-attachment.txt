@@ -1,0 +1,7 @@
+[2021-11-01 11:42:11,005][test_init_phone.py 14][INFO]: data===>[{'user_id': 1340}]
+[2021-11-01 11:42:11,006][test_init_phone.py 16][INFO]: 1340
+[2021-11-01 11:42:11,006][test_init_phone.py 20][INFO]: r===>gxd8iDZerc
+[2021-11-01 11:42:11,006][test_init_phone.py 21][INFO]: phone===>13656640242gxd8iDZerc
+[2021-11-01 11:42:11,119][mysql_operate.py 54][INFO]: 操作MySQL出现错误，错误原因：(1292, "Truncated incorrect DOUBLE value: '13656640242gxd8iDZerc'")
+[2021-11-01 11:42:11,184][test_init_phone.py 26][INFO]: ----------执行更新user表成功----------
+[2021-11-01 11:42:11,350][test_init_phone.py 28][INFO]: ----------执行更新user_wechat_channel表成功----------

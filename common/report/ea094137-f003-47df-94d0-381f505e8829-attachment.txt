@@ -1,0 +1,2 @@
+[2021-11-05 15:24:49,330][redis_operate.py 6][INFO]: 开始执行===>
+[2021-11-05 15:24:49,331][redis_operate.py 9][INFO]: r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=db0>>>

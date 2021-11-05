@@ -1,0 +1,4 @@
+[2021-11-05 15:54:48,661][redis_operate.py 6][INFO]: 开始执行===>
+[2021-11-05 15:54:48,663][redis_operate.py 9][INFO]: r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+[2021-11-05 15:54:48,838][redis_operate.py 10][INFO]: dbsize is===>3238
+[2021-11-05 15:54:48,905][redis_operate.py 13][INFO]: All keys of token is ===>b'\xac\xed\x00\x05t\x00}{"loginChannelEnum":"WECHAT_MINI_TYPE","timestamp":"2021-11-05 15:47:06","token":"1523qjgfvj41lJtoFT0h6PS0933","userId":1346}'

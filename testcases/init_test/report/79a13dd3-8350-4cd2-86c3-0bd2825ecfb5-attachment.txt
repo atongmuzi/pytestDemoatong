@@ -1,0 +1,3 @@
+[2021-10-29 16:06:09,780][test_init_phone.py 14][INFO]: data===>[{'user_id': 1340}]
+[2021-10-29 16:06:09,780][test_init_phone.py 16][INFO]: 1340
+[2021-10-29 16:06:09,780][test_init_phone.py 20][INFO]: r===>lcYUc6DzCy

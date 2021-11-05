@@ -14,7 +14,7 @@ def refund_admin(order_no):
     """
     json_data = {
         "order_no": order_no,
-        "out_refund_reason": "test",
+        "out_refund_reason": "测试",
         "refund_reason": "test",
         "refund_type": 2,
         "return_stock": True,

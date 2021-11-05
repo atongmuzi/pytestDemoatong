@@ -1,0 +1,4 @@
+[2021-10-29 15:46:19,558][test_init_phone.py 13][INFO]: data===>[{'user_id': 1340}]
+[2021-10-29 15:46:19,558][test_init_phone.py 15][INFO]: 1340
+[2021-10-29 15:46:19,559][test_init_phone.py 19][INFO]: r===>['x', 'r', 'j', 'c', 'e']
+[2021-10-29 15:46:19,559][test_init_phone.py 20][INFO]: phone_new===>x13656640242r13656640242j13656640242c13656640242e

@@ -1,0 +1,19 @@
+INFO     log:test_refund_00001.py:12 data===>[{'order_no': '202110261991285604679'}]
+INFO     log:test_refund_00001.py:14 202110261991285604679
+INFO     log:test_refund_00001.py:16 *************** 开始执行用例 *************** /n
+INFO     log:rest_client.py:51 接口请求地址 ==>> https://test2api.pookie.com.cn/adm/order/refund
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Authorization": "NTc6OTQ2NldLcTZrM0JoM2pBemZxSGtnc28zODAx"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "order_no": "202110261991285604679",
+    "out_refund_reason": "test",
+    "refund_reason": "test",
+    "refund_type": 2,
+    "return_stock": true
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null

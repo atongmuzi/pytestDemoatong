@@ -1,0 +1,4 @@
+INFO     log:test_init_phone.py:14 data===>[{'user_id': 1340}]
+INFO     log:test_init_phone.py:16 1340
+INFO     log:test_init_phone.py:20 r===>52haR8HA6n
+INFO     log:test_init_phone.py:21 phone===>513656640242213656640242h13656640242a13656640242R13656640242813656640242H13656640242A13656640242613656640242n

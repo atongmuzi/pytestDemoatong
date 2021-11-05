@@ -1,0 +1,3 @@
+INFO     log:redis_operate.py:6 开始执行===>
+INFO     log:redis_operate.py:9 r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+INFO     log:redis_operate.py:10 dbsize is===>7735

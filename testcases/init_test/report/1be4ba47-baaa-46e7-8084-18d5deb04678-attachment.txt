@@ -1,0 +1,14 @@
+[2021-11-05 16:31:30,048][test_init_phone.py 15][INFO]: data===>[{'user_id': 1346}]
+[2021-11-05 16:31:30,048][test_init_phone.py 17][INFO]: 1346
+[2021-11-05 16:31:30,048][test_init_phone.py 21][INFO]: r===>qaiZPAnLwE
+[2021-11-05 16:31:30,049][test_init_phone.py 22][INFO]: phone===>13656640242qaiZPAnLwE
+[2021-11-05 16:31:30,181][mysql_operate.py 54][INFO]: 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '13656640242qaiZPAnLwE' for key 'UK_OPEN_ID'")
+[2021-11-05 16:31:30,244][test_init_phone.py 27][INFO]: ----------执行更新user表成功----------
+[2021-11-05 16:31:30,437][test_init_phone.py 29][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2021-11-05 16:31:30,437][test_init_phone.py 30][INFO]: ----------执行清除缓存的操作----------
+[2021-11-05 16:31:30,437][redis_operate.py 8][INFO]: 开始执行===>
+[2021-11-05 16:31:30,438][redis_operate.py 11][INFO]: r is the redis===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+[2021-11-05 16:31:30,638][redis_operate.py 12][INFO]: dbsize is===>3098
+[2021-11-05 16:31:30,725][redis_operate.py 16][INFO]: 清除user_id为1346的tokens成功
+[2021-11-05 16:31:30,858][redis_operate.py 18][INFO]: 清除user_id为1346的token成功
+[2021-11-05 16:31:30,859][test_init_phone.py 32][INFO]: ----------执行清除缓存操作成功----------

@@ -1,0 +1,4 @@
+[2021-11-01 11:17:47,569][test_init_phone.py 14][INFO]: data===>[{'user_id': 1340}]
+[2021-11-01 11:17:47,570][test_init_phone.py 16][INFO]: 1340
+[2021-11-01 11:17:47,570][test_init_phone.py 20][INFO]: r===>lz0m555rVI
+[2021-11-01 11:17:47,570][test_init_phone.py 21][INFO]: phone===>13656640242lz0m555rVI
