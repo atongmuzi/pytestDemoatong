@@ -28,5 +28,19 @@ class RedisOperate:
         else:
             logger.info("----------无hash_tokens_keys为{}的tokens缓存----------".format(hash_tokens_keys))
 
+    def test_token_get(self, user_id):
+        host = data["redis_host"]
+        port = data["redis_port"]
+        pwd = data["redis_pwd"]
+        pool = redis.ConnectionPool(host=host, port=port, password=pwd, db=0)
+        r = redis.Redis(connection_pool=pool)
+        logger.info("redis缓存链接为：===>{}".format(r))
+        token_key = "pookie:token:user_%s" % user_id
+        value = r.get(token_key)
+        logger.info("token是===>{}".format(value))
+
 
 rs = RedisOperate()
+
+if __name__ == '__main__':
+    rs.test_token_get(1346)

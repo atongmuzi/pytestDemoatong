@@ -1,0 +1,14 @@
+[2021-11-09 19:20:21,275][test_init_phone.py 15][INFO]: data===>[{'user_id': 1457}]
+[2021-11-09 19:20:21,275][test_init_phone.py 17][INFO]: 1457
+[2021-11-09 19:20:21,276][test_init_phone.py 21][INFO]: 随机数===>wKLQFQuVgI
+[2021-11-09 19:20:21,276][test_init_phone.py 22][INFO]: 随机更新的手机号===>13656640242wKLQFQuVgI
+[2021-11-09 19:20:21,276][test_init_phone.py 26][INFO]: ----------开始更新user表----------
+[2021-11-09 19:20:21,455][test_init_phone.py 28][INFO]: ----------执行更新user表成功----------
+[2021-11-09 19:20:21,455][test_init_phone.py 29][INFO]: ----------开始更新user_wechat_channel表----------
+[2021-11-09 19:20:21,632][test_init_phone.py 31][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2021-11-09 19:20:21,632][test_init_phone.py 32][INFO]: ----------执行清除缓存的操作----------
+[2021-11-09 19:20:21,633][redis_operate.py 19][INFO]: redis缓存链接为：===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+[2021-11-09 19:20:21,818][redis_operate.py 23][INFO]: ----------清除user_id为1457的token成功----------
+[2021-11-09 19:20:21,877][redis_operate.py 24][INFO]: 1
+[2021-11-09 19:20:22,076][redis_operate.py 27][INFO]: ----------清除user_id为1457的tokens成功----------
+[2021-11-09 19:20:22,076][test_init_phone.py 34][INFO]: ----------执行清除缓存操作成功----------

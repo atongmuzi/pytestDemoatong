@@ -1,0 +1,14 @@
+INFO     log:test_init_phone.py:15 data===>[{'user_id': 1459}]
+INFO     log:test_init_phone.py:17 1459
+INFO     log:test_init_phone.py:21 随机数===>qTb9SDGclo
+INFO     log:test_init_phone.py:22 随机更新的手机号===>13656640242qTb9SDGclo
+INFO     log:test_init_phone.py:26 ----------开始更新user表----------
+INFO     log:test_init_phone.py:28 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:29 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:31 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:32 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:19 redis缓存链接为：===>Redis<ConnectionPool<Connection<host=192.168.4.4,port=6379,db=0>>>
+INFO     log:redis_operate.py:23 ----------清除user_id为1459的token成功----------
+INFO     log:redis_operate.py:24 1
+INFO     log:redis_operate.py:27 ----------清除user_id为1459的tokens成功----------
+INFO     log:test_init_phone.py:34 ----------执行清除缓存操作成功----------
