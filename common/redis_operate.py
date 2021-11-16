@@ -17,9 +17,9 @@ class RedisOperate:
     def __init__(self):
         self.pool = redis.ConnectionPool(host=host, port=port, password=pwd, db=0)
         self.r = redis.Redis(connection_pool=self.pool)
+        logger.info("redis缓存链接为：===>{}".format(self.r))
 
     def test_redis(self, user_id):
-        logger.info("redis缓存链接为：===>{}".format(self.r))
         hash_tokens_keys = "pookie:tokens:user_%s" % user_id
         token_key = "pookie:token:user_%s" % user_id
         self.r.delete(token_key)
@@ -32,7 +32,6 @@ class RedisOperate:
             logger.info("----------无hash_tokens_keys为{}的tokens缓存----------".format(hash_tokens_keys))
 
     def test_token_get(self, user_id):
-        logger.info("redis缓存链接为：===>{}".format(self.r))
         token_key = "pookie:token:user_%s" % user_id
         logger.info("token_key为===》{}".format(token_key))
         value = self.r.get(token_key)

@@ -1,0 +1,14 @@
+[2021-11-16 16:51:11,486][test_init_phone.py 15][INFO]: data===>[{'user_id': 1478}]
+[2021-11-16 16:51:11,486][test_init_phone.py 17][INFO]: 1478
+[2021-11-16 16:51:11,486][test_init_phone.py 21][INFO]: 随机数===>4m1pwg1szX
+[2021-11-16 16:51:11,486][test_init_phone.py 22][INFO]: 随机更新的手机号===>136566402424m1pwg1szX
+[2021-11-16 16:51:11,486][test_init_phone.py 26][INFO]: ----------开始更新user表----------
+[2021-11-16 16:51:11,611][mysql_operate.py 54][INFO]: 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '136566402424m1pwg1szX' for key 'UK_OPEN_ID'")
+[2021-11-16 16:51:11,670][test_init_phone.py 28][INFO]: ----------执行更新user表成功----------
+[2021-11-16 16:51:11,670][test_init_phone.py 29][INFO]: ----------开始更新user_wechat_channel表----------
+[2021-11-16 16:51:11,853][test_init_phone.py 31][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2021-11-16 16:51:11,854][test_init_phone.py 32][INFO]: ----------执行清除缓存的操作----------
+[2021-11-16 16:51:12,048][redis_operate.py 26][INFO]: ----------清除user_id为1478的token成功----------
+[2021-11-16 16:51:12,110][redis_operate.py 27][INFO]: 2
+[2021-11-16 16:51:12,291][redis_operate.py 30][INFO]: ----------清除user_id为1478的tokens成功----------
+[2021-11-16 16:51:12,291][test_init_phone.py 34][INFO]: ----------执行清除缓存操作成功----------
