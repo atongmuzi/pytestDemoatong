@@ -35,16 +35,15 @@ class RedisOperate:
         token_key = "pookie:token:user_%s" % user_id
         logger.info("token_key为===》{}".format(token_key))
         value = self.r.get(token_key)
-        logger.info("value===》{}".format(value))
+        logger.info("token对应的value===》{}".format(value))
         value_str = str(value)
-        logger.info("value_str==>{}".format(value_str))
-        logger.info(type(value_str))
+        logger.info("value转为str类型后的值value_str==>{}".format(value_str))
         result = re.findall(r"\"token\":\"(.*?)\"", value_str)
         logger.info("匹配结果是===》{}".format(result))
-        logger.info(sys.getdefaultencoding())
+        return result[0]
 
 
 rs = RedisOperate()
 
 if __name__ == '__main__':
-    rs.test_token_get(1478)
+    rs.test_token_get(1528)
