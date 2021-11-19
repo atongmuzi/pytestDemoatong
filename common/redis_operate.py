@@ -3,14 +3,17 @@ from common.logger import logger
 import os
 from common.read_data import data
 import re
-import sys
+from config.conf import config
 
-BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
-data = data.load_ini(data_file_path)["redis"]
-host = data["redis_host"]
-port = data["redis_port"]
-pwd = data["redis_pwd"]
+# BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
+# data = data.load_ini(data_file_path)["redis"]
+# host = data["redis_host"]
+# port = data["redis_port"]
+# pwd = data["redis_pwd"]
+host = config.redis_host
+port = config.redis_port
+pwd = config.redis_pwd
 
 
 class RedisOperate:
@@ -40,7 +43,10 @@ class RedisOperate:
         logger.info("value转为str类型后的值value_str==>{}".format(value_str))
         result = re.findall(r"\"token\":\"(.*?)\"", value_str)
         logger.info("匹配结果是===》{}".format(result))
-        return result[0]
+        if len(result) > 0:
+            return result[0]
+        else:
+            return None
 
 
 rs = RedisOperate()

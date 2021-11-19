@@ -2,17 +2,19 @@ import pymysql
 import os
 from common.read_data import data
 from common.logger import logger
+from config.conf import config
 
-BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
-data = data.load_ini(data_file_path)["mysql"]
+#
+# BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
+# data = data.load_ini(data_file_path)["mysql"]
 
 DB_CONF = {
-    "host": data["MYSQL_HOST"],
-    "port": int(data["MYSQL_PORT"]),
-    "user": data["MYSQL_USER"],
-    "password": data["MYSQL_PASSWD"],
-    "db": data["MYSQL_DB"]
+    "host": config.MYSQL_HOST,
+    "port": config.MYSQL_PORT,
+    "user": config.MYSQL_USER,
+    "password": config.MYSQL_PASSWD,
+    "db": config.MYSQL_DB
 }
 
 

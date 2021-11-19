@@ -1,10 +1,7 @@
 import os
 from core.rest_client import RestClient
-from common.read_data import data
-
-BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
-api_root_url = data.load_ini(data_file_path)["host"]["api_root_url"]
+from config.conf import config
+api_root_url = config.api_root_url
 
 
 class Admin(RestClient):
