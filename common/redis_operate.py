@@ -1,6 +1,6 @@
 import redis
 from common.logger import logger
-import os
+import sys
 from common.read_data import data
 import re
 from config.conf import config
@@ -50,6 +50,5 @@ class RedisOperate:
 
 
 rs = RedisOperate()
-
 if __name__ == '__main__':
     rs.test_token_get(1528)
