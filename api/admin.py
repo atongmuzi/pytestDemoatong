@@ -11,5 +11,8 @@ class Admin(RestClient):
     def refund(self, **kwargs):
         return self.post("/adm/order/refund", **kwargs)
 
+    def reward(self, **kwargs):
+        return self.post("/adm/reward_task/add", **kwargs)
+
 
 admin = Admin(api_root_url)

@@ -3,6 +3,7 @@
 # 配置文件
 import os
 import sys
+from common.logger import logger
 
 
 class Config(object):  # 默认配置
@@ -49,15 +50,17 @@ mapping = {
     'production': ProductionConfig,
     'default': DevelopmentConfig
 }
-
+#
 # 一键切换环境
 APP_ENV = os.environ.get('APP_ENV', 'production').lower()  # 设置环境变量为default
 config = mapping[APP_ENV]()  # 获取指定的环境
 
 # 根据脚本参数，来决定用那个环境配置
 
-
+#
 # print(sys.argv)
+# logger.info("环境是:{}".format(sys.argv))
+# logger.info("sys.argv[1]是{}".format(sys.argv[1]))
 # num = len(sys.argv) - 1  # 参数个数
 # if num < 1 or num > 1:
 #     exit("参数错误,必须传环境变量!比如: python xx.py dev|pro|default")

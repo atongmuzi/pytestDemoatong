@@ -1,0 +1,61 @@
+[2021-11-19 15:58:06,588][test_refund_00001.py 13][INFO]: data===>[{'order_no': '2021111915101418144643'}, {'order_no': '2021111915111418839838'}, {'order_no': '2021111915101418244731'}]
+[2021-11-19 15:58:06,588][test_refund_00001.py 15][INFO]: 2021111915101418144643
+[2021-11-19 15:58:06,589][test_refund_00001.py 17][INFO]: *************** 开始执行用例 *************** /n
+[2021-11-19 15:58:06,589][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/adm/order/refund
+[2021-11-19 15:58:06,589][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-11-19 15:58:06,590][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "NTc6ODU0NldTNXUxZ3NVRFpJMW9YbzdLakc1OTA0"
+}
+[2021-11-19 15:58:06,590][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-11-19 15:58:06,590][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-11-19 15:58:06,590][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+                                        "order_no": "2021111915101418144643",
+                                        "out_refund_reason": "测试",
+                                        "refund_reason": "test",
+                                        "refund_type": 2,
+                                        "return_stock": true
+}
+[2021-11-19 15:58:06,590][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-11-19 15:58:06,591][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-11-19 15:58:07,076][test_refund_00001.py 20][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-11-19 15:58:07,076][test_refund_00001.py 21][INFO]: 接口返回data信息：==》None
+[2021-11-19 15:58:07,076][test_refund_00001.py 15][INFO]: 2021111915111418839838
+[2021-11-19 15:58:07,077][test_refund_00001.py 17][INFO]: *************** 开始执行用例 *************** /n
+[2021-11-19 15:58:07,077][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/adm/order/refund
+[2021-11-19 15:58:07,077][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-11-19 15:58:07,077][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "NTc6ODU0NldTNXUxZ3NVRFpJMW9YbzdLakc1OTA0"
+}
+[2021-11-19 15:58:07,077][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-11-19 15:58:07,077][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-11-19 15:58:07,078][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+                                        "order_no": "2021111915111418839838",
+                                        "out_refund_reason": "测试",
+                                        "refund_reason": "test",
+                                        "refund_type": 2,
+                                        "return_stock": true
+}
+[2021-11-19 15:58:07,078][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-11-19 15:58:07,078][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-11-19 15:58:07,993][test_refund_00001.py 20][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-11-19 15:58:07,993][test_refund_00001.py 21][INFO]: 接口返回data信息：==》None
+[2021-11-19 15:58:07,993][test_refund_00001.py 15][INFO]: 2021111915101418244731
+[2021-11-19 15:58:07,993][test_refund_00001.py 17][INFO]: *************** 开始执行用例 *************** /n
+[2021-11-19 15:58:07,993][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test2api.pookie.com.cn/adm/order/refund
+[2021-11-19 15:58:07,993][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-11-19 15:58:07,994][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "NTc6ODU0NldTNXUxZ3NVRFpJMW9YbzdLakc1OTA0"
+}
+[2021-11-19 15:58:07,994][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-11-19 15:58:07,994][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-11-19 15:58:07,994][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+                                        "order_no": "2021111915101418244731",
+                                        "out_refund_reason": "测试",
+                                        "refund_reason": "test",
+                                        "refund_type": 2,
+                                        "return_stock": true
+}
+[2021-11-19 15:58:07,994][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-11-19 15:58:07,994][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-11-19 15:58:09,308][test_refund_00001.py 20][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-11-19 15:58:09,309][test_refund_00001.py 21][INFO]: 接口返回data信息：==》None

@@ -21,3 +21,31 @@ def refund_admin(order_no):
     }
     res = admin.refund(json=json_data, headers=headers)
     return res_deal(res)
+
+
+def reward_task(user_id, v_type, num, coupon_id):
+    """
+    手工发放，优惠券
+    :return:自定义的关键字返回结果 restult
+    """
+    json_data = {
+        "remark": "社群活动111",
+        "user_id_list": [
+            user_id
+        ],
+        "user_tag": 0,
+        "prize_list": [
+            {
+                "type": v_type,
+                "num": num,
+                "coupon_id": coupon_id,
+                "skill_card_id": None,
+                "item_id": None,
+                "item_sku_id": None,
+                "name": None,
+                "skillCardId": None
+            }
+        ]
+    }
+    res = admin.reward(json=json_data, headers=headers)
+    return res_deal(res)
