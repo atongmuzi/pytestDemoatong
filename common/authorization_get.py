@@ -9,6 +9,7 @@ class Authorization:
         token = rs.test_token_get(user_id)
         if token is None:
             logger.info("=====没有找到user_id为{}的token=====".format(user_id))
+            return None
         else:
             logger.info("token=====》{}".format(token))
             token_new = str(user_id) + ":" + token + ":" + str(channel_type)
@@ -17,6 +18,7 @@ class Authorization:
             authorization = base64.b64encode(token_new_encode)
             authorization_new = authorization.decode("utf-8")
             logger.info("Authorization为=====》{}".format(authorization_new))
+            return authorization_new
 
 
 au = Authorization()

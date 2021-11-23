@@ -123,9 +123,6 @@ class TestTradePreItem:
     def test_trade_wx_preorder(self):
         """预下单---》微信支付预下单"""
 
-
-
-
     # @allure.story("释放选中盒子")
     # def test_item_release(self, test_item_pick):
     #     """释放选中的盒子"""
@@ -142,5 +139,6 @@ class TestTradePreItem:
     #         logger.info("*************** 结束执行用例 *************** /n")
     #     else:
     #         logger.info("**********该案例的前置案例--》test_item_pick未执行或执行失败************")
+
 
 itemSelect = TestTradePreItem()

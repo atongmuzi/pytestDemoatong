@@ -1,9 +1,13 @@
 from api.order import order
 from common.res_deal import res_deal
 from testcases.conftest import base_data
+from common.authorization_get import au
+
+user_id = base_data["init_user"]["user_id"]
+v_Authorization = au.test_authorization_get(user_id,2)
 
 headers = {
-    "Authorization": base_data["init_admin_user"]["Authorization"]
+    "Authorization": v_Authorization
 }
 
 
