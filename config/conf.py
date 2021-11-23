@@ -52,7 +52,7 @@ mapping = {
 }
 #
 # 一键切换环境
-APP_ENV = os.environ.get('APP_ENV', 'production').lower()  # 设置环境变量为default
+APP_ENV = os.environ.get('APP_ENV', 'default').lower()  # 设置环境变量为default
 config = mapping[APP_ENV]()  # 获取指定的环境
 
 # 根据脚本参数，来决定用那个环境配置
