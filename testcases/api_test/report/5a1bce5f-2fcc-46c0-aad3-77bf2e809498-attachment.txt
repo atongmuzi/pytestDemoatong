@@ -1,0 +1,12 @@
+[2021-11-26 17:42:58,613][test_07_item.py 31][INFO]: 步骤5：预下单--》选择微信为支付方式
+[2021-11-26 17:42:58,613][test_07_item.py 136][INFO]: *************** 开始执行用例 *************** /n
+[2021-11-26 17:42:58,613][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/pay/wechat/prepay
+[2021-11-26 17:42:58,613][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-11-26 17:42:58,613][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "MTQ3MDo4MTg2V1V1Z3hXWkRIdmlsM011SDFLbDY3MDM6Mg=="
+}
+[2021-11-26 17:42:58,614][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-11-26 17:42:58,614][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-11-26 17:42:58,614][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-11-26 17:42:58,614][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-11-26 17:42:58,614][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null

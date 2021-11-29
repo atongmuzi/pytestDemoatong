@@ -4,7 +4,7 @@ from testcases.conftest import base_data
 from common.authorization_get import au
 
 user_id = base_data["init_user"]["user_id"]
-v_Authorization = au.test_authorization_get(user_id,2)
+v_Authorization = au.test_authorization_get(user_id, 2)
 
 headers = {
     "Authorization": v_Authorization
@@ -43,6 +43,6 @@ def pre_trade_wx(order_type, item_id, sku_type, sku_no, amount, act_id_list, app
         "app_allow_guess": app_allow_guess,
         "use_pcoin": use_pcoin
     }
-    res = order.pre_order_wx(json_data=json_data, headers=headers)
+    res = order.pre_order_wx(json=json_data, headers=headers)
     return res_deal(res)
 

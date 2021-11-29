@@ -2,7 +2,7 @@ import pytest
 import allure
 from operation.item import item_next_true, item_pick_sku, item_status, item_release_sku
 from common.logger import logger
-from operation.order import pre_trade
+from operation.order import pre_trade, pre_trade_wx
 from testcases.conftest import base_data
 
 
@@ -120,8 +120,24 @@ class TestTradePreItem:
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         logger.info("接口返回data信息：==》{}".format(result.data))
 
-    def test_trade_wx_preorder(self):
+    def test_trade_wx_preorder(self, testcase_data):
         """预下单---》微信支付预下单"""
+        step_5()
+        order_type = testcase_data["order_type"]
+        item_id = TestTradePreItem.item_id
+        sku_type = testcase_data["sku_type"]
+        sku_pick_no = itemSelect.sku_no
+        amount = testcase_data["amount"]
+        act_id_list = testcase_data["act_id_list"]
+        app_allow_guess = testcase_data["app_allow_guess"]
+        use_pcoin = testcase_data["use_pcoin"]
+        except_result = testcase_data["except_result"]
+        except_code = testcase_data["except_code"]
+        logger.info("*************** 开始执行用例 *************** /n")
+        result = pre_trade_wx(order_type, item_id, sku_type, sku_pick_no, amount, act_id_list, app_allow_guess, use_pcoin)
+        assert result.success is True, result.error
+        logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
+        logger.info(result.data)
 
     # @allure.story("释放选中盒子")
     # def test_item_release(self, test_item_pick):

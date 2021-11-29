@@ -54,3 +54,15 @@ test_reward_task:
   # 用户ID，类型，数量，优惠券ID
   - ["1528",3,2,242]
   - ["1284",3,2,242]
+test_trade_wx_preorder:
+  # 预支付的参数
+  # order_type,sku_type,amount,act_id_list,app_allow_guess,use_pcoin,except_result, except_code
+    order_type: 1
+    sku_type: 1
+    amount: 0.01
+    act_id_list: []
+    app_allow_guess: True
+    use_pcoin: False
+    except_result: True
+    except_code: 0
+
