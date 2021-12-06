@@ -2,7 +2,7 @@ import pytest
 import allure
 from operation.item import item_next_true, item_pick_sku, item_status, item_release_sku
 from common.logger import logger
-from operation.order import pre_trade, pre_trade_wx
+from operation.order import pre_trade, pre_trade_wx, trade_confirm
 from testcases.conftest import base_data
 
 
@@ -29,6 +29,11 @@ def step_4():
 @allure.step("步骤5：预下单--》选择微信为支付方式")
 def step_5():
     logger.info("步骤5：预下单--》选择微信为支付方式")
+
+
+@allure.step("步骤6：订单回调--》选择微信为支付方式")
+def step_6():
+    logger.info("步骤6：订单回调--》选择微信为支付方式")
 
 
 @allure.severity(allure.severity_level.TRIVIAL)
@@ -134,27 +139,30 @@ class TestTradePreItem:
         except_result = testcase_data["except_result"]
         except_code = testcase_data["except_code"]
         logger.info("*************** 开始执行用例 *************** /n")
-        result = pre_trade_wx(order_type, item_id, sku_type, sku_pick_no, amount, act_id_list, app_allow_guess, use_pcoin)
+        result = pre_trade_wx(order_type, item_id, sku_type, sku_pick_no, amount, act_id_list, app_allow_guess,
+                              use_pcoin)
         assert result.success is True, result.error
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         logger.info(result.data)
+        if result.data is None:
+            logger.info("**********下单失败**********")
+            itemSelect.order_no_status = False
+            itemSelect.order_no = ""
+        else:
+            itemSelect.order_no = result.data["order_no"]
+            itemSelect.order_no_status = True
+        return itemSelect.order_no_status
 
-    # @allure.story("释放选中盒子")
-    # def test_item_release(self, test_item_pick):
-    #     """释放选中的盒子"""
-    #     step_4()
-    #     pick_result = test_item_pick
-    #     if pick_result:
-    #         item_id = TestTradePreItem.item_id
-    #         sku_no_pick = itemSelect.sku_no
-    #         logger.info("*************** 开始执行用例 *************** /n")
-    #         result = item_release_sku(item_id, sku_no_pick)
-    #         assert result.success is True, result.error
-    #         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
-    #         logger.info(result.data)
-    #         logger.info("*************** 结束执行用例 *************** /n")
-    #     else:
-    #         logger.info("**********该案例的前置案例--》test_item_pick未执行或执行失败************")
+    def test_trade_confirm(self):
+        trade_status = itemSelect.order_no_status
+        order_no = itemSelect.order_no
+        if trade_status:
+            result = trade_confirm(order_no)
+            logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
+            # assert result.success is True, result.error
+            logger.info(result.data)
+        else:
+            logger.info("**********该案例的前置案例--》test_trade_wx_preorder未执行或执行失败************")
 
 
 itemSelect = TestTradePreItem()

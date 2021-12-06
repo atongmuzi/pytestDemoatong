@@ -22,5 +22,8 @@ class Order(RestClient):
     def pre_order_wx(self, **kwargs):
         return self.post("/pay/wechat/prepay", **kwargs)
 
+    def trade_confirm(self, **kwargs):
+        return self.post("/pay/trade/confirm", **kwargs)
+
 
 order = Order(api_root_url)

@@ -46,3 +46,16 @@ def pre_trade_wx(order_type, item_id, sku_type, sku_no, amount, act_id_list, app
     res = order.pre_order_wx(json=json_data, headers=headers)
     return res_deal(res)
 
+
+def trade_confirm(order_no):
+    """
+    订单回调确认
+    :return:自定义的关键字返回结果 result
+    """
+    json_data = {
+        "order_no": order_no
+    }
+    res = order.pre_order_wx(json=json_data, headers=headers)
+    return res_deal(res)
+
+
