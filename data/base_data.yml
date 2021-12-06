@@ -8,7 +8,7 @@ init_admin_user:
 init_item:
   item_id: 378
 init_user:
-  user_id: 1470
+  user_id: 1528
 
 
 init_sql:

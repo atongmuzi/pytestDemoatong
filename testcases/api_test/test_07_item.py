@@ -162,7 +162,7 @@ class TestTradePreItem:
             # assert result.success is True, result.error
             logger.info(result.data)
         else:
-            logger.info("**********该案例的前置案例--》test_trade_wx_preorder未执行或执行失败************")
+            logger.info("**********该案例的前置案例--》tesxt_trade_wx_preorder未执行或执行失败************")
 
 
 itemSelect = TestTradePreItem()

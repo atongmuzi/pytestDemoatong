@@ -1,0 +1,23 @@
+INFO     log:test_07_item.py:31 步骤5：预下单--》选择微信为支付方式
+INFO     log:test_07_item.py:141 *************** 开始执行用例 *************** /n
+INFO     log:rest_client.py:51 接口请求地址 ==>> https://testapi.pookie.com.cn/pay/wechat/prepay
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+                                        "Authorization": "MTUyODo1MjI1dHNwYVhjWU5HNmJXSE16ZVhiWTM5NDc6Mg=="
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+                                        "order_type": 1,
+                                        "item_id": 378,
+                                        "sku_type": 1,
+                                        "sku_no": "20211206427950113701684-1",
+                                        "amount": 0.01,
+                                        "act_id_list": [],
+                                        "app_allow_guess": true,
+                                        "use_pcoin": false
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:test_07_item.py:145 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+INFO     log:test_07_item.py:146 {'channel': None, 'timeStamp': '1638770301', 'nonceStr': 'ehm3ub9ed1aq79s3hyhk47en6jicksis', 'signType': 'MD5', 'paySign': 'D350CE8E316314C7D2CF6020967417B1', 'order_no': '202112061311528454399', 'package': 'prepay_id=wx0613582148229130d7c94cac91abda0000', 'mweb_url': None, 'trade_type': 'JSAPI'}

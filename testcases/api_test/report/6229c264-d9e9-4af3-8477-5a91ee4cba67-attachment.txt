@@ -1,0 +1,54 @@
+[2021-12-06 13:58:20,672][test_07_item.py 16][INFO]: 步骤2：盲盒的最新状态
+[2021-12-06 13:58:20,672][test_07_item.py 69][INFO]: *************** 开始执行用例 ***************
+[2021-12-06 13:58:20,673][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/cell_status?first_random=false&item_id=378&box_no=20211206427950113701684
+[2021-12-06 13:58:20,673][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-12-06 13:58:20,673][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "MTUyODo1MjI1dHNwYVhjWU5HNmJXSE16ZVhiWTM5NDc6Mg=="
+}
+[2021-12-06 13:58:20,674][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-12-06 13:58:20,674][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-12-06 13:58:20,675][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-12-06 13:58:20,675][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-12-06 13:58:20,676][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-12-06 13:58:20,737][test_07_item.py 72][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-12-06 13:58:20,738][test_07_item.py 76][INFO]: i====>0
+[2021-12-06 13:58:20,738][test_07_item.py 77][INFO]: result.data===>[{'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-1'}, {'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-2'}, {'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-3'}, {'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-4'}, {'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-5'}, {'status': 0, 'price': 0.01, 'img': None, 'uid': 0, 'head': None, 'sku_no': '20211206427950113701684-6'}]
+[2021-12-06 13:58:20,738][test_07_item.py 82][INFO]: sku_no==>>20211206427950113701684-1
+[2021-12-06 13:58:20,738][test_07_item.py 83][INFO]: *************** 结束执行用例 *************** /n
+[2021-12-06 13:58:20,739][test_07_item.py 21][INFO]: 步骤3：pick一个盒子
+[2021-12-06 13:58:20,739][test_07_item.py 96][INFO]: **********该案例的前置案例=>test_item_status,执行成功：**********
+[2021-12-06 13:58:20,739][test_07_item.py 99][INFO]: *************** 开始执行用例 *************** /n
+[2021-12-06 13:58:20,740][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/pick?item_id=378&sku_no=20211206427950113701684-1
+[2021-12-06 13:58:20,740][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2021-12-06 13:58:20,740][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "MTUyODo1MjI1dHNwYVhjWU5HNmJXSE16ZVhiWTM5NDc6Mg=="
+}
+[2021-12-06 13:58:20,740][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-12-06 13:58:20,741][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-12-06 13:58:20,741][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2021-12-06 13:58:20,741][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-12-06 13:58:20,741][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-12-06 13:58:20,803][test_07_item.py 102][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-12-06 13:58:20,803][test_07_item.py 103][INFO]: {'result': True, 'pick_time': 1638770300757}
+[2021-12-06 13:58:20,803][test_07_item.py 104][INFO]: *************** 结束执行用例 *************** /n
+[2021-12-06 13:58:20,811][test_07_item.py 26][INFO]: 步骤4：预下单--》未选择支付方式
+[2021-12-06 13:58:20,812][test_07_item.py 122][INFO]: *************** 开始执行用例 *************** /n
+[2021-12-06 13:58:20,812][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/pay/pre_trade
+[2021-12-06 13:58:20,812][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-12-06 13:58:20,813][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "MTUyODo1MjI1dHNwYVhjWU5HNmJXSE16ZVhiWTM5NDc6Mg=="
+}
+[2021-12-06 13:58:20,813][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-12-06 13:58:20,814][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-12-06 13:58:20,814][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+                                        "order_type": 1,
+                                        "item_id": 378,
+                                        "sku_type": 1,
+                                        "sku_no": "20211206427950113701684-1",
+                                        "act_id_list": [],
+                                        "use_pcoin": false
+}
+[2021-12-06 13:58:20,814][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-12-06 13:58:20,814][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-12-06 13:58:21,103][test_07_item.py 125][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2021-12-06 13:58:21,103][test_07_item.py 126][INFO]: 接口返回data信息：==》{'choose_coupon': {'id': 11209, 'name': '正常通用券', 'method': 1, 'count': None, 'sub_name': '1元', 'cut_quota': 1.0, 'highest_quota': 0.0, 'minimum_price': 0.0, 'valid_start_time': None, 'valid_end_time': None, 'rule_explain': '123', 'valid_time': '当前可用', 'cut_amount': 1.0, 'coupon_id': None, 'is_series_red_pack': False}, 'real_amount': 0.01, 'disc_amount': 1.0, 'choose_act_list': [], 'not_any_discount': False, 'original_amount': 0.01, 'trade_activity_list': [], 'user_coupon_list': [{'id': 11209, 'name': '正常通用券', 'method': 1, 'count': None, 'sub_name': '1元', 'cut_quota': 1.0, 'highest_quota': 0.0, 'minimum_price': 0.0, 'valid_start_time': None, 'valid_end_time': None, 'rule_explain': '123', 'valid_time': '当前可用', 'cut_amount': 1.0, 'coupon_id': None, 'is_series_red_pack': False}, {'id': 11206, 'name': '正常通用券', 'method': 1, 'count': None, 'sub_name': '1元', 'cut_quota': 1.0, 'highest_quota': 0.0, 'minimum_price': 0.0, 'valid_start_time': None, 'valid_end_time': None, 'rule_explain': '123', 'valid_time': '当前可用', 'cut_amount': None, 'coupon_id': None, 'is_series_red_pack': False}, {'id': 11205, 'name': '正常通用券', 'method': 1, 'count': None, 'sub_name': '1元', 'cut_quota': 1.0, 'highest_quota': 0.0, 'minimum_price': 0.0, 'valid_start_time': None, 'valid_end_time': None, 'rule_explain': '123', 'valid_time': '当前可用', 'cut_amount': None, 'coupon_id': None, 'is_series_red_pack': False}, {'id': 11204, 'name': '正常通用券', 'method': 1, 'count': None, 'sub_name': '1元', 'cut_quota': 1.0, 'highest_quota': 0.0, 'minimum_price': 0.0, 'valid_start_time': None, 'valid_end_time': None, 'rule_explain': '123', 'valid_time': '当前可用', 'cut_amount': None, 'coupon_id': None, 'is_series_red_pack': False}], 'pre_trade_pcoin': {'deduct_amout': 0.0, 'total_balance': 0.0, 'balance': 0.0}}
