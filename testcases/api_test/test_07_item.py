@@ -1,9 +1,10 @@
 import pytest
 import allure
-from operation.item import item_next_true, item_pick_sku, item_status, item_release_sku
+from operation.item import item_next_true, item_pick_sku, item_status
 from common.logger import logger
 from operation.order import pre_trade, pre_trade_wx, trade_confirm
 from testcases.conftest import base_data
+import math
 
 
 @allure.step("步骤1：下一个盲盒详情")

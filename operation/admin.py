@@ -25,31 +25,54 @@ def refund_admin(order_no):
     return res_deal(res)
 
 
-def reward_task(user_id, v_type, coupon_id):
+def reward_task(user_id, v_type, type_id, valid_day=0):
     """
     手工发放，优惠券
-    :return:自定义的关键字返回结果 restult
+    :return:自定义的关键字返回结果 result
     """
     num = random.randint(1, 9)
     logger.info("=====>发券数量为{}".format(num))
-    json_data = {
-        "remark": "社群活动111",
-        "user_id_list": [
-            user_id
-        ],
-        "user_tag": 0,
-        "prize_list": [
-            {
-                "type": v_type,
-                "num": num,
-                "coupon_id": coupon_id,
-                "skill_card_id": None,
-                "item_id": None,
-                "item_sku_id": None,
-                "name": None,
-                "skillCardId": None
-            }
-        ]
-    }
+    if v_type == 3:
+        json_data = {
+            "remark": "社群活动111",
+            "user_id_list": [
+                user_id
+            ],
+            "user_tag": 0,
+            "prize_list": [
+                {
+                    "type": v_type,
+                    "num": num,
+                    "coupon_id": type_id,
+                    "skill_card_id": None,
+                    "item_id": None,
+                    "item_sku_id": None,
+                    "name": None,
+                    "skillCardId": None
+                }
+            ]
+        }
+    elif v_type == 2:
+        json_data = {
+            "remark": "社群活动111",
+            "user_id_list": [
+                user_id
+            ],
+            "user_tag": 0,
+            "prize_list": [
+                {
+                    "type": v_type,
+                    "num": num,
+                    "coupon_id": None,
+                    "skill_card_id": type_id,
+                    "item_id": None,
+                    "item_sku_id": None,
+                    "name": None,
+                    "skillCardId": type_id,
+                    "valid_day": valid_day
+                }
+            ]
+        }
+
     res = admin.reward(json=json_data, headers=headers)
     return res_deal(res)

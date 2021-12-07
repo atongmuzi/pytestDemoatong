@@ -32,8 +32,9 @@ class RedisOperate:
         logger.info("token对应的value=====》{}".format(value))
         value_str = str(value)
         logger.info("value转为str类型后的值value_str=====>{}".format(value_str))
-        result = re.findall(r"\"token\":\"(.*?)\"", value_str)
+        result = re.findall(r'"token":"(.*?)"', value_str)
         logger.info("匹配结果是======》{}".format(result))
+        logger.info(r'let\'s go!')
         if len(result) > 0:
             return result[0]
         else:
@@ -42,4 +43,4 @@ class RedisOperate:
 
 rs = RedisOperate()
 if __name__ == '__main__':
-    rs.test_token_get(1470)
+    rs.test_token_get(1528)

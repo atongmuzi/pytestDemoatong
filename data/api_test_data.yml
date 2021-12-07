@@ -51,13 +51,16 @@ test_init_wx:
   # phone
   - "13656199001"
 test_reward_task:
-  # 用户ID，类型，数量，优惠券ID
+  # 用户ID，类型，优惠券ID
   - ["1528",3,242]
   - ["1284",3,242]
 test_reward_task_exp:
-  # 用户ID，类型，数量，优惠券ID
+  # 用户ID，类型，优惠券ID
   - ["1528",3,204]
   - ["1284",3,204]
+test_reward_task_tips_card:
+  # 用户ID，类型，技能卡ID，有效期天数
+  - ["1528",2,2,7]
 test_trade_wx_preorder:
   # 预支付的参数
   # order_type,sku_type,amount,act_id_list,app_allow_guess,use_pcoin,except_result, except_code
