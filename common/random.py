@@ -15,4 +15,5 @@ class Random:
         return random_str
 
 
+
 rm = Random()

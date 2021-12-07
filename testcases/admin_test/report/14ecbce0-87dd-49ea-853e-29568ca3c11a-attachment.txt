@@ -1,0 +1,30 @@
+[2021-12-06 15:55:21,273][test_reward_00001.py 14][INFO]: 开始准备手工发放正常通用券
+[2021-12-06 15:55:21,273][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/adm/reward_task/add
+[2021-12-06 15:55:21,273][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-12-06 15:55:21,273][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": "NTc6MzEzM29rZjlRWUlTNzlYcTJadThxRmEzNTUz"
+}
+[2021-12-06 15:55:21,273][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-12-06 15:55:21,273][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-12-06 15:55:21,274][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+                                        "remark": "社群活动111",
+                                        "user_id_list": [
+                                                                                "1284"
+                                        ],
+                                        "user_tag": 0,
+                                        "prize_list": [
+                                                                                {
+                                                                                                                        "type": 3,
+                                                                                                                        "num": 2,
+                                                                                                                        "coupon_id": 242,
+                                                                                                                        "skill_card_id": null,
+                                                                                                                        "item_id": null,
+                                                                                                                        "item_sku_id": null,
+                                                                                                                        "name": null,
+                                                                                                                        "skillCardId": null
+                                                                                }
+                                        ]
+}
+[2021-12-06 15:55:21,274][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-12-06 15:55:21,274][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-12-06 15:55:21,358][test_reward_00001.py 18][INFO]: 已经发放正常通用券完成

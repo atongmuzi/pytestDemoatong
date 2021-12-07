@@ -1,6 +1,8 @@
 from common.res_deal import res_deal
 from testcases.conftest import base_data
 from api.admin import admin
+import random
+from common.logger import logger
 
 headers = {
     "Authorization": base_data["init_admin_user"]["adminAuthorization"]
@@ -23,11 +25,13 @@ def refund_admin(order_no):
     return res_deal(res)
 
 
-def reward_task(user_id, v_type, num, coupon_id):
+def reward_task(user_id, v_type, coupon_id):
     """
     手工发放，优惠券
     :return:自定义的关键字返回结果 restult
     """
+    num = random.randint(1, 9)
+    logger.info("=====>发券数量为{}".format(num))
     json_data = {
         "remark": "社群活动111",
         "user_id_list": [
