@@ -9,7 +9,7 @@ init_item:
   item_id: 378
 init_user:
   user_id: 1528
-
+  friend_id: 1347
 
 init_sql:
   insert_delete_user:
