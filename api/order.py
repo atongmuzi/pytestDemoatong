@@ -14,7 +14,7 @@ api_root_url = config.api_root_url
 
 class Order(RestClient):
     def __init__(self, api_root_url, **kwargs):
-        super(Order, self).__init__(api_root_url, **kwargs)
+        super().__init__(api_root_url, **kwargs)
 
     def pre_order(self, **kwargs):
         return self.post("/pay/pre_trade", **kwargs)

@@ -12,7 +12,7 @@ api_root_url = config.api_root_url
 class User(RestClient):
 
     def __init__(self, api_root_url, **kwargs):
-        super(User, self).__init__(api_root_url, **kwargs)
+        super().__init__(api_root_url, **kwargs)
 
     def list_all_users(self, **kwargs):
         return self.get("/sign_in/detail/v2", **kwargs)

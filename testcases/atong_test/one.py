@@ -1,7 +1,26 @@
-def describe_pet(pet_name, animal_type='dog'):
-    """显示宠物的信息"""
-    print("\nI have a " + animal_type + ".")
-    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+class Bird:
+    def __init__(self):
+        self.hungry = True
+
+    def eat(self):
+        if self.hungry:
+            print('Aaaah ...')
+            self.hungry = False
+        else:
+            print('No, thanks!')
 
 
-describe_pet(pet_name='willie')
+class SongBird(Bird):
+    def __init__(self):
+        super().__init__()
+        self.sound = 'Squawk!'
+
+    def sing(self):
+        print(self.sound)
+
+
+if __name__ == '__main__':
+    sb = SongBird()
+    sb.sing()
+    sb.eat()
+    sb.eat()

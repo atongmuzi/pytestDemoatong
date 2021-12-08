@@ -1,6 +1,4 @@
-import os
 from core.rest_client import RestClient
-from common.read_data import data
 from config.conf import config
 api_root_url = config.api_root_url
 
@@ -14,7 +12,7 @@ api_root_url = config.api_root_url
 
 class Item(RestClient):
     def __init__(self, api_root_url, **kwargs):
-        super(Item, self).__init__(api_root_url, **kwargs)
+        super().__init__(api_root_url, **kwargs)
 
     def item_next(self, item_id, **kwargs):
         return self.get("/item/mbox/{}/next/v5".format(item_id), **kwargs)
