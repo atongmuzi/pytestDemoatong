@@ -1,0 +1,13 @@
+[2021-12-09 15:41:13,024][test_init_phone.py 15][INFO]: data===>[{'user_id': 1284}]
+[2021-12-09 15:41:13,024][test_init_phone.py 17][INFO]: 1284
+[2021-12-09 15:41:13,024][test_init_phone.py 21][INFO]: 随机数===>VGXgYGG6xE
+[2021-12-09 15:41:13,024][test_init_phone.py 22][INFO]: 随机更新的手机号===>13656199001VGXgYGG6xE
+[2021-12-09 15:41:13,024][test_init_phone.py 26][INFO]: ----------开始更新user表----------
+[2021-12-09 15:41:13,209][test_init_phone.py 28][INFO]: ----------执行更新user表成功----------
+[2021-12-09 15:41:13,209][test_init_phone.py 29][INFO]: ----------开始更新user_wechat_channel表----------
+[2021-12-09 15:41:13,391][test_init_phone.py 31][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2021-12-09 15:41:13,391][test_init_phone.py 32][INFO]: ----------执行清除缓存的操作----------
+[2021-12-09 15:41:13,597][redis_operate.py 21][INFO]: =====清除user_id为1284的token成功=====
+[2021-12-09 15:41:13,660][redis_operate.py 22][INFO]: 0
+[2021-12-09 15:41:13,720][redis_operate.py 27][INFO]: =====无hash_tokens_keys为pookie:tokens:user_1284的tokens缓存=====
+[2021-12-09 15:41:13,721][test_init_phone.py 34][INFO]: ----------执行清除缓存操作成功----------

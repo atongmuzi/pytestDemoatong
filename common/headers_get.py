@@ -7,7 +7,6 @@ class Headers:
     def test_headers_get(self):
         user_id = base_data["init_user"]["user_id"]
         v_Authorization = au.test_authorization_get(user_id, 1, channel_type=2)
-
         headers = {
             "Authorization": v_Authorization
         }

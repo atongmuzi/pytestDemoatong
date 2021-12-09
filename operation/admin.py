@@ -1,5 +1,4 @@
 from common.res_deal import res_deal
-from testcases.conftest import base_data
 from api.admin import admin
 import random
 from common.logger import logger
