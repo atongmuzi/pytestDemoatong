@@ -2,7 +2,10 @@ import os
 from core.rest_client import RestClient
 from common.read_data import data
 from config.conf import config
+
 api_root_url = config.api_root_url
+
+
 #
 # BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")

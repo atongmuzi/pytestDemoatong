@@ -6,8 +6,16 @@ class Headers:
 
     def test_headers_get(self):
         user_id = base_data["init_user"]["user_id"]
-        v_Authorization = au.test_authorization_get(user_id, 2)
+        v_Authorization = au.test_authorization_get(user_id, 1, channel_type=2)
 
+        headers = {
+            "Authorization": v_Authorization
+        }
+        return headers
+
+    def test_headers_get_admin(self):
+        user_id = base_data["init_user"]["admin_user_id"]
+        v_Authorization = au.test_authorization_get(user_id, 2)
         headers = {
             "Authorization": v_Authorization
         }
@@ -15,3 +23,4 @@ class Headers:
 
 
 headers = Headers()
+

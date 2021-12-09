@@ -2,10 +2,11 @@ import redis
 from common.logger import logger
 import re
 from config.conf import config
+
+
 host = config.redis_host
 port = config.redis_port
 pwd = config.redis_pwd
-
 
 class RedisOperate:
     def __init__(self):
@@ -25,8 +26,14 @@ class RedisOperate:
         else:
             logger.info("=====无hash_tokens_keys为{}的tokens缓存=====".format(hash_tokens_keys))
 
-    def test_token_get(self, user_id):
-        token_key = "pookie:token:user_%s" % user_id
+    def test_token_get(self, user_id, platform_type):
+        """
+        platform_type = 1表示小程序端，2表示管理端
+        """
+        if platform_type == 1:
+            token_key = "pookie:token:user_%s" % user_id
+        elif platform_type == 2:
+            token_key = "pookie_admin:token:user_%s" % user_id
         logger.info("token_key为=====》{}".format(token_key))
         value = self.r.get(token_key)
         logger.info("token对应的value=====》{}".format(value))
@@ -43,4 +50,4 @@ class RedisOperate:
 
 rs = RedisOperate()
 if __name__ == '__main__':
-    rs.test_token_get(1528)
+    rs.test_token_get(57, 2)

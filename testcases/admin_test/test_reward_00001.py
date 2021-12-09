@@ -35,7 +35,7 @@ class TestAdminReward:
         发放技能卡===》提示卡
         """
         logger.info("开始准备发放技能卡===》提示卡")
-        result = reward_task(user_id, v_type, skill_card_id, valid_day)
+        result = reward_task(user_id, v_type, skill_card_id, valid_day=valid_day)
         assert result.success is True, result.error
         logger.info("接口返回信息：code期望结果【0】,实际结果【{}】；msg期望结果【success】，实际结果【{}】".format(result.code, result.msg))
         logger.info("接口返回data信息：==》{}".format(result.data))

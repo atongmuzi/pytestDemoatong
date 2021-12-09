@@ -3,10 +3,9 @@ from testcases.conftest import base_data
 from api.admin import admin
 import random
 from common.logger import logger
+from common.headers_get import headers
 
-headers = {
-    "Authorization": base_data["init_admin_user"]["adminAuthorization"]
-}
+headers = headers.test_headers_get_admin()
 
 
 def refund_admin(order_no):
@@ -25,11 +24,12 @@ def refund_admin(order_no):
     return res_deal(res)
 
 
-def reward_task(user_id, v_type, type_id, valid_day=0):
+def reward_task(user_id, v_type, type_id, **kwargs):
     """
     手工发放，优惠券
     :return:自定义的关键字返回结果 result
     """
+    valid_day = dict(**kwargs).get("valid_day")
     num = random.randint(1, 9)
     logger.info("=====>发券数量为{}".format(num))
     if v_type == 3:

@@ -1,14 +1,8 @@
 from api.order import order
 from common.res_deal import res_deal
-from testcases.conftest import base_data
-from common.authorization_get import au
+from common.headers_get import headers
 
-user_id = base_data["init_user"]["user_id"]
-v_Authorization = au.test_authorization_get(user_id, 2)
-
-headers = {
-    "Authorization": v_Authorization
-}
+headers = headers.test_headers_get()
 
 
 def pre_trade(order_type, item_id, sku_type, sku_no, act_id_list, use_pcoin):
