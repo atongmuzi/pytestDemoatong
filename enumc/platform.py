@@ -7,7 +7,7 @@ class Platform(Enum):
     admin_platform = 2
 
 
-pf = Platform()
-
+pl = Platform()
 if __name__ == '__main__':
     Platform.mini_program
+
