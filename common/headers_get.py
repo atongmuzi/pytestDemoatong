@@ -10,7 +10,7 @@ class Headers:
         小程序端,platform_type= 1
         """
         user_id = base_data["init_user"]["user_id"]
-        v_Authorization = au.test_authorization_get(user_id, Platform.mini_program, channel_type=2)
+        v_Authorization = au.test_authorization_get(user_id, Platform.mini_program.value, channel_type=2)
         header = {
             "Authorization": v_Authorization
         }
@@ -22,7 +22,7 @@ class Headers:
         管理端，platform_type = 2
         """
         user_id = base_data["init_user"]["admin_user_id"]
-        v_Authorization = au.test_authorization_get(user_id, Platform.admin_platform)
+        v_Authorization = au.test_authorization_get(user_id, Platform.admin_platform.value)
         header = {
             "Authorization": v_Authorization
         }
