@@ -16,6 +16,17 @@ class Headers:
         }
         return header
 
+    def test_headers_get_friend(self):
+        """
+        小程序端,platform_type= 1
+        """
+        user_id = base_data["init_user"]["friend_id"]
+        v_Authorization = au.test_authorization_get(user_id, Platform.mini_program.value, channel_type=2)
+        header = {
+            "Authorization": v_Authorization
+        }
+        return header
+
 
     def test_headers_get_admin(self):
         """

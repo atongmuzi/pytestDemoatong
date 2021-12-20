@@ -22,6 +22,8 @@ def get_data(yaml_file_name):
 base_data = get_data("base_data.yml")
 api_data = get_data("api_test_data.yml")
 scenario_data = get_data("scenario_test_data.yml")
+user_id = base_data["init_user"]["user_id"]
+friend_user_id = base_data["init_user"]["friend_id"]
 
 
 @allure.step("前置步骤 ==>> 清理数据")
@@ -96,3 +98,22 @@ def update_user_telephone():
     step_first()
     logger.info("修改用户操作：手工修改用户的手机号，以便用例重复执行")
     logger.info("执行SQL：{}".format(update_sql))
+
+
+@pytest.fixture(scope="function")
+def delete_user_share_discount_boost():
+    """
+    在助力领取大额券之前，因为不能重复领取，所以先清除好友助力记录，以及领取记录表
+    """
+    delete_sql_boost = "delete from  act_share_discount_friend_boost_log where user_id ='%s' " \
+                       "and friend_user_id ='%s' " % (friend_user_id, user_id)
+
+    delete_sql_discount_user = "delete from act_share_discount_user_log where user_id in('%s','%s')" % (
+        friend_user_id, user_id)
+    step_first()
+    logger.info("=====开始清理act_share_discount_friend_boost_log表=====")
+    db.execute_db(delete_sql_boost)
+    logger.info("=====清理act_share_discount_friend_boost_log表结束=====")
+    logger.info("=====开始清理act_share_discount_user_log表=====")
+    db.execute_db(delete_sql_discount_user)
+    logger.info("=====清理act_share_discount_user_log表结束=====")

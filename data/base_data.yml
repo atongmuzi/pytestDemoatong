@@ -2,14 +2,12 @@ init_admin_user:
   username: "wintest"
   password: "123456"
   phone: "13656642042"
-  Authorization: "MTUyODo1OTM2MDBRVlBSTWxjTzh5Q3l5MkoxWTAzOTg6Mg=="
-  adminAuthorization: "NTc6MDI1MXhYZTJsUHdkRjgydU9HSGVSb1ExNjIw"
 
 init_item:
   item_id: 378
 init_user:
   user_id: 1528
-  friend_id: 1347
+  friend_id: 1682
   admin_user_id: 57
 
 init_sql:
