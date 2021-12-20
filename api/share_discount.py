@@ -22,5 +22,11 @@ class ShareDiscount(RestClient):
     def share_item_status(self, item_id, **kwargs):
         return self.get("/share_discount/{}/status".format(item_id), **kwargs)
 
+    """
+    大额券领取==》用户领取大额券
+    """
+    def share_discount_collection(self, item_id, **kwargs):
+        return self.get("/share_discount/{}/collection".format(item_id), **kwargs)
+
 
 discount = ShareDiscount(api_root_url)

@@ -28,5 +28,17 @@ def share_friend_boost_param(item_id):
     return result
 
 
+def share_discount_collection_param(item_id):
+    """
+    用户领取大额券以及好友领取大额券
+    """
+    res = discount.share_discount_collection(item_id, headers=header)
+    res_friend = discount.share_discount_collection(item_id, headers=headers_friend)
+    result = res_deal(res)
+    result_friend = res_deal(res_friend)
+    return result, result_friend
+
+
+
 
 

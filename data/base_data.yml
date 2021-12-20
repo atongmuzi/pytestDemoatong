@@ -9,6 +9,8 @@ init_user:
   user_id: 1528
   friend_id: 1682
   admin_user_id: 57
+init_coupon:
+  coupon_id: 710
 
 init_sql:
   insert_delete_user:

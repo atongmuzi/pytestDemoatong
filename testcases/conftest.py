@@ -24,6 +24,7 @@ api_data = get_data("api_test_data.yml")
 scenario_data = get_data("scenario_test_data.yml")
 user_id = base_data["init_user"]["user_id"]
 friend_user_id = base_data["init_user"]["friend_id"]
+coupon_id = base_data["init_coupon"]["coupon_id"]
 
 
 @allure.step("前置步骤 ==>> 清理数据")
@@ -117,3 +118,19 @@ def delete_user_share_discount_boost():
     logger.info("=====开始清理act_share_discount_user_log表=====")
     db.execute_db(delete_sql_discount_user)
     logger.info("=====清理act_share_discount_user_log表结束=====")
+
+
+@pytest.fixture(scope="function")
+def delete_user_coupon():
+    """
+    领取大额券时，需要先清除已经领取的该大额券
+    """
+    delete_sql_coupon = "delete from user_coupon where user_id in('%s','%s') and coupon_id = '%s' " \
+                        % (user_id, friend_user_id, coupon_id)
+    step_first()
+    logger.info("=====开始清理user_coupon表=====")
+    db.execute_db(delete_sql_coupon)
+    logger.info("=====清理user_coupon表结束=====")
+    logger.info("=====清理表数据结束=====")
+
+
