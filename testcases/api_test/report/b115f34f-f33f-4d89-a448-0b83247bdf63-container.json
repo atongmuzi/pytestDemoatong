@@ -1,0 +1,1 @@
+{"uuid": "c6f83c6c-4b41-42de-82e7-31127f106f11", "children": ["09369c08-330a-4589-be5f-03de8f8bd96d"], "befores": [{"name": "delete_user_coupon", "status": "passed", "steps": [{"name": "前置步骤 ==>> 清理数据", "status": "passed", "start": 1639998669472, "stop": 1639998669472}], "start": 1639998669471, "stop": 1639998669612}], "start": 1639998669471, "stop": 1639998669789}
