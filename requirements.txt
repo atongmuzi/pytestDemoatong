@@ -5,3 +5,4 @@ requests==2.20.0
 PyYAML==5.3.1
 
 redis~=3.5.3
+Flask~=2.0.2
