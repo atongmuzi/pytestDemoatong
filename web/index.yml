@@ -1,9 +1,9 @@
 
-    This is the language awesomeness API
-    Call this api passing a language name and get back its features
+    This is the phone init API
+    Call this api generate a new phone user
     ---
     tags:
-      - Awesomeness Language API
+      - 新用户生成
     parameters:
       - name: phone
         in: path
@@ -12,9 +12,9 @@
         description: 需要初始化的手机号
     responses:
       500:
-        description: Error The language is not awesome!
+        description: Error The phone is error
       200:
-        description: A language with its awesomeness
+        description: The phone user is inited
         schema:
           id: awesome
           properties:
