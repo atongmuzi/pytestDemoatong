@@ -49,7 +49,7 @@ test_trade_preorder:
 test_init_wx:
   # 初始化的电话号码
   # phone
-  - "13656199001"
+  - "15868132038"
 test_reward_task:
   # 用户ID，类型，优惠券ID
   - ["1528",3,242]

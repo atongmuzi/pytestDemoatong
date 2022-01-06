@@ -28,4 +28,3 @@
               items:
                 type: string
               default: ["perfect", "simple", "lovely"]
-
