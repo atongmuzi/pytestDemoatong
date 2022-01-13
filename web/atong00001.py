@@ -4,6 +4,7 @@ from flask import Flask
 from common.random import rm
 from common.mysql_operate import db
 from common.redis_operate import rs
+
 app = Flask(__name__)
 Swagger(app)
 

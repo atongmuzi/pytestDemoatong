@@ -1,0 +1,35 @@
+
+    This is the phone init API
+    Call this api generate a new phone user
+    ---
+    tags:
+      - 根据手机号返回用户基本信息
+    parameters:
+      - name: phone
+        in: query
+        type: string
+        required: true
+        description: 需要查询的手机号
+      - name: size
+        in: query
+        type: integer
+        required: true
+        description: 手机号长度
+    responses:
+      500:
+        description: 请输入正确的手机号
+      200:
+        description: The phone user is inited
+        schema:
+          id: awesome
+          properties:
+            language:
+              type: string
+              description: The language name
+              default: Lua
+            features:
+              type: array
+              description: The awesomeness list
+              items:
+                type: string
+              default: ["perfect", "simple", "lovely"]
