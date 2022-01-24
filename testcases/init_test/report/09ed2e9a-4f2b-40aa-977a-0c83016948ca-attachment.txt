@@ -1,0 +1,13 @@
+[2022-01-19 13:51:25,774][test_init_phone.py 15][INFO]: data===>[{'user_id': 1744}]
+[2022-01-19 13:51:25,775][test_init_phone.py 17][INFO]: 1744
+[2022-01-19 13:51:25,775][test_init_phone.py 21][INFO]: 随机数===>02dVWGH88h
+[2022-01-19 13:51:25,775][test_init_phone.py 22][INFO]: 随机更新的手机号===>1814345922302dVWGH88h
+[2022-01-19 13:51:25,775][test_init_phone.py 26][INFO]: ----------开始更新user表----------
+[2022-01-19 13:51:25,971][test_init_phone.py 28][INFO]: ----------执行更新user表成功----------
+[2022-01-19 13:51:25,971][test_init_phone.py 29][INFO]: ----------开始更新user_wechat_channel表----------
+[2022-01-19 13:51:26,167][test_init_phone.py 31][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2022-01-19 13:51:26,167][test_init_phone.py 32][INFO]: ----------执行清除缓存的操作----------
+[2022-01-19 13:51:27,327][redis_operate.py 21][INFO]: =====清除user_id为1744的token成功=====
+[2022-01-19 13:51:27,391][redis_operate.py 22][INFO]: 1
+[2022-01-19 13:51:27,595][redis_operate.py 25][INFO]: =====清除user_id为1744的tokens成功=====
+[2022-01-19 13:51:27,595][test_init_phone.py 34][INFO]: ----------执行清除缓存操作成功----------

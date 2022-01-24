@@ -1,0 +1,13 @@
+INFO     log:test_init_phone.py:15 data===>[{'user_id': 1767}]
+INFO     log:test_init_phone.py:17 1767
+INFO     log:test_init_phone.py:21 随机数===>3SluHs8WDy
+INFO     log:test_init_phone.py:22 随机更新的手机号===>181434592233SluHs8WDy
+INFO     log:test_init_phone.py:26 ----------开始更新user表----------
+INFO     log:test_init_phone.py:28 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:29 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:31 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:32 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1767的token成功=====
+INFO     log:redis_operate.py:22 1
+INFO     log:redis_operate.py:25 =====清除user_id为1767的tokens成功=====
+INFO     log:test_init_phone.py:34 ----------执行清除缓存操作成功----------
