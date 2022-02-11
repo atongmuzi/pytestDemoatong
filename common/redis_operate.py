@@ -26,6 +26,11 @@ class RedisOperate:
         else:
             logger.info("=====无hash_tokens_keys为{}的tokens缓存=====".format(hash_tokens_keys))
 
+    def test_fragment_redis(self, user_id):
+        fragment_info = "pookie:fragment_user_fragment_info:%s" % user_id
+        self.r.delete(fragment_info)
+        logger.info("=====清除user_id为{}的fragment_info成功=====".format(user_id))
+
     def test_token_get(self, user_id, platform_type):
         """
         platform_type = 1表示小程序端，2表示管理端

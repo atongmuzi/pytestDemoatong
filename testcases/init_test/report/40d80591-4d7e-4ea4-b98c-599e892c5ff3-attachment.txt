@@ -1,0 +1,2 @@
+[2022-02-10 16:24:48,526][test_init_phone.py 15][INFO]: data===>[{'user_id': 1800}]
+[2022-02-10 16:24:48,526][test_init_phone.py 17][INFO]: 1800
