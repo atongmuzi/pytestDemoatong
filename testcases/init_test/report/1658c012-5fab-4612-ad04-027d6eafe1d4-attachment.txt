@@ -1,0 +1,11 @@
+INFO     log:test_init_phone.py:41 随机数===>qq760K06Vw
+INFO     log:test_init_phone.py:42 随机更新的手机号===>1846qq760K06Vw
+INFO     log:test_init_phone.py:47 ----------开始更新user表----------
+INFO     log:test_init_phone.py:49 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:50 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:52 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:53 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1846的token成功=====
+INFO     log:redis_operate.py:22 0
+INFO     log:redis_operate.py:27 =====无hash_tokens_keys为pookie:tokens:user_1846的tokens缓存=====
+INFO     log:test_init_phone.py:55 ----------执行清除缓存操作成功----------

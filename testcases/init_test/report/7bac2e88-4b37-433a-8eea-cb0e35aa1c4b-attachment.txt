@@ -1,0 +1,12 @@
+[2022-02-16 15:36:52,366][test_init_phone.py 41][INFO]: 随机数===>ya8CIZiqg2
+[2022-02-16 15:36:52,366][test_init_phone.py 42][INFO]: 随机更新的手机号===>1850ya8CIZiqg2
+[2022-02-16 15:36:52,367][test_init_phone.py 47][INFO]: ----------开始更新user表----------
+[2022-02-16 15:36:52,437][mysql_operate.py 56][INFO]: 操作MySQL出现错误，错误原因：(1292, "Truncated incorrect DOUBLE value: '1850ya8CIZiqg2'")
+[2022-02-16 15:36:52,490][test_init_phone.py 49][INFO]: ----------执行更新user表成功----------
+[2022-02-16 15:36:52,491][test_init_phone.py 50][INFO]: ----------开始更新user_wechat_channel表----------
+[2022-02-16 15:36:52,654][test_init_phone.py 52][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2022-02-16 15:36:52,655][test_init_phone.py 53][INFO]: ----------执行清除缓存的操作----------
+[2022-02-16 15:36:52,824][redis_operate.py 21][INFO]: =====清除user_id为1850的token成功=====
+[2022-02-16 15:36:52,879][redis_operate.py 22][INFO]: 0
+[2022-02-16 15:36:52,933][redis_operate.py 27][INFO]: =====无hash_tokens_keys为pookie:tokens:user_1850的tokens缓存=====
+[2022-02-16 15:36:52,933][test_init_phone.py 55][INFO]: ----------执行清除缓存操作成功----------

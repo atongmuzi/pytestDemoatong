@@ -1,0 +1,12 @@
+INFO     log:test_init_phone.py:41 随机数===>Dgrxw5uMD1
+INFO     log:test_init_phone.py:42 随机更新的手机号===>1830Dgrxw5uMD1
+INFO     log:test_init_phone.py:46 ----------开始更新user表----------
+INFO     log:mysql_operate.py:56 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '1830Dgrxw5uMD1' for key 'UK_OPEN_ID'")
+INFO     log:test_init_phone.py:48 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:49 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:51 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:52 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1830的token成功=====
+INFO     log:redis_operate.py:22 1
+INFO     log:redis_operate.py:25 =====清除user_id为1830的tokens成功=====
+INFO     log:test_init_phone.py:54 ----------执行清除缓存操作成功----------

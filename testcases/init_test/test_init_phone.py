@@ -17,7 +17,7 @@ class TestInitPhone:
             logger.info(data[i]["user_id"])
             user_id = data[i]["user_id"]
             rm_result = rm.generate_random_str(10)
-            phone_new = phone+rm_result
+            phone_new = phone + rm_result
             logger.info("随机数===>{}".format(rm_result))
             logger.info("随机更新的手机号===>{}".format(phone_new))
             sql_up_user = "update user set phone = '%s' where id ='%s'" % (phone_new, user_id)
@@ -33,4 +33,23 @@ class TestInitPhone:
             rs.test_redis(user_id)
             logger.info("----------执行清除缓存操作成功----------")
 
-
+    @pytest.mark.parametrize("userID", api_data["test_init_wx_userID"])
+    def test_init_wx_userID(self, userID):
+        """批量初始化userID为新用户"""
+        rm_result = rm.generate_random_str(10)
+        phone_new = userID + rm_result
+        logger.info("随机数===>{}".format(rm_result))
+        logger.info("随机更新的手机号===>{}".format(phone_new))
+        sql_up_user = "update user set phone = '%s' , phone_encrypt = '%s'  where id ='%s'"\
+                      % (phone_new, phone_new, userID)
+        sql_up_wx = "update user_wechat_channel set open_id ='%s',union_id = '%s' " \
+                    "where user_id ='%s'" % (phone_new, phone_new, userID)
+        logger.info("----------开始更新user表----------")
+        db.execute_db(sql_up_user)
+        logger.info("----------执行更新user表成功----------")
+        logger.info("----------开始更新user_wechat_channel表----------")
+        db.execute_db(sql_up_wx)
+        logger.info("----------执行更新user_wechat_channel表成功----------")
+        logger.info("----------执行清除缓存的操作----------")
+        rs.test_redis(userID)
+        logger.info("----------执行清除缓存操作成功----------")

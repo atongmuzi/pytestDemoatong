@@ -1,0 +1,2 @@
+[2022-02-16 15:36:29,377][test_init_phone.py 41][INFO]: 随机数===>DWZpSfYDGf
+[2022-02-16 15:36:29,377][test_init_phone.py 42][INFO]: 随机更新的手机号===>1850DWZpSfYDGf

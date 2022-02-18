@@ -1,0 +1,12 @@
+INFO     log:test_init_phone.py:42 随机数===>7K3hVKfotG
+INFO     log:test_init_phone.py:43 随机更新的手机号===>18507K3hVKfotG
+INFO     log:test_init_phone.py:48 ----------开始更新user表----------
+INFO     log:mysql_operate.py:56 操作MySQL出现错误，错误原因：(1292, "Truncated incorrect DOUBLE value: '18507K3hVKfotG'")
+INFO     log:test_init_phone.py:50 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:51 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:53 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:54 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1850的token成功=====
+INFO     log:redis_operate.py:22 0
+INFO     log:redis_operate.py:27 =====无hash_tokens_keys为pookie:tokens:user_1850的tokens缓存=====
+INFO     log:test_init_phone.py:56 ----------执行清除缓存操作成功----------
