@@ -59,7 +59,7 @@ test_init_wx_userID:
   #- ""
   #- ""
   #- ""
-  - "1846"
+  - "1891"
 test_reward_task:
   # 用户ID，类型，优惠券ID
   - ["1528",3,242]

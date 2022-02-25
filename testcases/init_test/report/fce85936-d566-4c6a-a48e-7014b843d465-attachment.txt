@@ -1,0 +1,15 @@
+INFO     log:test_init_phone.py:41 随机数===>UNo7slDS2l
+INFO     log:test_init_phone.py:42 随机更新的手机号===>1528UNo7slDS2l
+INFO     log:test_init_phone.py:46 ----------开始更新user表----------
+INFO     log:test_init_phone.py:48 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:51 ----------开始更新user_wechat_channel表----------
+INFO     log:mysql_operate.py:56 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '15282gbebw6Z1x' for key 'UK_OPEN_ID'")
+INFO     log:test_init_phone.py:57 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:51 ----------开始更新user_wechat_channel表----------
+INFO     log:mysql_operate.py:56 操作MySQL出现错误，错误原因：(1062, "Duplicate entry '15283tqmeQQVEp' for key 'UK_OPEN_ID'")
+INFO     log:test_init_phone.py:57 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:58 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1528的token成功=====
+INFO     log:redis_operate.py:22 0
+INFO     log:redis_operate.py:27 =====无hash_tokens_keys为pookie:tokens:user_1528的tokens缓存=====
+INFO     log:test_init_phone.py:60 ----------执行清除缓存操作成功----------
