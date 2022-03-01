@@ -1,0 +1,11 @@
+INFO     log:test_init_phone.py:41 随机数===>RPa87EHm0v
+INFO     log:test_init_phone.py:42 随机更新的手机号===>atongtest1937RPa87EHm0v
+INFO     log:test_init_phone.py:46 ----------开始更新user表----------
+INFO     log:test_init_phone.py:48 ----------执行更新user表成功----------
+INFO     log:test_init_phone.py:52 ----------开始更新user_wechat_channel表----------
+INFO     log:test_init_phone.py:58 ----------执行更新user_wechat_channel表成功----------
+INFO     log:test_init_phone.py:59 ----------执行清除缓存的操作----------
+INFO     log:redis_operate.py:21 =====清除user_id为1937的token成功=====
+INFO     log:redis_operate.py:22 1
+INFO     log:redis_operate.py:25 =====清除user_id为1937的tokens成功=====
+INFO     log:test_init_phone.py:61 ----------执行清除缓存操作成功----------

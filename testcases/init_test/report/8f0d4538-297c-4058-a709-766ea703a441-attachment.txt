@@ -1,0 +1,12 @@
+[2022-02-28 15:05:48,592][test_init_phone.py 41][INFO]: 随机数===>Zbb6pM55cG
+[2022-02-28 15:05:48,592][test_init_phone.py 42][INFO]: 随机更新的手机号===>atongtest1902Zbb6pM55cG
+[2022-02-28 15:05:48,592][test_init_phone.py 46][INFO]: ----------开始更新user表----------
+[2022-02-28 15:05:48,905][mysql_operate.py 56][INFO]: 操作MySQL出现错误，错误原因：(1054, "Unknown column 'None' in 'field list'")
+[2022-02-28 15:05:49,109][test_init_phone.py 48][INFO]: ----------执行更新user表成功----------
+[2022-02-28 15:05:49,519][test_init_phone.py 52][INFO]: ----------开始更新user_wechat_channel表----------
+[2022-02-28 15:05:50,125][test_init_phone.py 58][INFO]: ----------执行更新user_wechat_channel表成功----------
+[2022-02-28 15:05:50,125][test_init_phone.py 59][INFO]: ----------执行清除缓存的操作----------
+[2022-02-28 15:05:51,751][redis_operate.py 21][INFO]: =====清除user_id为1902的token成功=====
+[2022-02-28 15:05:52,077][redis_operate.py 22][INFO]: 0
+[2022-02-28 15:05:52,286][redis_operate.py 27][INFO]: =====无hash_tokens_keys为pookie:tokens:user_1902的tokens缓存=====
+[2022-02-28 15:05:52,286][test_init_phone.py 61][INFO]: ----------执行清除缓存操作成功----------

@@ -1,0 +1,2 @@
+[2022-02-28 15:04:27,862][test_init_phone.py 41][INFO]: 随机数===>1HhXP4nDsC
+[2022-02-28 15:04:27,862][test_init_phone.py 42][INFO]: 随机更新的手机号===>atongtest19021HhXP4nDsC

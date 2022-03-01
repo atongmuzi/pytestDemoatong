@@ -1,0 +1,2 @@
+[2022-02-28 15:04:39,243][test_init_phone.py 41][INFO]: 随机数===>qQqXgzgLZO
+[2022-02-28 15:04:39,243][test_init_phone.py 42][INFO]: 随机更新的手机号===>atongtest1902qQqXgzgLZO
