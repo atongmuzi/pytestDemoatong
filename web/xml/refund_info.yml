@@ -1,0 +1,79 @@
+
+    根据userID增加该用户下碎片活动的各种碎片数量
+    ---
+    tags:
+      - fragmentinfo
+    parameters:
+      - name: userID
+        in: query
+        type: string
+        required: true
+        description: 需要查询的userID,必填项
+      - name: any_fragment
+        in: query
+        type: integer
+        required: false
+        description: 万能碎片
+      - name: red_fragment
+        type: integer
+        in: query
+        required: false
+        description: 红莲碎片
+      - name: blue_fragment
+        type: integer
+        in: query
+        required: false
+        description: 海蓝碎片
+      - name: purple_fragment
+        type: integer
+        in: query
+        required: false
+        description: 紫晶碎片
+      - name: green_fragment
+        type: integer
+        in: query
+        required: false
+        description: 翡翠碎片
+      - name: pink_fragment
+        type: integer
+        in: query
+        required: false
+        description: 粉砖碎片
+      - name: white_fragment
+        type: integer
+        in: query
+        required: false
+        description: 珍珠碎片
+      - name: black_fragment
+        type: integer
+        in: query
+        required: false
+        description: 黒曜碎片
+      - name: brown_fragment
+        type: integer
+        in: query
+        required: false
+        description: 琥珀碎片
+      - name: gray_fragment
+        type: integer
+        in: query
+        required: false
+        description: 灰玉碎片
+    responses:
+      500:
+        description: 需要查询的userID,为必填项
+      200:
+        description: 查询成功
+        schema:
+          id: result
+          properties:
+            userID:
+              type: string
+              description: 用户ID
+              default: 1528
+            use:
+              type: array
+              description: 用途
+              items:
+                type: string
+              default: ["perfect", "simple", "lovely"]

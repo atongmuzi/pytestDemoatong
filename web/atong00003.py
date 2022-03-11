@@ -62,7 +62,7 @@ def fragment_update(userID, amount, fragment_type):
     db.execute_db(sql)
 
 
-@app.route('/api/test/', methods=['GET'])
+@app.route('/api/refund/', methods=['GET'])
 @swag_from('/web/xml/fragment_info.yml')
 def user_fragment_test():
     return "hahah"
