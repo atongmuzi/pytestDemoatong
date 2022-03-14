@@ -1,69 +1,29 @@
 
-    根据userID增加该用户下碎片活动的各种碎片数量
+    根据userID以及需退款条数、退款金额限制来满足退款需求
     ---
     tags:
-      - fragmentinfo
+      - refund
     parameters:
       - name: userID
         in: query
         type: string
         required: true
-        description: 需要查询的userID,必填项
-      - name: any_fragment
+        description: 需要退款的userID,必填项
+      - name: refund_num
         in: query
         type: integer
         required: false
-        description: 万能碎片
-      - name: red_fragment
-        type: integer
+        description: 需退款的条数--》一次最多可以退款5条
+      - name: refund_amount
+        type: float
         in: query
         required: false
-        description: 红莲碎片
-      - name: blue_fragment
-        type: integer
-        in: query
-        required: false
-        description: 海蓝碎片
-      - name: purple_fragment
-        type: integer
-        in: query
-        required: false
-        description: 紫晶碎片
-      - name: green_fragment
-        type: integer
-        in: query
-        required: false
-        description: 翡翠碎片
-      - name: pink_fragment
-        type: integer
-        in: query
-        required: false
-        description: 粉砖碎片
-      - name: white_fragment
-        type: integer
-        in: query
-        required: false
-        description: 珍珠碎片
-      - name: black_fragment
-        type: integer
-        in: query
-        required: false
-        description: 黒曜碎片
-      - name: brown_fragment
-        type: integer
-        in: query
-        required: false
-        description: 琥珀碎片
-      - name: gray_fragment
-        type: integer
-        in: query
-        required: false
-        description: 灰玉碎片
+        description: 需退款的最小金额-》不填写该金额，则默认为0.01元
     responses:
       500:
         description: 需要查询的userID,为必填项
       200:
-        description: 查询成功
+        description: 退款成功
         schema:
           id: result
           properties:

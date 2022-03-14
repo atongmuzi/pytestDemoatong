@@ -3,6 +3,7 @@ from flasgger import Swagger, swag_from
 from flask import Flask, request
 from common.mysql_operate import db
 from common.redis_operate import rs
+from common.refund import re
 
 app = Flask(__name__)
 app.config["SWAGGER"] = {
@@ -63,9 +64,12 @@ def fragment_update(userID, amount, fragment_type):
 
 
 @app.route('/api/refund/', methods=['GET'])
-@swag_from('/web/xml/fragment_info.yml')
+@swag_from('/web/xml/refund_info.yml')
 def user_fragment_test():
-    return "hahah"
+    user_id = request.args.get("userID")
+    refund_num = request.args.get("refund_num")
+    refund_amount = request.args.get("refund_amount")
+    re.test_refund(user_id, refund_num, refund_amount)
 
 
 app.run(debug=True)
