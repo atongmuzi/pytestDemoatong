@@ -18,7 +18,7 @@
         type: float
         in: query
         required: false
-        description: 需退款的最小金额-》不填写该金额，则默认为0.01元
+        description: 需退款的最小金额-》不填写该金额，则默认为0.02元
     responses:
       500:
         description: 需要查询的userID,为必填项

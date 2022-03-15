@@ -1,4 +1,3 @@
-from common.logger import logger
 from flasgger import Swagger, swag_from
 from flask import Flask, request
 from common.mysql_operate import db
@@ -67,9 +66,10 @@ def fragment_update(userID, amount, fragment_type):
 @swag_from('/web/xml/refund_info.yml')
 def user_fragment_test():
     user_id = request.args.get("userID")
-    refund_num = request.args.get("refund_num")
-    refund_amount = request.args.get("refund_amount")
-    re.test_refund(user_id, refund_num, refund_amount)
+    refund_num = int(request.args.get("refund_num")) if request.args.get("refund_num") is not None else 5
+    refund_amount = float(request.args.get("refund_amount")) if request.args.get("refund_amount") is not None else 0.02
+    result = re.test_refund(user_id, refund_num, refund_amount)
+    return result
 
 
 app.run(debug=True)
