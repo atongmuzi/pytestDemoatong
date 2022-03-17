@@ -1,6 +1,6 @@
 
-    根据userID增加该用户下碎片活动的各种碎片数量
-    ---
+  根据userID增加该用户下碎片活动的各种碎片数量
+  ---
     tags:
       - fragmentinfo
     parameters:

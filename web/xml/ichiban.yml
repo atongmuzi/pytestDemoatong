@@ -1,0 +1,38 @@
+    根据需要插入一番赏商品、上架该商品以及加入一番赏活动
+    ---
+      tags:
+      - ichiban
+      summary: "Get a accessToken"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: body
+        description: "account of fastone"
+        required: true
+        in: body
+        schema:
+          $ref: "#/definitions/Auth"
+      responses:
+        400:
+          description: "Invalid input"
+        403:
+          description: "Invalid credential"
+        200:
+          description: "Get a accessToken"
+      definitions:
+        Auth:
+          type: "string"
+          properties:
+            usernameOrEmail:
+              type: string
+              default: "atong"
+            password:
+              type: string
+              default: "ahua"
+            sku_list:
+              type: array
+              items:
+                type: dict
+                default: [ "perfect", "simple", "lovely" ]

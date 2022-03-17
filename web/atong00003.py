@@ -72,4 +72,10 @@ def user_fragment_test():
     return result
 
 
+@app.route('/api/ichiban')
+@swag_from('/web/xml/ichiban.yml')
+def user_ichiban_test():
+    return "test"
+
+
 app.run(debug=True)
