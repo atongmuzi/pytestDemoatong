@@ -80,3 +80,17 @@ def reward_task(user_id, v_type, type_id, **kwargs):
 def ichiban_insert(body):
     res = admin.ichiban(json=body, headers=headers)
     return res_deal(res)
+
+
+def item_upsert(id, status):
+    json_data = {
+        "id": id,
+        'status': status
+    }
+    res = admin.item_upsert(json=json_data, headers=headers)
+    return res_deal(res)
+
+
+def ichiban_activity_add(body):
+    res = admin.ichiban_activity(json=body, headers=headers)
+    return res_deal(res)

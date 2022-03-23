@@ -16,7 +16,13 @@ class Admin(RestClient):
         return self.post("/adm/reward_task/add", **kwargs)
 
     def ichiban(self, **kwargs):
-        return self.post("/adm/series_reward/config_excel",**kwargs)
+        return self.post("/adm/series_reward/config_excel", **kwargs)
+
+    def item_upsert(self, **kwargs):
+        return self.post("/adm/item/upsert", **kwargs)
+
+    def ichiban_activity(self, **kwargs):
+        return self.post("/adm/series_reward/addOrUpdate", **kwargs)
 
 
 admin = Admin(api_root_url)
