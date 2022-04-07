@@ -1,1 +1,0 @@
-INFO     log:test_reward_00001.py:37 开始准备发放技能卡===》提示卡

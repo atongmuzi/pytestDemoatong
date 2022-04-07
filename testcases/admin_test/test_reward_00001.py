@@ -1,9 +1,13 @@
+import allure
+
 from common.logger import logger
 from operation.admin import reward_task
 from testcases.conftest import api_data
 import pytest
 
 
+@allure.epic("针对多接口的测试")
+@allure.feature("手工发券模块的测试")
 class TestAdminReward:
     """
     主要是针对发放优惠券
