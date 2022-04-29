@@ -1,1 +1,0 @@
-{"uuid": "8d70bc0b-47c9-4d9d-acef-86429c076f0f", "children": ["7c4ee893-e88c-471d-8211-c9c36e52dc15"], "befores": [{"name": "test_item_next", "status": "passed", "steps": [{"name": "步骤1：下一个盲盒详情", "status": "passed", "start": 1632730429090, "stop": 1632730429090}], "start": 1632730429090, "stop": 1632730429362}], "start": 1632730429090, "stop": 1632730429367}

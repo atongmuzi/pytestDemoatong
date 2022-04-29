@@ -1,0 +1,17 @@
+[2022-03-25 14:06:19,561][test_07_item.py 11][INFO]: 步骤1：下一个盲盒详情
+[2022-03-25 14:06:19,561][test_07_item.py 53][INFO]: *************** 开始执行用例 *************** /n
+[2022-03-25 14:06:19,561][rest_client.py 51][INFO]: 接口请求地址 ==>> https://testapi.pookie.com.cn/item/mbox/378/next/v5
+[2022-03-25 14:06:19,561][rest_client.py 52][INFO]: 接口请求方式 ==>> GET
+[2022-03-25 14:06:19,562][rest_client.py 54][INFO]: 接口请求头 ==>> {
+                                        "Authorization": null
+}
+[2022-03-25 14:06:19,562][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> {
+                                        "first_random": true
+}
+[2022-03-25 14:06:19,562][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-03-25 14:06:19,562][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2022-03-25 14:06:19,562][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-03-25 14:06:19,562][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-03-25 14:06:19,785][test_07_item.py 56][INFO]: 接口返回信息：code期望结果【0】,实际结果【0】；msg期望结果【success】，实际结果【success】
+[2022-03-25 14:06:19,785][test_07_item.py 59][INFO]: box_no==>>20220325412680020131814
+[2022-03-25 14:06:19,786][test_07_item.py 60][INFO]: *************** 结束执行用例 *************** /n

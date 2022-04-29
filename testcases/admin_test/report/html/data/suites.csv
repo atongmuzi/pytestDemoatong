@@ -1,0 +1,18 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 07 10:56:01 CST 2022","Thu Apr 07 10:56:01 CST 2022","117","testcases.admin_test","test_reward_00001","TestAdminReward","","","test_reward_task_tips_card[1528-2-2-7]","
+        发放技能卡===》提示卡
+        "
+"passed","Thu Apr 07 10:56:00 CST 2022","Thu Apr 07 10:56:00 CST 2022","133","testcases.admin_test","test_reward_00001","TestAdminReward","","","test_reward_task_com[1528-3-242]","
+        发放券===》1元通用券
+        "
+"passed","Thu Apr 07 10:56:01 CST 2022","Thu Apr 07 10:56:01 CST 2022","126","testcases.admin_test","test_reward_00001","TestAdminReward","","","test_reward_task_exp[1528-3-204]","
+        发放券===》体验券
+        "
+"passed","Thu Apr 07 10:55:55 CST 2022","Thu Apr 07 10:55:58 CST 2022","2807","testcases.admin_test","test_refund_00001","TestAdminRefund","","","test_refund_userID","该用例是针对获取单个用户信息接口的测试"
+"passed","Thu Apr 07 10:56:01 CST 2022","Thu Apr 07 10:56:01 CST 2022","127","testcases.admin_test","test_reward_00001","TestAdminReward","","","test_reward_task_exp[1284-3-204]","
+        发放券===》体验券
+        "
+"passed","Thu Apr 07 10:56:00 CST 2022","Thu Apr 07 10:56:01 CST 2022","110","testcases.admin_test","test_reward_00001","TestAdminReward","","","test_reward_task_com[1284-3-242]","
+        发放券===》1元通用券
+        "
+"passed","Thu Apr 07 10:55:58 CST 2022","Thu Apr 07 10:56:00 CST 2022","2684","testcases.admin_test","test_refund_00001","TestAdminRefund","","","test_refund_phone","该用例是针对获取单个用户信息接口的测试"

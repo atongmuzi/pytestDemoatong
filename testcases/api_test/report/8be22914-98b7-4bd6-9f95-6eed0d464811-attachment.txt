@@ -1,5 +1,0 @@
-INFO     log:conftest.py:32 ******************************
-INFO     log:conftest.py:33 前置步骤开始 ==>> 清理数据
-INFO     log:conftest.py:131 =====开始清理user_coupon表=====
-INFO     log:conftest.py:133 =====清理user_coupon表结束=====
-INFO     log:conftest.py:134 =====清理表数据结束=====

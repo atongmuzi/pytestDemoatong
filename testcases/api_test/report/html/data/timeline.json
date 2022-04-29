@@ -1,0 +1,65 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "tongchunyan.local",
+    "children" : [ {
+      "name" : "64252-MainThread",
+      "children" : [ {
+        "name" : "test_trade_wx_preorder",
+        "uid" : "c310cdea05c2ad34",
+        "parentUid" : "90ad140c2c5068d322cef2d3053a2c2f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1648188196572,
+          "stop" : 1648188196637,
+          "duration" : 65
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_trade_confirm",
+        "uid" : "a0361b13c52acea9",
+        "parentUid" : "90ad140c2c5068d322cef2d3053a2c2f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1648188196659,
+          "stop" : 1648188196659,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_item_next",
+        "uid" : "bac41a002f48ab58",
+        "parentUid" : "90ad140c2c5068d322cef2d3053a2c2f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1648188195957,
+          "stop" : 1648188196453,
+          "duration" : 496
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_trade_preorder",
+        "uid" : "92dbc7bab78f3780",
+        "parentUid" : "90ad140c2c5068d322cef2d3053a2c2f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1648188196455,
+          "stop" : 1648188196455,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "90ad140c2c5068d322cef2d3053a2c2f"
+    } ],
+    "uid" : "c65670a955334acad6bc34f4b797a283"
+  } ]
+}

@@ -1,0 +1,71 @@
+{
+  "uid" : "a0361b13c52acea9",
+  "name" : "test_trade_confirm",
+  "fullName" : "testcases.api_test.test_07_item.TestTradePreItem#test_trade_confirm",
+  "historyId" : "906ba53a5b4aa1ad5ebdf39f62925166",
+  "time" : {
+    "start" : 1648188196659,
+    "stop" : 1648188196659,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'TestTradePreItem' object has no attribute 'order_no_status'",
+  "statusTrace" : "self = <testcases.api_test.test_07_item.TestTradePreItem object at 0x10d4d7550>\n\n    def test_trade_confirm(self):\n>       trade_status = itemSelect.order_no_status\nE       AttributeError: 'TestTradePreItem' object has no attribute 'order_no_status'\n\ntest_07_item.py:157: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "针对单个接口的测试"
+  }, {
+    "name" : "severity",
+    "value" : "trivial"
+  }, {
+    "name" : "feature",
+    "value" : "盲盒详情"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases.api_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_07_item"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestTradePreItem"
+  }, {
+    "name" : "host",
+    "value" : "tongchunyan.local"
+  }, {
+    "name" : "thread",
+    "value" : "64252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.api_test.test_07_item"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "trivial",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "a0361b13c52acea9.json",
+  "parameterValues" : [ ]
+}

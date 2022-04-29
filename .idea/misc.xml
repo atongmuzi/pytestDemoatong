@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/testcases/admin_test/report/1d9ba369-817a-4ffd-bbbc-1af2f42d46a2-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/admin_test/report/3856e366-3912-493d-8550-fcdf84e724e4-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/030c1601-7167-45a2-a2bb-3da369953683-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/28c9f431-3cf4-4dfa-973a-401e34d76a80-container.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/28ce9f83-29bd-4176-9b8e-1ced2ca8ba28-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/30dcae16-d0a6-4afd-b60f-86b70495f1c5-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/31ceca07-769a-4bf7-aee7-d6f52ed0759b-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/34b3e11a-0362-43ea-b343-5632aaaf7b7c-container.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/35bb1065-8846-4e68-ba33-c9a56540e13c-container.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/35d4d943-39ad-475b-a5c3-eb077063ac3c-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/39dc13e6-69cd-4f62-84fa-f2328df7eabe-result.json" />
+    <file url="file://$PROJECT_DIR$/testcases/api_test/report/41a9c564-1be5-400e-9120-5e129a4dabe7-container.json" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (pytestDemo)" project-jdk-type="Python SDK" />
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />

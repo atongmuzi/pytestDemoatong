@@ -1,0 +1,108 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testcases.admin_test",
+    "children" : [ {
+      "name" : "test_refund_00001",
+      "children" : [ {
+        "name" : "test_refund_userID",
+        "uid" : "caecd5f66cc8f40b",
+        "parentUid" : "8e0720388ccde760e837d0daef45598a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300155354,
+          "stop" : 1649300158161,
+          "duration" : 2807
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_refund_phone",
+        "uid" : "88fd1119545fa560",
+        "parentUid" : "8e0720388ccde760e837d0daef45598a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300158164,
+          "stop" : 1649300160848,
+          "duration" : 2684
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8e0720388ccde760e837d0daef45598a"
+    }, {
+      "name" : "test_reward_00001",
+      "children" : [ {
+        "name" : "test_reward_task_com[1528-3-242]",
+        "uid" : "55b87332e338f9a7",
+        "parentUid" : "357f95c10ac888209529d2922159edce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300160852,
+          "stop" : 1649300160985,
+          "duration" : 133
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "242", "'1528'", "3" ]
+      }, {
+        "name" : "test_reward_task_com[1284-3-242]",
+        "uid" : "e81936b847e8ef5d",
+        "parentUid" : "357f95c10ac888209529d2922159edce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300160989,
+          "stop" : 1649300161099,
+          "duration" : 110
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "242", "'1284'", "3" ]
+      }, {
+        "name" : "test_reward_task_exp[1528-3-204]",
+        "uid" : "2b80dab96be74334",
+        "parentUid" : "357f95c10ac888209529d2922159edce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161103,
+          "stop" : 1649300161229,
+          "duration" : 126
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "204", "'1528'", "3" ]
+      }, {
+        "name" : "test_reward_task_exp[1284-3-204]",
+        "uid" : "200c5a9be8fc99a",
+        "parentUid" : "357f95c10ac888209529d2922159edce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161232,
+          "stop" : 1649300161359,
+          "duration" : 127
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "204", "'1284'", "3" ]
+      }, {
+        "name" : "test_reward_task_tips_card[1528-2-2-7]",
+        "uid" : "5c92453b11a11204",
+        "parentUid" : "357f95c10ac888209529d2922159edce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161364,
+          "stop" : 1649300161481,
+          "duration" : 117
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "2", "'1528'", "2", "7" ]
+      } ],
+      "uid" : "357f95c10ac888209529d2922159edce"
+    } ],
+    "uid" : "testcases.admin_test"
+  } ]
+}

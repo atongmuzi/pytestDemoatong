@@ -1,0 +1,71 @@
+[ {
+  "uid" : "2b80dab96be74334",
+  "name" : "test_reward_task_exp[1528-3-204]",
+  "time" : {
+    "start" : 1649300161103,
+    "stop" : 1649300161229,
+    "duration" : 126
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "55b87332e338f9a7",
+  "name" : "test_reward_task_com[1528-3-242]",
+  "time" : {
+    "start" : 1649300160852,
+    "stop" : 1649300160985,
+    "duration" : 133
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "88fd1119545fa560",
+  "name" : "test_refund_phone",
+  "time" : {
+    "start" : 1649300158164,
+    "stop" : 1649300160848,
+    "duration" : 2684
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "200c5a9be8fc99a",
+  "name" : "test_reward_task_exp[1284-3-204]",
+  "time" : {
+    "start" : 1649300161232,
+    "stop" : 1649300161359,
+    "duration" : 127
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e81936b847e8ef5d",
+  "name" : "test_reward_task_com[1284-3-242]",
+  "time" : {
+    "start" : 1649300160989,
+    "stop" : 1649300161099,
+    "duration" : 110
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5c92453b11a11204",
+  "name" : "test_reward_task_tips_card[1528-2-2-7]",
+  "time" : {
+    "start" : 1649300161364,
+    "stop" : 1649300161481,
+    "duration" : 117
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "caecd5f66cc8f40b",
+  "name" : "test_refund_userID",
+  "time" : {
+    "start" : 1649300155354,
+    "stop" : 1649300158161,
+    "duration" : 2807
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

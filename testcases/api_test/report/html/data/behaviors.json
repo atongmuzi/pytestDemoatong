@@ -1,0 +1,73 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "针对单个接口的测试",
+    "children" : [ {
+      "name" : "盲盒详情",
+      "children" : [ {
+        "name" : "下一个盲盒详情",
+        "children" : [ {
+          "name" : "test_item_next",
+          "uid" : "bac41a002f48ab58",
+          "parentUid" : "de22856c79aec30c588e4910d03115d6",
+          "status" : "passed",
+          "time" : {
+            "start" : 1648188195957,
+            "stop" : 1648188196453,
+            "duration" : 496
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "de22856c79aec30c588e4910d03115d6"
+      }, {
+        "name" : "预下单--获取下单前的一些关键信息",
+        "children" : [ {
+          "name" : "test_trade_preorder",
+          "uid" : "92dbc7bab78f3780",
+          "parentUid" : "b79577296798c74d78f297f91a7a5e57",
+          "status" : "failed",
+          "time" : {
+            "start" : 1648188196455,
+            "stop" : 1648188196455,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "b79577296798c74d78f297f91a7a5e57"
+      }, {
+        "name" : "test_trade_wx_preorder",
+        "uid" : "c310cdea05c2ad34",
+        "parentUid" : "6fe07f2dfbb774e8e87d833d8185f6c5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1648188196572,
+          "stop" : 1648188196637,
+          "duration" : 65
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_trade_confirm",
+        "uid" : "a0361b13c52acea9",
+        "parentUid" : "6fe07f2dfbb774e8e87d833d8185f6c5",
+        "status" : "broken",
+        "time" : {
+          "start" : 1648188196659,
+          "stop" : 1648188196659,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6fe07f2dfbb774e8e87d833d8185f6c5"
+    } ],
+    "uid" : "6b8f2f790c75a706c4fafda03d54caa6"
+  } ]
+}

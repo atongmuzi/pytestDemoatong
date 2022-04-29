@@ -1,0 +1,41 @@
+[ {
+  "uid" : "92dbc7bab78f3780",
+  "name" : "test_trade_preorder",
+  "time" : {
+    "start" : 1648188196455,
+    "stop" : 1648188196455,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "severity" : "trivial"
+}, {
+  "uid" : "a0361b13c52acea9",
+  "name" : "test_trade_confirm",
+  "time" : {
+    "start" : 1648188196659,
+    "stop" : 1648188196659,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "trivial"
+}, {
+  "uid" : "c310cdea05c2ad34",
+  "name" : "test_trade_wx_preorder",
+  "time" : {
+    "start" : 1648188196572,
+    "stop" : 1648188196637,
+    "duration" : 65
+  },
+  "status" : "failed",
+  "severity" : "trivial"
+}, {
+  "uid" : "bac41a002f48ab58",
+  "name" : "test_item_next",
+  "time" : {
+    "start" : 1648188195957,
+    "stop" : 1648188196453,
+    "duration" : 496
+  },
+  "status" : "passed",
+  "severity" : "trivial"
+} ]

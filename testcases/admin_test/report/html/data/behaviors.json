@@ -1,0 +1,120 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "针对单个接口的测试",
+    "children" : [ {
+      "name" : "退款模块的测试",
+      "children" : [ {
+        "name" : "用例--通过userID退款",
+        "children" : [ {
+          "name" : "test_refund_userID",
+          "uid" : "caecd5f66cc8f40b",
+          "parentUid" : "36767a419030c699f3d28ce4bca6ec97",
+          "status" : "passed",
+          "time" : {
+            "start" : 1649300155354,
+            "stop" : 1649300158161,
+            "duration" : 2807
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "36767a419030c699f3d28ce4bca6ec97"
+      }, {
+        "name" : "用例--通过手机号退款",
+        "children" : [ {
+          "name" : "test_refund_phone",
+          "uid" : "88fd1119545fa560",
+          "parentUid" : "58422704fe6b3cdd06b635fa686c81b8",
+          "status" : "passed",
+          "time" : {
+            "start" : 1649300158164,
+            "stop" : 1649300160848,
+            "duration" : 2684
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "58422704fe6b3cdd06b635fa686c81b8"
+      } ],
+      "uid" : "617bb793e284a9c0eb20e15550a529ea"
+    } ],
+    "uid" : "6b8f2f790c75a706c4fafda03d54caa6"
+  }, {
+    "name" : "针对多接口的测试",
+    "children" : [ {
+      "name" : "手工发券模块的测试",
+      "children" : [ {
+        "name" : "test_reward_task_com[1528-3-242]",
+        "uid" : "55b87332e338f9a7",
+        "parentUid" : "ee2e0ccbd723eb828fd812f3c733aa66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300160852,
+          "stop" : 1649300160985,
+          "duration" : 133
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "242", "'1528'", "3" ]
+      }, {
+        "name" : "test_reward_task_com[1284-3-242]",
+        "uid" : "e81936b847e8ef5d",
+        "parentUid" : "ee2e0ccbd723eb828fd812f3c733aa66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300160989,
+          "stop" : 1649300161099,
+          "duration" : 110
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "242", "'1284'", "3" ]
+      }, {
+        "name" : "test_reward_task_exp[1528-3-204]",
+        "uid" : "2b80dab96be74334",
+        "parentUid" : "ee2e0ccbd723eb828fd812f3c733aa66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161103,
+          "stop" : 1649300161229,
+          "duration" : 126
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "204", "'1528'", "3" ]
+      }, {
+        "name" : "test_reward_task_exp[1284-3-204]",
+        "uid" : "200c5a9be8fc99a",
+        "parentUid" : "ee2e0ccbd723eb828fd812f3c733aa66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161232,
+          "stop" : 1649300161359,
+          "duration" : 127
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "204", "'1284'", "3" ]
+      }, {
+        "name" : "test_reward_task_tips_card[1528-2-2-7]",
+        "uid" : "5c92453b11a11204",
+        "parentUid" : "ee2e0ccbd723eb828fd812f3c733aa66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1649300161364,
+          "stop" : 1649300161481,
+          "duration" : 117
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "2", "'1528'", "2", "7" ]
+      } ],
+      "uid" : "ee2e0ccbd723eb828fd812f3c733aa66"
+    } ],
+    "uid" : "6108f92ed23d9c7e7afb88bb3e73da01"
+  } ]
+}

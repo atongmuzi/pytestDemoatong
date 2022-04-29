@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Fri Mar 25 14:03:16 CST 2022","Fri Mar 25 14:03:16 CST 2022","0","testcases.api_test","test_07_item","TestTradePreItem","","","test_trade_preorder","预下单---》支付预下单-->未选择支付方式前"
+"broken","Fri Mar 25 14:03:16 CST 2022","Fri Mar 25 14:03:16 CST 2022","0","testcases.api_test","test_07_item","TestTradePreItem","","","test_trade_confirm",""
+"failed","Fri Mar 25 14:03:16 CST 2022","Fri Mar 25 14:03:16 CST 2022","65","testcases.api_test","test_07_item","TestTradePreItem","","","test_trade_wx_preorder","预下单---》微信支付预下单"
+"passed","Fri Mar 25 14:03:15 CST 2022","Fri Mar 25 14:03:16 CST 2022","496","testcases.api_test","test_07_item","TestTradePreItem","","","test_item_next","下一个盲盒详情"

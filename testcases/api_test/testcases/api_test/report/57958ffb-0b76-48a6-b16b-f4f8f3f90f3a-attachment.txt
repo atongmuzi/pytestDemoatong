@@ -1,0 +1,19 @@
+[2021-06-03 15:01:39,537][test_06_pre_order.py 21][INFO]: **********开始执行测试用例**********
+[2021-06-03 15:01:39,538][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test_api.pookie.com.cn/pay/pre_trade
+[2021-06-03 15:01:39,539][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-06-03 15:01:39,539][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "ODM3OjEzMDlVRWN5QmI3YnNPMm1WWXNIUkpjMjU3Njoy",
+    "Content-Type": "application/json"
+}
+[2021-06-03 15:01:39,540][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-06-03 15:01:39,540][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-06-03 15:01:39,540][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "order_type": 1,
+    "item_id": 308,
+    "sku_type": 1,
+    "sku_no": "20210511420000112137492-2",
+    "act_id_list": [],
+    "use_pcoin": false
+}
+[2021-06-03 15:01:39,541][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-06-03 15:01:39,541][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null

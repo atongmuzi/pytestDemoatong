@@ -1,0 +1,81 @@
+{
+  "7895858351580925ca002a7fcee281a4" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c310cdea05c2ad34",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success",
+      "time" : {
+        "start" : 1648188196572,
+        "stop" : 1648188196637,
+        "duration" : 65
+      }
+    } ]
+  },
+  "906ba53a5b4aa1ad5ebdf39f62925166" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a0361b13c52acea9",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'TestTradePreItem' object has no attribute 'order_no_status'",
+      "time" : {
+        "start" : 1648188196659,
+        "stop" : 1648188196659,
+        "duration" : 0
+      }
+    } ]
+  },
+  "6b0a704f96a4bd744dcbd4e694c5a478" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bac41a002f48ab58",
+      "status" : "passed",
+      "time" : {
+        "start" : 1648188195957,
+        "stop" : 1648188196453,
+        "duration" : 496
+      }
+    } ]
+  },
+  "c02eae2e1b70ef4224bba75ee80d1fd1" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "92dbc7bab78f3780",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success",
+      "time" : {
+        "start" : 1648188196455,
+        "stop" : 1648188196455,
+        "duration" : 0
+      }
+    } ]
+  }
+}

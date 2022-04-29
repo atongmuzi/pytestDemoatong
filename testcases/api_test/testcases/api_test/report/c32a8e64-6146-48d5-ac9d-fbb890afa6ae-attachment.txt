@@ -1,0 +1,23 @@
+[2021-06-04 10:41:16,152][conftest.py 29][INFO]: ******************************
+[2021-06-04 10:41:16,153][conftest.py 30][INFO]: 前置步骤开始 ==>> 清理数据
+[2021-06-04 10:41:16,153][conftest.py 107][INFO]: 执行sql：DELETE FROM user_order where user_id = '789' and order_no = 'car_789_90' 
+[2021-06-04 10:41:16,157][test_06_pre_order.py 24][INFO]: **********开始执行测试用例**********
+[2021-06-04 10:41:16,158][rest_client.py 51][INFO]: 接口请求地址 ==>> https://test_api.pookie.com.cn/pay/pre_trade
+[2021-06-04 10:41:16,158][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2021-06-04 10:41:16,158][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Authorization": "ODM3OjEzMDlVRWN5QmI3YnNPMm1WWXNIUkpjMjU3Njoy",
+    "Content-Type": "application/json"
+}
+[2021-06-04 10:41:16,158][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2021-06-04 10:41:16,158][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2021-06-04 10:41:16,158][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "order_type": 1,
+    "item_id": 308,
+    "sku_type": 1,
+    "sku_no": "20210511420000112137694-2",
+    "act_id_list": [],
+    "use_pcoin": false
+}
+[2021-06-04 10:41:16,158][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2021-06-04 10:41:16,158][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2021-06-04 10:41:16,669][test_06_pre_order.py 12][INFO]: 下单类型为：盲盒, 商品ID为：308, sku_no为：20210511420000112137694-2, 是否使用P币：不使用

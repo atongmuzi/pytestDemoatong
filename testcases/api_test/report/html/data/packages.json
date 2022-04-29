@@ -1,0 +1,61 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testcases.api_test.test_07_item",
+    "children" : [ {
+      "name" : "test_item_next",
+      "uid" : "bac41a002f48ab58",
+      "parentUid" : "ec27a3ee571e17ddf0bc7fb04b2a82ff",
+      "status" : "passed",
+      "time" : {
+        "start" : 1648188195957,
+        "stop" : 1648188196453,
+        "duration" : 496
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_trade_preorder",
+      "uid" : "92dbc7bab78f3780",
+      "parentUid" : "ec27a3ee571e17ddf0bc7fb04b2a82ff",
+      "status" : "failed",
+      "time" : {
+        "start" : 1648188196455,
+        "stop" : 1648188196455,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_trade_wx_preorder",
+      "uid" : "c310cdea05c2ad34",
+      "parentUid" : "ec27a3ee571e17ddf0bc7fb04b2a82ff",
+      "status" : "failed",
+      "time" : {
+        "start" : 1648188196572,
+        "stop" : 1648188196637,
+        "duration" : 65
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_trade_confirm",
+      "uid" : "a0361b13c52acea9",
+      "parentUid" : "ec27a3ee571e17ddf0bc7fb04b2a82ff",
+      "status" : "broken",
+      "time" : {
+        "start" : 1648188196659,
+        "stop" : 1648188196659,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "testcases.api_test.test_07_item"
+  } ]
+}

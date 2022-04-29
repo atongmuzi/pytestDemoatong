@@ -1,0 +1,60 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success",
+      "children" : [ {
+        "name" : "test_trade_preorder",
+        "uid" : "92dbc7bab78f3780",
+        "parentUid" : "ab69b13a00db4b128cae30a5f3f425bd",
+        "status" : "failed",
+        "time" : {
+          "start" : 1648188196455,
+          "stop" : 1648188196455,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_trade_wx_preorder",
+        "uid" : "c310cdea05c2ad34",
+        "parentUid" : "ab69b13a00db4b128cae30a5f3f425bd",
+        "status" : "failed",
+        "time" : {
+          "start" : 1648188196572,
+          "stop" : 1648188196637,
+          "duration" : 65
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ab69b13a00db4b128cae30a5f3f425bd"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'TestTradePreItem' object has no attribute 'order_no_status'",
+      "children" : [ {
+        "name" : "test_trade_confirm",
+        "uid" : "a0361b13c52acea9",
+        "parentUid" : "1a5c504223a7189bcd4bbab212f43bb7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1648188196659,
+          "stop" : 1648188196659,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1a5c504223a7189bcd4bbab212f43bb7"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

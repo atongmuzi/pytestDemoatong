@@ -60,7 +60,6 @@ class TestTradePreItem:
         logger.info("*************** 结束执行用例 *************** /n")
 
     @allure.story("实时查看盒子状态--选取未被占用的盒子")
-    @pytest.fixture()
     def test_item_status(self):
         """实时查看盒子状态--选取未被占用的盒子"""
         step_2()

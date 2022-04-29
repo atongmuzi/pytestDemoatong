@@ -8,12 +8,13 @@ from common.logger import logger
 
 @allure.step("步骤1 ==>> 获取所有用户信息")
 def step_1():
-    logger.info("步骤1 ==>> 获取所有用户信息")
+    logger.info("步骤1 ==>> 获取所有用户信息".f)
 
 
 @allure.step("步骤1 ==>> 获取某个用户信息")
 def step_2(username):
     logger.info("步骤1 ==>> 获取某个用户信息：{}".format(username))
+    logger.info("dd".format())
 
 
 @allure.severity(allure.severity_level.TRIVIAL)
@@ -37,7 +38,7 @@ class TestGetUserInfo():
         text = result.response.text
         textjson = json.loads(text)
         favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', }
-        for name,language in favorite_languages.items():
+        for name, language in favorite_languages.items():
             print(name.title())
             print(language.title())
 

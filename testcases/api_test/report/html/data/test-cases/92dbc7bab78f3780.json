@@ -1,0 +1,142 @@
+{
+  "uid" : "92dbc7bab78f3780",
+  "name" : "test_trade_preorder",
+  "fullName" : "testcases.api_test.test_07_item.TestTradePreItem#test_trade_preorder",
+  "historyId" : "c02eae2e1b70ef4224bba75ee80d1fd1",
+  "time" : {
+    "start" : 1648188196455,
+    "stop" : 1648188196455,
+    "duration" : 0
+  },
+  "description" : "预下单---》支付预下单-->未选择支付方式前",
+  "descriptionHtml" : "<p>预下单---》支付预下单--&gt;未选择支付方式前</p>\n",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success",
+  "statusTrace" : "self = <testcases.api_test.test_07_item.TestTradePreItem object at 0x10c382f98>\n\n    @allure.story(\"实时查看盒子状态--选取未被占用的盒子\")\n    @pytest.fixture()\n    def test_item_status(self):\n        \"\"\"实时查看盒子状态--选取未被占用的盒子\"\"\"\n        step_2()\n        item_id = TestTradePreItem.item_id\n        box_no = itemSelect.box_no\n        logger.info(\"*************** 开始执行用例 ***************\")\n        result = item_status(item_id, box_no)\n>       assert result.success is True, result.error\nE       AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nE       assert False is True\nE        +  where False = <class 'core.result_base.ResultBase'>.success\n\ntest_07_item.py:71: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "test_item_status",
+    "time" : {
+      "start" : 1648188196456,
+      "stop" : 1648188196482,
+      "duration" : 26
+    },
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success\n",
+    "statusTrace" : "  File \"/Users/apple/Documents/atong/pythontest/pytestDemo/venv/lib/python3.7/site-packages/pluggy/callers.py\", line 187, in _multicall\n    res = hook_impl.function(*args)\n  File \"/Users/apple/Documents/atong/pythontest/pytestDemo/venv/lib/python3.7/site-packages/_pytest/fixtures.py\", line 937, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n  File \"/Users/apple/Documents/atong/pythontest/pytestDemo/venv/lib/python3.7/site-packages/_pytest/fixtures.py\", line 794, in call_fixture_func\n    res = fixturefunc(**kwargs)\n  File \"/Users/apple/Documents/atong/pythontest/pytestDemo/testcases/api_test/test_07_item.py\", line 71, in test_item_status\n    assert result.success is True, result.error\n",
+    "steps" : [ {
+      "name" : "步骤2：盲盒的最新状态",
+      "time" : {
+        "start" : 1648188196456,
+        "stop" : 1648188196456,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  }, {
+    "name" : "testcase_data",
+    "time" : {
+      "start" : 1648188196456,
+      "stop" : 1648188196456,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "预下单---》支付预下单-->未选择支付方式前",
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nassert False is True\n +  where False = <class 'core.result_base.ResultBase'>.success",
+    "statusTrace" : "self = <testcases.api_test.test_07_item.TestTradePreItem object at 0x10c382f98>\n\n    @allure.story(\"实时查看盒子状态--选取未被占用的盒子\")\n    @pytest.fixture()\n    def test_item_status(self):\n        \"\"\"实时查看盒子状态--选取未被占用的盒子\"\"\"\n        step_2()\n        item_id = TestTradePreItem.item_id\n        box_no = itemSelect.box_no\n        logger.info(\"*************** 开始执行用例 ***************\")\n        result = item_status(item_id, box_no)\n>       assert result.success is True, result.error\nE       AssertionError: 接口的返回码：【-1】，接口返回的信息：user.error.no_login\nE       assert False is True\nE        +  where False = <class 'core.result_base.ResultBase'>.success\n\ntest_07_item.py:71: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e85819b3abe191ab",
+      "name" : "log",
+      "source" : "e85819b3abe191ab.txt",
+      "type" : "text/plain",
+      "size" : 834
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "针对单个接口的测试"
+  }, {
+    "name" : "severity",
+    "value" : "trivial"
+  }, {
+    "name" : "story",
+    "value" : "预下单--获取下单前的一些关键信息"
+  }, {
+    "name" : "feature",
+    "value" : "盲盒详情"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases.api_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_07_item"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestTradePreItem"
+  }, {
+    "name" : "host",
+    "value" : "tongchunyan.local"
+  }, {
+    "name" : "thread",
+    "value" : "64252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.api_test.test_07_item"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "trivial",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "92dbc7bab78f3780.json",
+  "parameterValues" : [ ]
+}
