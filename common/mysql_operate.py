@@ -59,5 +59,5 @@ class MysqlDb():
 
 
 db = MysqlDb(DB_CONF)
-sql = "select * from recommend_ip_id where id = 1"
-db.select_db(sql)
+# sql = "select * from recommend_ip_id where id = 1"
+# db.select_db(sql)

@@ -44,15 +44,31 @@ class DevelopmentConfig(Config):  # 测试环境
     MYSQL_DB = "pookie"
 
 
+class LocalHostConfig(Config):
+    # url地址
+    api_root_url = "https://testapi.pookie.com.cn"
+    # redis 地址配置
+    redis_host = "192.168.4.4"
+    redis_port = 6379
+    redis_pwd = "0.123abc"
+    # mysql 地址配置
+    MYSQL_HOST = "127.0.0.1"
+    MYSQL_PORT = 3306
+    MYSQL_USER = "root"
+    MYSQL_PASSWD = "123456"
+    MYSQL_DB = "test"
+
+
 # 环境映射关系
 mapping = {
     'development': DevelopmentConfig,
     'production': ProductionConfig,
-    'default': DevelopmentConfig
+    'default': DevelopmentConfig,
+    'local': LocalHostConfig
 }
 #
 # 一键切换环境
-APP_ENV = os.environ.get('APP_ENV', 'default').lower()  # 设置环境变量为default
+APP_ENV = os.environ.get('APP_ENV', 'local').lower()  # 设置环境变量为default
 config = mapping[APP_ENV]()  # 获取指定的环境
 
 # 根据脚本参数，来决定用那个环境配置

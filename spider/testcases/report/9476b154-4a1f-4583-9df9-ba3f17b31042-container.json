@@ -1,0 +1,1 @@
+{"uuid": "7bb16291-dd15-41de-bdb4-ce54223d7591", "children": ["5dd2465b-67c7-4cff-a7b2-ca78ca045cd3", "2dc2b3c4-d158-4341-8690-e957868915f1"], "befores": [{"name": "fund_info_delete", "status": "passed", "start": 1652151328609, "stop": 1652151328610}], "start": 1652151328609, "stop": 1652151328878}
