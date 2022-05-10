@@ -60,3 +60,17 @@ def fund_csv_header_write():
         header_list = ['基金代码', '更新日期', '基金净值', '涨跌幅']
         writer = csv.writer(f)
         writer.writerow(header_list)
+
+
+@pytest.fixture(scope="session")
+def movie_csv_header_write():
+    """
+        在csv写入数据之前，先写入表格头部
+    """
+    with open("result.csv", "w")as f:
+        header_list = ['更新日期', '名字', '链接', '译名', '片名', '年代', '产地', '类别']
+        # 先清空文件
+        f.truncate()
+        # 写入表格头部
+        writer = csv.writer(f)
+        writer.writerow(header_list)
