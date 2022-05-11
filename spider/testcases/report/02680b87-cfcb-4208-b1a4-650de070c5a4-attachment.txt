@@ -1,1 +1,0 @@
-INFO     log:mysql_operate.py:56 操作MySQL出现错误，错误原因：(1054, "Unknown column '1er' in 'field list'")

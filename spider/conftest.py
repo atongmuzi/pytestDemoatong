@@ -67,7 +67,7 @@ def movie_csv_header_write():
     """
         在csv写入数据之前，先写入表格头部
     """
-    with open("result.csv", "w")as f:
+    with open("movie_test/result/result.csv", "w")as f:
         header_list = ['更新日期', '名字', '链接', '译名', '片名', '年代', '产地', '类别']
         # 先清空文件
         f.truncate()

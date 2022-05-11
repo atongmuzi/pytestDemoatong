@@ -1,0 +1,1 @@
+[2022-05-11 15:02:55,541][mysql_operate.py 56][INFO]: 操作MySQL出现错误，错误原因：(1406, "Data too long for column 'movie_name' at row 1")

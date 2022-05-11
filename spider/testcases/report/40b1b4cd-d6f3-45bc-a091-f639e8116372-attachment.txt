@@ -1,1 +1,0 @@
-[2022-05-09 10:51:07,713][mysql_operate.py 56][INFO]: 操作MySQL出现错误，错误原因：(1136, "Column count doesn't match value count at row 1")

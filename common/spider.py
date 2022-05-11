@@ -2,6 +2,7 @@ from urllib import request
 from fake_useragent import UserAgent
 from common.mysql_operate import db
 import csv
+import re
 
 
 # 定义一个爬虫类
@@ -25,6 +26,11 @@ class Spider:
         with open(filename, write_type, newline='')as f:
             writer = csv.writer(f)
             writer.writerow(result)
+
+    # 匹配正则表达式、返回结果
+    def patton_result(self, patton_ex, html):
+        patton = re.compile(patton_ex, re.S)
+        return patton.findall(html)
 
     # 操作数据库
     def db_operate(self, sql):
