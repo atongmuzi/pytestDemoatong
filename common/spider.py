@@ -9,11 +9,11 @@ import re
 class Spider:
 
     # 请求url，得到页面，传统三步
-    def get_html(self, url):
+    def get_html(self, url, encoding_type):
         ua = UserAgent().chrome
         req = request.Request(url=url, headers={'User-Agent': ua})
         res = request.urlopen(req)
-        html = res.read().decode('GBK')
+        html = res.read().decode(encoding_type)
         return html
 
     # 保存文件函数
