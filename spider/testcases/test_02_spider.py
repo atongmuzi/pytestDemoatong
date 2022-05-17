@@ -1,5 +1,6 @@
 import re
 from common.spider import spider
+from spider.testcases.novel.novel import lunyu_charper
 import pytest
 from spider.testcases.movie_test.new_movie_serch import one_level_serch
 
@@ -11,3 +12,7 @@ class TestMovieSpider:
             url = 'https://www.dytt8.net/html/gndy/dyzz/list_23_{}.html'.format(i)
             one_level_serch(url)
             i += 1
+
+    def test_novel_parse(self):
+        url = 'http://www.jjwxc.net/onebook.php?novelid=6102782'
+        lunyu_charper(url)
