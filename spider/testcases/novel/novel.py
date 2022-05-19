@@ -23,18 +23,31 @@ def lunyu_charper(url):
     # 书写xpath表达式,提取文本最终使用text()
     # xpath_bds = '//div/div[4]/ul/li/a/text()|//div[4]/ul/li/a/@href'
     xpath_bds_name = '//*[@id="oneboolt"]/tbody/tr/td/span/div/a/text()'
-    xpath_bds_link = '//*[@id="oneboolt"]/tbody/tr/td/span/div/a/@href'
+    xpath_bds_link = '//*[@id="oneboolt"]/tbody/tr/td/span/div/a/@href|//*[@id="oneboolt"]/tbody/tr/td/span/div[1]/a[' \
+                     '@itemprop="url"]/@rel '
     # 提取文本数据，以列表形式输出
     r_List_name = parse_html.xpath(xpath_bds_name)
     r_list_link = parse_html.xpath(xpath_bds_link)
     # 打印数据列表
     for i in range(len(r_List_name)):
         html_content = spider.get_request_html(r_list_link[i], 'gb18030', headers)
-        # 创建解析对象
-        parse_html_content = etree.HTML(html_content)
-        # 书写xpath表达式，提取文本最终使用text()
-        xpath_bds = '//*[@id="oneboolt"]/tbody/tr[2]/td[1]/div/text()'
-        # 提取文本数据，以列表形式输出
-        r_list_content = parse_html_content.xpath(xpath_bds)
-        spider.save_csv("novel.csv", [r_List_name[i], r_list_link[i], r_list_content], 'a')
+        spider.save_html("novel_new.html", html_content, 'w')
+        # 标题存入txt
+        spider.save_html("三嫁咸鱼.txt", r_List_name[i], 'a')
+        # 匹配文本的第一行内容
+        re_list_first = spider.patton_result(
+            r'<div style="clear:both;"></div>(.*?)<br><br>', html_content)
+        # 第一行存入txt
+        spider.save_html("三嫁咸鱼.txt", re_list_first[0], 'a')
+        # 匹配文本的2到n-1行内容
+        re_list = spider.patton_result(
+            r'<br><br>(.*?)<br><br>', html_content)
+        for r in re_list:
+            spider.save_html("三嫁咸鱼.txt", r, 'a')
+        # 匹配文本的最后一行内容
+        re_list_last = spider.patton_result(
+            r'{}<br><br>(.*?)<div id="favoriteshow_3"'.format(re_list[len(re_list)-1]), html_content)
+        # 最后一行存入txt
+        if re_list_last:
+            spider.save_html("三嫁咸鱼.txt", re_list_last[0], 'a')
         i += 1

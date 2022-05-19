@@ -35,13 +35,21 @@ class Spider:
 
     def get_request_html(self, url, encoding_type, headers):
         # 使用requests模块得到响应对象,三个参数
-        ua = UserAgent().chrome
         res = requests.get(url, headers=headers)
         # 更改编码格式
         res.encoding = encoding_type
         # 得到html网页
         html = res.text
         return html
+
+    def post_request(self, url, data, headers):
+        # post请求
+        res = requests.post(
+            url=url,
+            data=data,
+            headers=headers,
+        )
+        return res
 
     # 保存文件函数
     def save_html(self, filename, html, write_type):

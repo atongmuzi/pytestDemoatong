@@ -1,0 +1,642 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>SuperDiamond 配置管理服务器</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link href='/superdiamond/resources/css/bootstrap/css/bootstrap.min.css' rel="stylesheet">
+    	<script type="text/javascript" src='/superdiamond/resources/js/jquery.min.js'></script>
+    	<script type="text/javascript" src='/superdiamond/resources/js/bootstrap.min.js'></script>
+    	<script type="text/javascript" src='/superdiamond/resources/js/bootbox.min.js'></script>
+    	<script type="text/javascript" src='/superdiamond/resources/js/bootstrap-paginator.min.js'></script>
+    	<style type="text/css">
+	      	body {
+	        	padding-top: 60px;
+	       	 	padding-bottom: 40px;
+	      	}
+	      	.sidebar-nav {
+	       		padding: 9px 0;
+	      	}
+	      	.table td {
+			    line-height: 16px;
+			    font-size: 12px;
+			    padding: 4px;
+			}
+			.form-horizontal .control-label {
+			 	width: 100px
+			}
+			
+			.form-horizontal .controls {
+			    margin-left: 120px;
+			}
+			.input-xlarge {
+				width: 360px
+			}
+			.search-btn {
+				margin-bottom: 10px;
+			}
+	    </style>
+	    <script type="text/javascript">
+		  	$(document).ready(function () {
+		  		var menuId = $("#pageId").val();
+				$("#" + menuId).addClass("active");
+		  	});
+		</script>
+	    
+	</head>
+
+  	<body>
+    	<div class="navbar navbar-inverse navbar-fixed-top">
+      		<div class="navbar-inner">
+        		<div class="container">
+          			<a class="brand" href="/superdiamond/index">SuperDiamond 配置管理服务器</a>
+          			<div class="pull-right">
+          				<p class="navbar-text">
+          					欢迎：admin&nbsp;&nbsp;&nbsp;
+          					<a href='/superdiamond/logout'>注销</a>
+          				</p>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+
+    	<div class="container">
+			
+
+
+<a class="brand" href="/superdiamond/index">首页</a> >> <b>pookie-app - development</b>
+<div class="pull-right">
+	<input type="text" name="keyName" id="keyName" placeholder="模糊搜索key值" value='user_check.white_user'/>
+	<button type="button" id="searchBtn" class="btn btn-primary search-btn">搜索</button>
+</div>
+<br/><br/>
+<b>模块：</b>
+<select id="sel-queryModule">
+	<option value="">全部</option>
+	
+		<option value='737'>default</option>
+	
+		<option value='738'>security</option>
+	
+		<option value='742'>oss</option>
+	
+</select>
+<!-- <button type="button" id="queryModule" class="btn btn-primary">查询</button> -->
+
+	 <a id="addModule" href="javascript:void(0)">添加Module</a> 
+	 <a id="delModule" href="javascript:void(0)">删除Module</a> 
+
+<!-- <a id="deleteModule" href="javascript:void(0)">删除Module</a> -->
+<div class="pull-right">
+	<button type="button" class="btn btn-primary" onclick="exportAllConfigs(167);">导出配置</button>
+	
+		<button type="button" id="importModule" class="btn btn-primary">导入配置</button>
+		<button type="button" onclick="addModuleTemplate('167');" class="btn btn-primary">导入模版</button>
+		<button type="button" id="addConfig" class="btn btn-primary">添加配置</button>
+	
+	<button type="button" id="preview" class="btn btn-primary">预览</button>
+</div>
+
+<div id="addModalWin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 id="myModalLabel">添加Module</h3>
+  	</div>
+  	<div class="modal-body">
+    	<form id="moduleForm" class="form-horizontal" action='/superdiamond/module/save' method="post">
+  			<div class="control-group">
+    			<label class="control-label">名称：</label>
+    			<div class="controls">
+    				<input type="hidden" name="projectId" value='167'/>
+    				<input type="hidden" name="type" value='development'/>
+    				<input type="hidden" name="page" value='1'/>
+      				<input type="text" id="addModuleName" name="name" class="input-large"> <span id="addTip" style="color: red"></span>
+    			</div>
+  			</div>
+		</form>
+  	</div>
+  	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    	<button class="btn btn-primary" id="saveModule">保存</button>
+  	</div>
+</div>
+
+<div id="importModuleWin" style="width:700px" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 id="myModalLabel">请选择module模板文件</h3>
+  	</div>
+  	<div class="modal-body">
+		<form class="form-horizontal" action='/superdiamond/importModule' enctype="multipart/form-data"  method="post" id="importModuleForm">
+            <input type="file" name="file" id="moduleExcel"/>
+            <input type="hidden" name="type" value='development'/>
+            <input type="hidden" name="projectId" value='167'/>
+        </form>
+  	</div>
+  	<div class="modal-footer">
+  		<span id="fileUploadConfigTip" style="color: red"></span>
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    	<button class="btn btn-primary" id="submitModule">上传</button>
+  	</div>
+</div>
+<div id="addConfigWin" style="width:700px" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 id="myModalLabel">参数配置</h3>
+  	</div>
+  	<div class="modal-body">
+    	<form id="configForm" class="form-horizontal" action='/superdiamond/config/save' method="post">
+  			<div class="control-group">
+  				<!-- 记录defaultModule的id -->
+  				
+					
+						<input type="hidden" id="defaultModule" value="737"/>
+					
+				
+					
+				
+					
+				
+  				<label class="control-label">模块：</label>
+    			<div class="controls">
+    				<select class="input-xxlarge" name="moduleId" id="config-moduleId">
+						<!-- <option value="">请选择...</option> -->
+						
+							<!-- 只显示default module -->
+							<option value='737'>default</option>
+						
+							<!-- 只显示default module -->
+							<option value='738'>security</option>
+						
+							<!-- 只显示default module -->
+							<option value='742'>oss</option>
+						
+					</select>
+    			</div>
+    			<label class="control-label">资源类型：</label>
+    			<div class="controls">
+    				<select class="input-xxlarge" name="configType" id="config-configType">
+						<option value="CONFIG">CONFIG</option>
+						<option value="DRM">DRM</option>
+					</select>
+    			</div>
+    			<label class="control-label">可见性：</label>
+    			<div class="controls">
+    				<select class="input-xxlarge" name="visableType" id="config-visableType">
+						<option value="PUBLIC">PUBLIC</option>
+						<option value="PRIVATE">PRIVATE</option>
+					</select>
+    			</div>
+    			<label class="control-label">Config Key：</label>
+    			<div class="controls">
+    				<input type="hidden" name="configId" id="config-configId" />
+    				<input type="hidden" name="projectId" value='167'/>
+    				<input type="hidden" name="type" value='development'/>
+    				<input type="hidden" name="page" value='1'/>
+    				<input type="hidden" name="selModuleId" value=''/>
+    				<input type="hidden" name="flag" id="config-flag"/>
+					<input type="hidden" name="keyName" value='user_check.white_user'/>
+					<input type="text" name="configKey" class="input-xxlarge" id="config-configKey">
+    			</div>
+    			<label class="control-label">Config Value：</label>
+    			<div class="controls">
+    				<textarea rows="8" name="configValue" class="input-xxlarge" id="config-configValue"></textarea>
+    			</div>
+    			<label class="control-label">描述：</label>
+    			<div class="controls">
+      				<textarea rows="2" class="input-xxlarge" name="configDesc" id="config-configDesc"></textarea>
+    			</div>
+  			</div>
+		</form>
+  	</div>
+  	<div class="modal-footer">
+  		<span id="configTip" style="color: red"></span>
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    	<button class="btn btn-primary" id="saveConfig">保存</button>
+    	<button class="btn btn-primary" id="saveConfigExt">保存继续添加</button>
+  	</div>
+</div>
+<!-- add by kanguangwen -->
+<div id="pushConfigWin" style="width:700px" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h5 id="myModalLabel">MODULE:<font color="read"><span id="moduleValue"></span></font> KEY:<font color="read"><span id="keyValue"></span></font>
+    	 VALUE:<font color="read"><span id="globalValue"></span></font> newValue:&nbsp;<input type="text" id="newValue"/></h5>
+  	</div>
+  	<div class="modal-body">
+    	<table class="table table-striped table-bordered">
+		  	<thead>
+		    	<tr>
+		    		<th width="60">客户端类型</th>
+		    		<th width="90">客户端地址</th>
+		    		<th width="90">连接时间</th>
+		    		<th width="90">最后心跳时间</th>
+		    		<th width="50">项目名称</th>
+		      		<th width="50">操作</th>
+		    	</tr>
+		  	</thead>
+		  	<tbody id="clientInfos"></tbody>
+		</table>
+  	</div>
+</div>
+<div id="clientInfosWin" style="width:700px" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3>客户端列表</h3>
+  	</div>
+  	<div class="modal-body">
+    	<table class="table table-striped table-bordered">
+		  	<thead>
+		    	<tr>
+		    		<th width="20%">客户端类型</th>
+		    		<th width="20%">客户端地址</th>
+		    		<th width="20%">连接时间</th>
+		    		<th width="20%">最后心跳时间</th>
+		    		<th width="20%">项目名称</th>
+		    	</tr>
+		  	</thead>
+		  	<tbody id="showClientInfos"></tbody>
+		</table>
+  	</div>
+</div>
+
+<table class="table table-striped table-bordered">
+  	<thead>
+    	<tr>
+    		<th width="50">Module</th>
+      		<th width="50">Key</th>
+      		<th>Value</th>
+      		<th width="100">描述</th>
+      		<th width="70">配置类型</th>
+      		<th width="50">可见性</th>
+      		<th width="45">操作人</th>
+      		<th width="120">操作时间</th>
+      		<th width="200">操作</th>
+    	</tr>
+  	</thead>
+  	<tbody>
+    	
+    		<tr id='row-6172'>
+               	<td value='737'>
+                  	default
+               	</td>
+               	<td value='user_check.white_user'>
+               		user_check.white_user
+               	</td>
+               	
+               	
+	               	<td title='1852,1853,1855,1857,1858,1860,1649,1815,1087,1187,1862,1854,1866,1867,1868,1869,1870,1575,1861,1872,1871,1873,1874,1877,1875,1878,1879,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1327,1892,1893,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1652,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1789,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,1876,1816,1812,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2074,2075,1023,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2087,2088,2089,2087,2088,2089' >
+	                  	<script type="text/javascript">
+	                  		var value = '1852,1853,1855,1857,1858,1860,1649,1815,1087,1187,1862,1854,1866,1867,1868,1869,1870,1575,1861,1872,1871,1873,1874,1877,1875,1878,1879,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1327,1892,1893,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1652,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1789,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,1876,1816,1812,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2074,2075,1023,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2087,2088,2089,2087,2088,2089';
+	                  		if(value.length > 30)
+	                  			document.write(value.substring(0, 30) + "...");
+	                  		else
+	                  			document.write(value);
+	                  	</script>
+	               	</td>
+               	
+               	<td title='' >
+                  	<script type="text/javascript">
+                  		var value = '';
+                  		if(value.length > 15)
+                  			document.write(value.substring(0, 15) + "...");
+                  		else
+                  			document.write(value);
+                  	</script>
+               	</td>
+               	<td title='DRM'>
+                  	DRM
+               	</td>
+               	<td title='PUBLIC'>
+                  	PUBLIC
+               	</td>
+               	<td>
+                  	admin
+               	</td>
+               	<td>
+                  	2022-05-19 15:24:41.0
+               	</td>
+               	<td>
+               		
+                  		<a class="deleteConfig" href='/superdiamond/config/delete/6172?projectId=167&type=development&moduleName=default' title="删除"><i class="icon-remove"></i></a>&nbsp;&nbsp;
+	                  	<a href='javascript:updateConfig(6172)' title="更新"><i class="icon-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  		<!-- 为DRM资源才显示推送按钮 -->	
+	                  	
+	                  	<!-- add by kanguangwen -->
+							<button type="button" onclick="pushGlobalConfig('167','default','user_check.white_user');" class="btn btn-primary">全推</button>&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="button" onclick="pushPartConfig('167','default','user_check.white_user','1852,1853,1855,1857,1858,1860,1649,1815,1087,1187,1862,1854,1866,1867,1868,1869,1870,1575,1861,1872,1871,1873,1874,1877,1875,1878,1879,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1327,1892,1893,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1652,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1789,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,1876,1816,1812,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2074,2075,1023,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2087,2088,2089,2087,2088,2089');" class="btn btn-primary">局推</button>
+	                  	
+	                  	<!-- 为CONFIG资源显示ip列表 -->
+	                  	
+                  	
+                  	
+               	</td>
+          	</tr>
+     	
+	</tbody>
+</table>
+
+
+
+<script type="text/javascript">
+function updateConfig(id) {
+	var tds = $("#row-" + id + " > td");
+	$("#config-moduleId").val($(tds.get(0)).attr("value"));
+	$("#config-configKey").val($(tds.get(1)).attr("value"));
+	$("#config-configValue").val($(tds.get(2)).attr("title"));
+	$("#config-configDesc").val($(tds.get(3)).attr("title"));
+	$("#config-configType").val($(tds.get(4)).attr("title"));
+	$("#config-visableType").val($(tds.get(5)).attr("title"));
+	$("#config-configId").val(id);
+	
+	$('#addConfigWin').modal({
+		backdrop: false
+	})
+}
+//add by kanguangwen
+//打开推送客户端列表
+function pushPartConfig(projectId,moduleName,configKey,configValue){
+	var pushInfo = "'"+projectId+"',"+"'development',"+"'"+moduleName+"',"+"'"+configKey+"'";
+	var temp;
+	//获取最新的客户端连接列表
+	$.ajax({
+		  url: '/superdiamond/profile/'+projectId+'/development/'+moduleName,
+		  type: 'POST',
+		  dataType: 'html',
+		  success: function(data, textStatus, xhr) {
+				//字符串转换成json对象
+			    var clientInfos = eval('(' + data + ')');
+			  	var text;
+				for(var clientInfo in clientInfos){
+					temp = pushInfo;
+					temp += (",'"+clientInfos[clientInfo].address+"'")
+					text += ('<tr><td>'+
+					clientInfos[clientInfo].clientType
+			        +'</td><td>'+
+					clientInfos[clientInfo].address
+			        +'</td><td>'+
+					clientInfos[clientInfo].connTime
+			        +'</td><td>'+
+					clientInfos[clientInfo].lastConnTime
+			        +'</td><td>'+
+					clientInfos[clientInfo].projectName
+			        +'</td><td><button class=\"btn btn-primary\" onclick=\"pushAction('+temp+');\">推送</button></td></tr>')
+				}
+				//展现客户端连接列表
+				$("#clientInfos").html('');
+				$("#clientInfos").append(text);
+		  }
+	});
+	$("#moduleValue").text(moduleName);
+	$("#keyValue").text(configKey);
+	$("#globalValue").text(configValue);
+
+	$('#pushConfigWin').modal({
+		backdrop: true
+	})		 
+}
+//展示CONFIG客户端列表
+function showClientInfos(projectId,moduleName){
+	//获取最新的客户端连接列表
+	$.ajax({
+		  url: '/superdiamond/profile/'+projectId+'/development/'+moduleName,
+		  type: 'POST',
+		  dataType: 'html',
+		  success: function(data, textStatus, xhr) {
+				//字符串转换成json对象
+			    var clientInfos = eval('(' + data + ')');
+			  	var text;
+				for(var clientInfo in clientInfos){
+					text += ('<tr><td>'+
+					clientInfos[clientInfo].clientType
+			        +'</td><td>'+
+					clientInfos[clientInfo].address
+			        +'</td><td>'+
+					clientInfos[clientInfo].connTime
+			        +'</td><td>'+
+					clientInfos[clientInfo].lastConnTime
+			        +'</td><td>'+
+					clientInfos[clientInfo].projectName
+			        +'</td></tr>')
+				}
+				//展现客户端连接列表
+				$("#showClientInfos").html('');
+				$("#showClientInfos").append(text);
+		  }
+	});
+
+	$('#clientInfosWin').modal({
+		backdrop: true
+	})		 
+}
+//向客户端推送单个配置项
+function pushAction(projectId,profile,moduleName,configKey,clientAddress){
+	if($("#newValue").val() == ''){
+		alert('请输入要推送的数据!');
+		return;
+	}
+    bootbox.confirm("确认推送? 推送后<font color=\"read\">"+clientAddress+"</font>所对应的客户端数据将被替换为<font color=\"read\">"+$("#newValue").val()+"</font>", function(confirmed) {
+    	if(confirmed){
+    		$.ajax({
+    			  url: '/superdiamond/partPush/'+projectId+'/development/'+moduleName,
+    			  type: 'POST',
+    			  dataType: 'html',
+    			  data: {clientAddress: clientAddress,configKey:configKey,configValue: $("#newValue").val()},
+    			  success: function(data, textStatus, xhr) {
+    					//字符串转换成json对象
+    					if(data != ''){
+    						//简单的alert出推送失败的服务器信息
+    						alert(data);
+    					}else{
+    						alert('推送触发成功!');
+    					}
+    			  }
+    		});
+    	}
+    });
+    return false;
+}
+
+
+function pushGlobalConfig(projectId,moduleName,configKey){
+	 bootbox.confirm("确认全局推送? 推送后订阅<font color=\"read\">"+configKey+"</font>的所有客户端数据将被替换！", function(confirmed) {
+	    	if(confirmed){
+	    		$.ajax({
+	    			  url: '/superdiamond/globalPush/'+projectId+'/development/'+moduleName,
+	    			  type: 'POST',
+	    			  dataType: 'html',
+	    			  data: {configKey: configKey},
+	    			  success: function(data, textStatus, xhr) {
+	    					//字符串转换成json对象
+	    					if(data != ''){
+	    						//简单的alert出推送失败的服务器信息
+	    						alert(data);
+	    					}else{
+	    						alert('推送触发成功!');
+	    					}
+	    			  }
+	    		});
+	    	}
+	    });
+	    return false;
+}
+
+
+function addModuleTemplate(projectId){
+	window.open('/superdiamond/moduleManage/moduleList?page=1&projectId='+projectId,'模版列表','height=500,width=1000,top=100,left=150,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no,z-look=yes')
+}
+	
+//导出配置到Excel文件
+function exportAllConfigs(projectId){
+	window.location.href="/superdiamond/exportAllConfig/development?projectId="+projectId;
+}
+
+$(document).ready(function () {
+	$("#sel-queryModule").val();
+	
+	$("#preview").click(function(e) {
+		window.location.href = '/superdiamond/profile/preview/pookie-app/development?projectId=167';
+	});
+	
+	$("a.deleteConfig").click(function(e) {
+	    e.preventDefault();
+	    bootbox.confirm("确定删除配置项，删除之后不可恢复！", function(confirmed) {
+	    	if(confirmed)
+	    		window.location.href = $(e.target).parent().attr("href");
+	    });
+	    
+	    return false;
+	});
+	
+	$("#sel-queryModule").change(function(e) {
+		var moduleId = $("#sel-queryModule").val();
+		var url = '/superdiamond/profile/development/167';
+		if(moduleId)
+			url = url + "?moduleId=" + moduleId;
+		
+		window.location.href = url;
+	});
+	
+	$("#queryModule").click(function(e) {
+		var moduleId = $("#sel-queryModule").val();
+		var url = '/superdiamond/profile/development/167';
+		if(moduleId)
+			url = url + "?moduleId=" + moduleId;
+		
+		window.location.href = url;
+	});
+	
+	$("#addModule").click(function(e) {
+		$('#addModalWin').modal({
+			keyboard: false
+		})
+	});
+	
+	$("#delModule").click(function(e) {
+		var moduleId = $("#sel-queryModule").val();
+		if(moduleId) {
+			window.location.href = '/superdiamond/module/delete/development/167/' + moduleId;
+		} else {
+			bootbox.alert("请选择一个模块！");
+		}
+	});
+	
+	$("#saveModule").click(function(e) {
+		if(!$("#addModuleName").val()) {
+			$("#addTip").text("不能为空");
+		} else {
+			$("#moduleForm")[0].submit();
+		}
+	});
+	
+	$("#addConfig").click(function(e) {
+		$("#config-moduleId").val($("#defaultModule").val());
+		$('#addConfigWin').modal({
+			backdrop: true
+		})
+	});
+	//显示导入模板的页面
+	$("#importModule").click(function(e) {
+		$('#importModuleWin').modal({
+			backdrop: true
+		})
+	});
+	//提交Excel文件
+	$("#submitModule").click(function(e) {
+		if(!$("#moduleExcel").val()) {
+			$("#fileUploadConfigTip").text("请选择Excel文件!");
+		} else {
+			$("#importModuleForm")[0].submit();
+		}
+	});
+	
+	$("#saveConfig").click(function(e) {
+		if(!$("#config-moduleId").val()) {
+			$("#configTip").text("模块不能为空");
+		} else if(!$("#config-configKey").val()) {
+			$("#configTip").text("configKey不能为空");
+		} else if(!$("#config-configValue").val()) {
+			$("#configTip").text("configValue不能为空");
+		} else {
+			$("#configForm")[0].submit();
+		}
+	});
+	
+	$("#saveConfigExt").click(function(e) {
+		$("#config-flag").val("con");
+		if(!$("#config-moduleId").val()) {
+			$("#configTip").text("模块不能为空");
+		} else if(!$("#config-configKey").val()) {
+			$("#configTip").text("configKey不能为空");
+		} else if(!$("#config-configValue").val()) {
+			$("#configTip").text("configValue不能为空");
+		} else {
+			$("#configForm")[0].submit();
+		}
+	});
+	
+	var flag = "null";
+	if(flag == "con") {
+		$("#addConfig").click();
+	}
+
+	$('#searchBtn').click(function () {
+	    var keyName = $('#keyName').val();
+        window.location.href = "/superdiamond/profile/development/167?page=1&moduleId=&keyName=" + keyName;
+    });
+});
+</script>
+			<div id="paginator"></div>
+			<span class="label label-success">Versions: 
+				
+					769
+				
+				
+				
+				
+			</span>
+    	</div>
+    	
+  	</body>
+</html>
+<script type='text/javascript'>
+    var options = {
+    	size: "small",
+    	alignment:"right",
+    	totalPages: 1,
+        currentPage: 1,
+        pageUrl: function(type, page, current){
+            return "/superdiamond/profile/development/167?page="+page+"&moduleId=&keyName=user_check.white_user";
+        }
+    };
+    $('#paginator').bootstrapPaginator(options);
+	$('body').keydown(function(e){
+		var e = e || window.event;
+		if(e.keyCode == 13){
+		$('#searchBtn').click();
+		}
+	});
+</script>

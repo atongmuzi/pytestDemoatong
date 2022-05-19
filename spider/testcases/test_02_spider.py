@@ -3,6 +3,7 @@ from common.spider import spider
 from spider.testcases.novel.novel import lunyu_charper
 import pytest
 from spider.testcases.movie_test.new_movie_serch import one_level_serch
+from spider.testcases.admin.admin_api import admin
 
 
 class TestMovieSpider:
@@ -14,5 +15,9 @@ class TestMovieSpider:
             i += 1
 
     def test_novel_parse(self):
-        url = 'http://www.jjwxc.net/onebook.php?novelid=6102782'
+        url = 'http://www.jjwxc.net/onebook.php?novelid=4735894'
         lunyu_charper(url)
+
+    def test_admin_modify(self):
+        admin.admin_modify_api()
+
