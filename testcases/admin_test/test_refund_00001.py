@@ -14,7 +14,7 @@ class TestAdminRefund:
     @allure.issue("https://www.cnblogs.com/wintest", name="点击，跳转到对应BUG的链接地址")
     @allure.testcase("https://www.cnblogs.com/wintest", name="点击，跳转到对应用例的链接地址")
     def test_refund_userID(self):
-        sql = "select order_no from user_order where user_id =1528 and" \
+        sql = "select order_no from user_order where user_id =2048 and" \
               " status not in(0,30,31,300) and real_price >= 0.02 limit 2 "
         data = db.select_db(sql)
         logger.info("data===>{}".format(data))

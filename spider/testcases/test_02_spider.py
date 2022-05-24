@@ -19,5 +19,5 @@ class TestMovieSpider:
         lunyu_charper(url)
 
     def test_admin_modify(self):
-        admin.admin_modify_api()
+        admin.modify_login_white_phone_api('13656199033')
 
