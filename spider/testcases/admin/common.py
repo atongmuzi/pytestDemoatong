@@ -42,7 +42,7 @@ def admin_white_user_list_push(headers, configkey):
     return res.status_code
 
 
-def login_white_phone_list_get(headers, keyName, number):
+def value_list_get(headers, keyName, number):
     url = 'http://{}:9080/superdiamond/profile/development/167?page=1&moduleId=&keyName={}'.format(
         host, keyName)
     # 获得html数据

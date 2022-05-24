@@ -1,15 +1,18 @@
+from flasgger import swag_from
 from flask import Flask, request
 from flask_restplus import Resource, Api, fields
+
+from common.refund import re
 from operation.admin import ichiban_insert, item_upsert, ichiban_activity_add
 from common.random import rm
 from common.mysql_operate import db
+from spider.testcases.admin.admin_api import admin
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='AUTH API', description='A authenticate user and save cloud accounts API')
 au = api.namespace('ichiban', path='/')
-ca = api.namespace('cloud accounts', path='/')
-acs = api.namespace('accounts', path='/')
-bca = api.namespace('binding cloud accounts', path='/')
+ad = api.namespace('superdemo', path='/')
+af = api.namespace('refund', path='/')
 
 item = au.model("Item", {
     "mash": fields.String(example="a_reward"),
@@ -80,6 +83,51 @@ class ichiban_activity(Resource):
         json_data = request.json
         ichiban_activity_add(json_data)
         return "成功"
+
+
+@ad.route("/add_white_user")
+@ad.param("user_id", "需要添加进入白名单的user_id", required=True)
+class white_user_add(Resource):
+    def get(self):
+        data = request.args
+        user_id = int(data.get("user_id"))
+        result = admin.modify_white_user_api(user_id, user_id + 1)
+        return result
+
+
+@ad.route("/add_white_user_batch")
+@ad.param("end_user_id", "不包含", required=True)
+@ad.param("start_user_id", "包含", required=True)
+class white_user_add(Resource):
+    def get(self):
+        data = request.args
+        start_user_id = int(data.get("start_user_id"))
+        end_user_id = int(data.get("end_user_id"))
+        result = admin.modify_white_user_api(start_user_id, end_user_id)
+        return result
+
+
+@ad.route("/add_login_white_phone")
+@ad.param("phone", required=True)
+class login_white_phone_add(Resource):
+    def get(self):
+        data = request.args
+        phone = data.get("phone")
+        result = admin.modify_login_white_phone_api(phone)
+        return result
+
+
+@af.route('/refund')
+@af.param("refund_num", "需退款数量,默认为5条")
+@af.param("refund_amount", "最小退款金额，默认为0.02")
+@af.param("userID", "需退款用户的ID", required=True)
+class user_fragment_test(Resource):
+    def get(self):
+        user_id = request.args.get("userID")
+        refund_num = int(request.args.get("refund_num")) if request.args.get("refund_num") is not None else 5
+        refund_amount = float(request.args.get("refund_amount")) if request.args.get("refund_amount") is not None else 0.02
+        result = re.test_refund(user_id, refund_num, refund_amount)
+        return result
 
 
 if __name__ == '__main__':
