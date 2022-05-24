@@ -11,6 +11,7 @@ url = 'http://{}:9080/superdiamond/config/save'.format(host)
 class admin_api_get:
 
     def modify_white_user_api(self, start, end):
+        # 获取headers的值
         headers = admin_login_jsessionid_get()
         # 获取configValue的值
         keyName = 'user_check.white_user'
@@ -43,10 +44,11 @@ class admin_api_get:
             return "添加成功"
 
     def modify_login_white_phone_api(self, phone):
+        # 获取header的值
+        headers = admin_login_jsessionid_get()
         # 获取configValue的值
         keyName = 'login.white.list'
         configId = 5974
-        headers = admin_login_jsessionid_get()
         configValue = login_white_phone_list_get(headers, keyName, configId) + ',' + phone
         # 构建form表单数据
         data = {
@@ -59,8 +61,8 @@ class admin_api_get:
             "page": 1,
             "selModuleId": "",
             "flag": "",
-            "keyName": "login.white.list",
-            "configKey": "login.white.list",
+            "keyName": keyName,
+            "configKey": keyName,
             "configValue": configValue,
             "configDesc": ""
         }
