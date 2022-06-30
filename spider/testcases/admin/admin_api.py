@@ -2,7 +2,7 @@ from lxml import etree
 from common.spider import spider
 from config.conf import config
 from spider.testcases.admin.common import admin_login_jsessionid_get, admin_white_user_list_push,\
-    value_list_get
+    value_list_get, form_data_get
 
 host = config.MYSQL_HOST
 url = 'http://{}:9080/superdiamond/config/save'.format(host)
@@ -19,22 +19,8 @@ class admin_api_get:
         configValue = value_list_get(headers, keyName, configId)
         for i in range(start, end):
             configValue = configValue + "," + str(i)
-            # 构建form表单数据
-            data = {
-                "moduleId": 737,
-                "configType": "DRM",
-                "visableType": "PUBLIC",
-                "configId": configId,
-                "projectId": 167,
-                "type": 'development',
-                "page": 1,
-                "selModuleId": "",
-                "flag": "",
-                "keyName": keyName,
-                "configKey": keyName,
-                "configValue": configValue,
-                "configDesc": ""
-            }
+            # 根据参数获取form表单数据
+            data = form_data_get(configId, keyName, configValue)
         # 使用 reqeusts.post()方法提交请求
         res = spider.post_request(url=url, data=data, headers=headers)
         print("更改user_check.white_user的值返回码:{}\n".format(res.status_code))
@@ -50,22 +36,8 @@ class admin_api_get:
         keyName = 'login.white.list'
         configId = 5974
         configValue = value_list_get(headers, keyName, configId) + ',' + phone
-        # 构建form表单数据
-        data = {
-            "moduleId": 737,
-            "configType": "DRM",
-            "visableType": "PUBLIC",
-            "configId": configId,
-            "projectId": 167,
-            "type": 'development',
-            "page": 1,
-            "selModuleId": "",
-            "flag": "",
-            "keyName": keyName,
-            "configKey": keyName,
-            "configValue": configValue,
-            "configDesc": ""
-        }
+        # 根据参数获取form表单数据
+        data = form_data_get(configId, keyName, configValue)
         # 使用 reqeusts.post()方法提交请求
         res = spider.post_request(url=url, data=data, headers=headers)
         print("更改login.white.list的值返回码:{}\n".format(res.status_code))

@@ -3,10 +3,10 @@ from common.logger import logger
 import re
 from config.conf import config
 
-
 host = config.redis_host
 port = config.redis_port
 pwd = config.redis_pwd
+
 
 class RedisOperate:
     def __init__(self):
@@ -52,7 +52,14 @@ class RedisOperate:
         else:
             return None
 
+    def exchange_token_delete(self):
+        list_keys = self.r.keys("pookie:item_sku_second_price:*")
+        for key in list_keys:
+            self.r.delete(key)
+            logger.info("=====清除item_sku_second_price的缓存成功=====")
+
 
 rs = RedisOperate()
+
 if __name__ == '__main__':
-    rs.test_token_get(57, 2)
+    rs.exchange_token_delete()

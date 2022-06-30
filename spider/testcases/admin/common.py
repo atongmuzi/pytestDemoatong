@@ -54,3 +54,23 @@ def value_list_get(headers, keyName, number):
     r_list = parse_html.xpath(xpath_bds)
     print(r_list[0])
     return r_list[0]
+
+
+def form_data_get(configId, keyName, configValue):
+    # 构建form表单数据
+    data = {
+        "moduleId": 737,
+        "configType": "DRM",
+        "visableType": "PUBLIC",
+        "configId": configId,
+        "projectId": 167,
+        "type": 'development',
+        "page": 1,
+        "selModuleId": "",
+        "flag": "",
+        "keyName": keyName,
+        "configKey": keyName,
+        "configValue": configValue,
+        "configDesc": ""
+    }
+    return data

@@ -1,20 +1,23 @@
-from flasgger import swag_from
 from flask import Flask, request
 from flask_restplus import Resource, Api, fields
 
 from common.refund import re
+from common.user_init import init
 from operation.admin import ichiban_insert, item_upsert, ichiban_activity_add
 from common.random import rm
 from common.mysql_operate import db
 from spider.testcases.admin.admin_api import admin
+from common.exchange_init import ex
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='AUTH API', description='A authenticate user and save cloud accounts API')
 au = api.namespace('ichiban', path='/')
 ad = api.namespace('superdemo', path='/')
 af = api.namespace('refund', path='/')
+ai = api.namespace('user_init', path='/')
+ae = api.namespace('exchange_init', path='/')
 
-item = au.model("Item", {
+item1 = au.model("item1", {
     "mash": fields.String(example="a_reward"),
     "total_count": fields.Integer(example=30),
     "detail_img": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/upload"
@@ -23,7 +26,7 @@ item = au.model("Item", {
     "w_count": fields.Integer(example=0),
     "series_reward_detail_img": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/upload"
                                                       "/2c6dc2e3f4394224a0d1ff2ea9296726.jpg"),
-    "sku_id": fields.Integer(example=6922),
+    "sku_id": fields.Integer(example=6922)
 })
 
 ichiban_item = au.model("Ichiban", {
@@ -33,14 +36,14 @@ ichiban_item = au.model("Ichiban", {
     "item_main_imgs": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/static/ichibansho"
                                             "/ichibansho-main.jpg"),
     "price": fields.Float(example=0.01),
-    "sku_list": fields.List(fields.Nested(item)),
+    "sku_list": fields.List(fields.Nested(item1)),
 })
 
 ichiban_activity = au.model("Activity", {
     "title": fields.String(example="atong一番赏活动"),
     "ali_title": fields.String(example="atong一番赏活动"),
     "start_time": fields.Integer(example=1647532800000),
-    "end_time": fields.Integer(example=1648656000000),
+    "end_time": fields.Integer(example=1656137741000),
     "price": fields.Float(example=1),
     "original_price": fields.Float(example=1),
     "status": fields.Boolean(example=False),
@@ -53,8 +56,8 @@ ichiban_activity = au.model("Activity", {
                                    "/0a4acfaee477448cac852f683a5972f2.png"),
     "tags": fields.String(example="[]"),
     "description": fields.String(example="atong一番赏活动"),
-    "limit_num": fields.Integer(example=None),
-    "special_rewards": fields.String(excmple=""),
+    "limit_num": fields.Integer(example=2),
+    "special_rewards": fields.String(example="a"),
     "item_id": fields.Integer(example=915),
     "item_id_list": fields.List(fields.Integer(example=915))
 
@@ -121,13 +124,29 @@ class login_white_phone_add(Resource):
 @af.param("refund_num", "需退款数量,默认为5条")
 @af.param("refund_amount", "最小退款金额，默认为0.02")
 @af.param("userID", "需退款用户的ID", required=True)
-class user_fragment_test(Resource):
+class user_refund_test(Resource):
     def get(self):
         user_id = request.args.get("userID")
         refund_num = int(request.args.get("refund_num")) if request.args.get("refund_num") is not None else 5
-        refund_amount = float(request.args.get("refund_amount")) if request.args.get("refund_amount") is not None else 0.02
+        refund_amount = float(request.args.get("refund_amount")) if request.args.get(
+            "refund_amount") is not None else 0.02
         result = re.test_refund(user_id, refund_num, refund_amount)
         return result
+
+
+@ai.route('/user_init')
+@ai.param("user_id", "需初始化用户的ID", required=True)
+class user_init(Resource):
+    def get(self):
+        user_id = request.args.get("userID")
+        init.init_wx_userID(user_id)
+
+
+@ae.route('/exchange_init')
+class exchange_init(Resource):
+    def get(self):
+        ex.all_init()
+        return "许愿换娃数据初始化成功"
 
 
 if __name__ == '__main__':
