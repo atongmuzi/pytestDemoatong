@@ -46,5 +46,21 @@ class admin_api_get:
         if code:
             return "添加成功"
 
+    def wish_exchage_switch_api(self):
+        # 获取header的值
+        headers = admin_login_jsessionid_get()
+        keyName = 'wish.switch'
+        configId = 6189
+        configValue = 'true'
+        # 根据参数获取form表单数据
+        data = form_data_get(configId, keyName, configValue)
+        # 使用 reqeusts.post()方法提交请求
+        res = spider.post_request(url=url, data=data, headers=headers)
+        print("更改wish.switch的值返回码:{}\n".format(res.status_code))
+        # 全推变量，使其生效
+        code = admin_white_user_list_push(headers, keyName)
+        return code
+
+
 
 admin = admin_api_get()

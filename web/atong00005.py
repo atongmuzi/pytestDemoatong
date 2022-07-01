@@ -145,8 +145,9 @@ class user_init(Resource):
 @ae.route('/exchange_init')
 class exchange_init(Resource):
     def get(self):
-        ex.all_init()
-        return "许愿换娃数据初始化成功"
+        code = ex.all_init()
+        if code:
+            return "许愿换娃数据初始化成功"
 
 
 if __name__ == '__main__':
