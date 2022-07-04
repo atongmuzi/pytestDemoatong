@@ -1,23 +1,44 @@
-from flask import Flask, request
-from flask_restplus import Resource, Api
+from flask import Flask
+from flask_restplus import Api, fields, Resource, marshal
 
 app = Flask(__name__)
-api = Api(app)
-# app.config['ERROR_404_HELP'] = False
+api = Api()
+api.init_app(app)
 
-todos = {"a": "haha", "b": "hehe"}
+metadata_model = api.model("metadata", {
+    'file': fields.String()
+})
+
+user_model = api.model('UserModel', {
+          "user_id": fields.Integer(required=True, description=''),
+          "user_name": fields.String(required=True, description=''),
+          "user_role": fields.String(required=False, description='')
+})
+
+response_model = api.model("Result", {
+    'metadata': fields.List(fields.Nested(metadata_model)),
+    'result': fields.Raw()
+})
 
 
-@api.route('/<string:todo_id>')
-class TodoSimple(Resource):
-    def get(self, todo_id):
-        print("atong"+todos)
-        return {todo_id: todos[todo_id]}
+@api.route("/test")
+class ApiView(Resource):
 
-    def put(self, todo_id):
-        todos[todo_id] = request.form['data']
-        return {todo_id: todos[todo_id]}
+    @api.marshal_with(response_model)
+    def get(self):
+
+        data = {'metadata': {},
+                'result': self.get_user()}
+        return data
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    def get_user(self):
+        # Access database and get data
+        user_data = [{'user_id': 1, 'user_name': 'John', 'user_role': 'editor'},
+                     {'user_id': 2, 'user_name': 'Sue', 'user_role': 'curator'}]
+
+        # The kwarg envelope does the trick
+        return marshal(user_data, user_model, envelope='data')
+
+
+app.run(host='127.0.0.1', debug=True)

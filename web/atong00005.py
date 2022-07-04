@@ -36,7 +36,8 @@ ichiban_item = au.model("Ichiban", {
     "item_main_imgs": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/static/ichibansho"
                                             "/ichibansho-main.jpg"),
     "price": fields.Float(example=0.01),
-    "sku_list": fields.List(fields.Nested(item1)),
+    "sku_list": fields.List(fields.Nested(item1))
+    # "sku_list": fields.List(fields.Raw)
 })
 
 ichiban_activity = au.model("Activity", {
