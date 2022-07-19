@@ -22,6 +22,7 @@ class Exchange_init():
         rs.exchange_token_delete()
         logger.info("===<清除item_sku_second_price缓存>===")
         admin.wish_exchage_switch_api()
+        return True
 
 
 ex = Exchange_init()
