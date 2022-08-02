@@ -8,6 +8,7 @@ from common.random import rm
 from common.mysql_operate import db
 from spider.testcases.admin.admin_api import admin
 from common.exchange_init import ex
+import time
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='AUTH API', description='A authenticate user and save cloud accounts API')
@@ -18,7 +19,7 @@ ai = api.namespace('user_init', path='/')
 ae = api.namespace('exchange_init', path='/')
 
 item1 = au.model("item1", {
-    "mash": fields.String(example="a_reward"),
+    "mash": fields.String(example="c_reward"),
     "total_count": fields.Integer(example=30),
     "detail_img": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/upload"
                                         "/2c6dc2e3f4394224a0d1ff2ea9296726.jpg"),
@@ -43,8 +44,8 @@ ichiban_item = au.model("Ichiban", {
 ichiban_activity = au.model("Activity", {
     "title": fields.String(example="atong一番赏活动"),
     "ali_title": fields.String(example="atong一番赏活动"),
-    "start_time": fields.Integer(example=1647532800000),
-    "end_time": fields.Integer(example=1656137741000),
+    "start_time": fields.Integer(example=int(time.time()*1000)),
+    "end_time": fields.Integer(example=1689824012000),
     "price": fields.Float(example=1),
     "original_price": fields.Float(example=1),
     "status": fields.Boolean(example=False),

@@ -1,7 +1,7 @@
 from lxml import etree
 from common.spider import spider
 from config.conf import config
-from spider.testcases.admin.common import admin_login_jsessionid_get, admin_white_user_list_push,\
+from spider.testcases.admin.common import admin_login_jsessionid_get, admin_white_user_list_push, \
     value_list_get, form_data_get
 
 host = config.MYSQL_HOST
@@ -60,7 +60,6 @@ class admin_api_get:
         # 全推变量，使其生效
         code = admin_white_user_list_push(headers, keyName)
         return code
-
 
 
 admin = admin_api_get()
