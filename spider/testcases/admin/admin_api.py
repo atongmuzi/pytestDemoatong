@@ -29,6 +29,16 @@ class admin_api_get:
         if code:
             return "添加成功"
 
+    def select_white_user_last(self):
+        # 获取headers的值得
+        headers = admin_login_jsessionid_get()
+        # 获取configValue的值
+        keyName = 'user_check.white_user'
+        configId = 6172
+        configValue = value_list_get(headers, keyName, configId)
+        last_user_id = configValue.split(',')[-1]
+        return last_user_id
+
     def modify_login_white_phone_api(self, phone):
         # 获取header的值
         headers = admin_login_jsessionid_get()

@@ -44,7 +44,7 @@ ichiban_item = au.model("Ichiban", {
 ichiban_activity = au.model("Activity", {
     "title": fields.String(example="atong一番赏活动"),
     "ali_title": fields.String(example="atong一番赏活动"),
-    "start_time": fields.Integer(example=int(time.time()*1000)),
+    "start_time": fields.Integer(example=int(time.time() * 1000)),
     "end_time": fields.Integer(example=1689824012000),
     "price": fields.Float(example=1),
     "original_price": fields.Float(example=1),
@@ -97,6 +97,13 @@ class white_user_add(Resource):
         data = request.args
         user_id = int(data.get("user_id"))
         result = admin.modify_white_user_api(user_id, user_id + 1)
+        return result
+
+
+@ad.route("/select_white_user_list")
+class select_white_user(Resource):
+    def get(self):
+        result = admin.select_white_user_last()
         return result
 
 
