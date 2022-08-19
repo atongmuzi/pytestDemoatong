@@ -1,13 +1,25 @@
-import jpype
-import os.path
+# 描述符类
+class revealAccess:
+    def __init__(self, initval=None, name='var'):
+        self.val = initval
+        self.name = name
 
-from jpype._core import startJVM
-from jpype._jvmfinder import getDefaultJVMPath
+    def __get__(self, obj, objtype):
+        print("Retrieving", self.name)
+        return self.val
 
-jarpath = os.path.join(os.path.abspath('.'), "MathFuns.jar")
-# os.path.abspath这个函数用来获取当前 python 脚本所在的绝对路径
+    def __set__(self, obj, val):
+        print("updating", self.name)
+        self.val = val
 
-print(os.path.abspath('.'))
-startJVM(getDefaultJVMPath(), "-ea", "-Djava.class.path=%s" % jarpath)
-#"D:/jdk/jre/bin/server/jvm.dll"
 
+class myClass:
+    x = revealAccess(10, 'var "x"')
+    y = 5
+
+
+m = myClass()
+print(m.x)
+m.x = 20
+print(m.x)
+print(m.y)
