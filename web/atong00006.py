@@ -1,21 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restplus import Resource, Api
 
 app = Flask(__name__)
-api = Api(app)
-
-todos = {"todo1":"hahha", "tudo2":"heheh"}
+# api = Api(app)
 
 
-@api.route('/<string:todo_id>')
-class TodoSimple(Resource):
-    def get(self, todo_id):
-        a = todos.get("todo1")
-        return {todo_id: a}
-
-    def put(self, todo_id):
-        todos[todo_id] = request.form['data']
-        return {todo_id: todos[todo_id]}
+@app.route('/', methods=['GET', 'POST'])
+def index(download_xml=None):
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

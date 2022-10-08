@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restplus import Resource, Api, fields
 
 from common.refund import re
@@ -21,12 +21,14 @@ ae = api.namespace('exchange_init', path='/')
 item1 = au.model("item1", {
     "mash": fields.String(example="c_reward"),
     "total_count": fields.Integer(example=30),
+    "org_price": fields.Float(example=20.88),
     "detail_img": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/upload"
                                         "/2c6dc2e3f4394224a0d1ff2ea9296726.jpg"),
     "is_pre_sale": fields.Boolean(example=False),
-    "w_count": fields.Integer(example=0),
     "series_reward_detail_img": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/upload"
                                                       "/2c6dc2e3f4394224a0d1ff2ea9296726.jpg"),
+    "cost_price": fields.Float(example=20.99),
+    "special_type": fields.String(example="mbox_bad"),
     "sku_id": fields.Integer(example=6922)
 })
 
@@ -36,8 +38,13 @@ ichiban_item = au.model("Ichiban", {
     "notify_num": fields.Integer(example=1),
     "item_main_imgs": fields.String(example="https://pookie-h5.oss-cn-hangzhou.aliyuncs.com/static/ichibansho"
                                             "/ichibansho-main.jpg"),
-    "price": fields.Float(example=0.01),
-    "sku_list": fields.List(fields.Nested(item1))
+    "price": fields.Float(example=0.03),
+    "sku_list": fields.List(fields.Nested(item1)),
+    "support_three_choose": fields.Boolean(example=0),
+    "three_choose_price": fields.Float(example=0),
+    "three_choose_recovery_price": fields.Float(example=0),
+    "notify_num": fields.Float(example=50),
+    "series_recovery_amount": fields.Float(example=0.13)
     # "sku_list": fields.List(fields.Raw)
 })
 
@@ -59,14 +66,14 @@ ichiban_activity = au.model("Activity", {
     "tags": fields.String(example="[]"),
     "description": fields.String(example="atong一番赏活动"),
     "limit_num": fields.Integer(example=2),
-    "special_rewards": fields.String(example="a"),
+    "special_rewards": fields.String(example=""),
     "item_id": fields.Integer(example=915),
     "item_id_list": fields.List(fields.Integer(example=915))
 
 })
 
 
-@au.route('/add_ichiban_item', doc={"description": "新增一番赏商品且上架，返回的item_id可用于一番赏活动接口"})
+@au.route('/add_ichiban_item_nomal', doc={"description": "新增一番赏(普通且非三选一)商品且上架，返回的item_id可用于一番赏活动接口"})
 class HelloWorld(Resource):
     # @au.marshal_with(school, as_list=True)
     @au.expect(ichiban_item)
@@ -86,8 +93,11 @@ class ichiban_activity(Resource):
     @au.expect(ichiban_activity)
     def post(self):
         json_data = request.json
-        ichiban_activity_add(json_data)
-        return "成功"
+        result = ichiban_activity_add(json_data)
+        if result.error:
+            return result.error
+        else:
+            return "成功"
 
 
 @ad.route("/add_white_user")
