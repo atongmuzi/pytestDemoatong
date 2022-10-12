@@ -9,6 +9,7 @@ from common.mysql_operate import db
 from spider.testcases.admin.admin_api import admin
 from common.exchange_init import ex
 import time
+from common.common_snowflake_reward import snr
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='AUTH API', description='A authenticate user and save cloud accounts API')
@@ -17,6 +18,7 @@ ad = api.namespace('superdemo', path='/')
 af = api.namespace('refund', path='/')
 ai = api.namespace('user_init', path='/')
 ae = api.namespace('exchange_init', path='/')
+asr = api.namespace('snowflake_reward_init', path='/')
 
 item1 = au.model("item1", {
     "mash": fields.String(example="c_reward"),
@@ -167,6 +169,16 @@ class exchange_init(Resource):
         code = ex.all_init()
         if code:
             return "许愿换娃数据初始化成功"
+
+
+@asr.route('/snowflake_reward_init')
+@asr.param("type", "活动类型", required=True)
+@asr.param("reward_type", "需要初始化的奖励类型，1-实物 2-技能卡 3-优惠券", required=True)
+class snowflake_reward_init(Resource):
+    def get(self):
+        type = request.args.get("type")
+        reward_type = request.args.get("reward_type")
+        snr.common_snowflake_reward(type, reward_type)
 
 
 if __name__ == '__main__':
