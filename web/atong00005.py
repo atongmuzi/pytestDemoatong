@@ -171,14 +171,28 @@ class exchange_init(Resource):
             return "许愿换娃数据初始化成功"
 
 
-@asr.route('/snowflake_reward_init')
+@asr.route('/reward_config_init')
 @asr.param("type", "活动类型", required=True)
 @asr.param("reward_type", "需要初始化的奖励类型，1-实物 2-技能卡 3-优惠券", required=True)
 class snowflake_reward_init(Resource):
     def get(self):
         type = request.args.get("type")
         reward_type = request.args.get("reward_type")
-        snr.common_snowflake_reward(type, reward_type)
+        result = snr.common_snowflake_reward(type, reward_type)
+        return result
+
+
+@asr.route('/consumption_value_init')
+@asr.param("user_id", "用户user_id", required=True)
+@asr.param("value", "可用消费值", required=True)
+@asr.param("rest_num", "可用体力等数量", required=True)
+class snowflake_reward_init(Resource):
+    def get(self):
+        user_id = request.args.get("user_id")
+        value = int(request.args.get("value"))
+        rest_num = int(request.args.get("rest_num"))
+        result = snr.common_consumption_value(user_id, value, rest_num)
+        return result
 
 
 if __name__ == '__main__':
