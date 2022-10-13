@@ -1,4 +1,5 @@
 from common.mysql_operate import db
+from testcases.conftest import table_data
 
 
 class SnowflakeReward:
@@ -8,8 +9,9 @@ class SnowflakeReward:
         data_id = db.select_db(sql)
         len_data = len(data_id)
         if reward_type.__eq__('1'):
-            sql_item_sku = "select id, name from item_sku where item_id = %s" % 2260
-            data_sku_name = db.select_db(sql_item_sku)
+            sql_by_sku = table_data["item_sku"]["select_by_id"] % 2260
+            # sql_item_sku = "select id, name from item_sku where item_id = %s" % 2260
+            data_sku_name = db.select_db(sql_by_sku)
             for i in range(len_data):
                 sql = "update  snowflake_reward_config set sku_id = %s , name = '%s' where id = %s " \
                       % (data_sku_name[i]["id"], data_sku_name[i]["name"], data_id[i]["id"])

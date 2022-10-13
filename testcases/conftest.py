@@ -22,6 +22,7 @@ def get_data(yaml_file_name):
 base_data = get_data("base_data.yml")
 api_data = get_data("api_test_data.yml")
 scenario_data = get_data("scenario_test_data.yml")
+table_data = get_data("table_data.yml")
 user_id = base_data["init_user"]["user_id"]
 friend_user_id = base_data["init_user"]["friend_id"]
 coupon_id = base_data["init_coupon"]["coupon_id"]
