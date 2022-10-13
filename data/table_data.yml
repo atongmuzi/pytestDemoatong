@@ -1,18 +1,14 @@
 item_sku:
-  select_by_id: "select id, name from item_sku where item_id = %s"
+  select_by_item_id: "select id, name from item_sku where item_id = %s"
 
-init_item:
-  item_id: 378
-init_user:
-  user_id: 1528
-  friend_id: 1682
-  admin_user_id: 57
-init_coupon:
-  coupon_id: 710
+snowflake_reward_config:
+  select_by_type: "select id from snowflake_reward_config where type = %s and reward_type = %s"
+  update_skuId_by_id: "update  snowflake_reward_config set sku_id = %s , name = '%s' where id = %s"
+  update_skillId_by_id: "update snowflake_reward_config set skill_card_id = %s, name ='%s' where id = %s "
+  update_couponId_by_id: "update snowflake_reward_config set coupon_id = %s, name ='%s' where id = %s "
 
-init_sql:
-  insert_delete_user:
-    - "INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')"
-    - "DELETE FROM user WHERE username = '测试test'"
-  delete_register_user: "DELETE FROM user WHERE username = '测试test'"
-  update_user_telephone: "UPDATE user SET telephone = '13500010004' WHERE id = 4"
+skill_card_info:
+  select_by_id: "select id,name from skill_card_info where status=1 order by id desc limit %s"
+
+coupon_info:
+  select_by_activity_id: "select id, name from coupon_info where status=1 and activity_id=0 order by id desc limit %s"
