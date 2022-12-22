@@ -3,6 +3,7 @@ from flask_restplus import Resource, Api, fields
 
 from common.refund import re
 from common.user_init import init
+from enumc.platform import Platform
 from operation.admin import ichiban_insert, item_upsert, ichiban_activity_add
 from common.random import rm
 from common.mysql_operate import db
@@ -10,17 +11,19 @@ from spider.testcases.admin.admin_api import admin
 from common.exchange_init import ex
 import time
 from common.common_snowflake_reward import snr
+from common.authorization_get import au
+import base64
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='AUTH API', description='A authenticate user and save cloud accounts API')
-au = api.namespace('ichiban', path='/')
+aui = api.namespace('ichiban', path='/')
 ad = api.namespace('superdemo', path='/')
 af = api.namespace('refund', path='/')
 ai = api.namespace('user_init', path='/')
 ae = api.namespace('exchange_init', path='/')
 asr = api.namespace('snowflake_reward_init', path='/')
-
-item1 = au.model("item1", {
+aun = api.namespace('authorization', path='/')
+item1 = aui.model("item1", {
     "mash": fields.String(example="c_reward"),
     "total_count": fields.Integer(example=30),
     "org_price": fields.Float(example=20.88),
@@ -34,7 +37,7 @@ item1 = au.model("item1", {
     "sku_id": fields.Integer(example=6922)
 })
 
-ichiban_item = au.model("Ichiban", {
+ichiban_item = aui.model("Ichiban", {
     "item_name": fields.String(example="atongtest一番赏" + rm.generate_random_str(2)),
     "round": fields.Integer(example=1),
     "notify_num": fields.Integer(example=1),
@@ -50,7 +53,7 @@ ichiban_item = au.model("Ichiban", {
     # "sku_list": fields.List(fields.Raw)
 })
 
-ichiban_activity = au.model("Activity", {
+ichiban_activity = aui.model("Activity", {
     "title": fields.String(example="atong一番赏活动"),
     "ali_title": fields.String(example="atong一番赏活动"),
     "start_time": fields.Integer(example=int(time.time() * 1000)),
@@ -75,10 +78,10 @@ ichiban_activity = au.model("Activity", {
 })
 
 
-@au.route('/add_ichiban_item_nomal', doc={"description": "新增一番赏(普通且非三选一)商品且上架，返回的item_id可用于一番赏活动接口"})
+@aui.route('/add_ichiban_item_nomal', doc={"description": "新增一番赏(普通且非三选一)商品且上架，返回的item_id可用于一番赏活动接口"})
 class HelloWorld(Resource):
     # @au.marshal_with(school, as_list=True)
-    @au.expect(ichiban_item)
+    @aui.expect(ichiban_item)
     def post(self):
         json_data = request.json
         '新增一番赏商品--尚未上架'
@@ -90,9 +93,9 @@ class HelloWorld(Resource):
         return {"item_id": data[0]["id"]}
 
 
-@au.route("/add_ichiban_activity")
+@aui.route("/add_ichiban_activity")
 class ichiban_activity(Resource):
-    @au.expect(ichiban_activity)
+    @aui.expect(ichiban_activity)
     def post(self):
         json_data = request.json
         result = ichiban_activity_add(json_data)
@@ -192,6 +195,24 @@ class snowflake_reward_init(Resource):
         value = int(request.args.get("value"))
         rest_num = int(request.args.get("rest_num"))
         result = snr.common_consumption_value(user_id, value, rest_num)
+        return result
+
+
+@aun.route('/decode_authorization')
+@aun.param("authorization", "用户的签名", required=True)
+class userid_get(Resource):
+    def get(self):
+        authorization = request.args.get("authorization")
+        result = base64.b64decode(authorization)
+        return str(result)
+
+
+@aun.route('/get_authorization')
+@aun.param("user_id", "用户名", required=True)
+class userid_get(Resource):
+    def get(self):
+        user_id = request.args.get("user_id")
+        result = au.test_authorization_get(user_id, Platform.mini_program.value, channel_type=2)
         return result
 
 

@@ -25,5 +25,8 @@ class TestAdminRefund:
         else:
             return "暂无需要退款的订单"
 
+    def test_refund_by_name(self, nickname, nickname_num, refund_num, refund_amount):
+        userId_sql = "select id from user where nickname like '%s' limit %s" % (nickname, nickname_num)
+
 
 re = TestAdminRefund()
